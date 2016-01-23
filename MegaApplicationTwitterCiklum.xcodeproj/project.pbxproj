@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
+		A800FD191C542766006E8CD8 /* TweetsParse.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD181C542766006E8CD8 /* TweetsParse.m */; };
+		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
 		A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C91C523E2B009D6F07 /* AppDelegate.m */; };
 		A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39CC1C523E2B009D6F07 /* ViewController.m */; };
 		A83F39D01C523E2B009D6F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83F39CE1C523E2B009D6F07 /* Main.storyboard */; };
-		A83F39D31C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A83F39D11C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodeld */; };
+		A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */; };
 		A83F39D51C523E2B009D6F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83F39D41C523E2B009D6F07 /* Assets.xcassets */; };
 		A83F39D81C523E2B009D6F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */; };
+		A83F39E11C523E4D009D6F07 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39E01C523E4D009D6F07 /* CoreDataStack.m */; };
+		A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */; };
+		A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */; };
+		A83F39F11C524451009D6F07 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39EF1C524451009D6F07 /* Tweet.m */; };
+		A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2B8B51C5269090031B5AE /* TwitterAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.release.xcconfig"; sourceTree = "<group>"; };
+		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
+		A800FD171C542766006E8CD8 /* TweetsParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsParse.h; sourceTree = "<group>"; };
+		A800FD181C542766006E8CD8 /* TweetsParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsParse.m; sourceTree = "<group>"; };
+		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
+		A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorAlertView.m; sourceTree = "<group>"; };
 		A83F39C21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaApplicationTwitterCiklum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83F39C61C523E2B009D6F07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A83F39C81C523E2B009D6F07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -24,10 +38,21 @@
 		A83F39CB1C523E2B009D6F07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A83F39CC1C523E2B009D6F07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A83F39CF1C523E2B009D6F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A83F39D21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MegaApplicationTwitterCiklum.xcdatamodel; sourceTree = "<group>"; };
+		A83F39D21C523E2B009D6F07 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A83F39D41C523E2B009D6F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83F39D71C523E2B009D6F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A83F39D91C523E2B009D6F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A83F39DF1C523E4D009D6F07 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		A83F39E01C523E4D009D6F07 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		A83F39E21C523EA8009D6F07 /* CoreDataInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataInterface.h; sourceTree = "<group>"; };
+		A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataInterface.m; sourceTree = "<group>"; };
+		A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tweet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tweet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A83F39EE1C524451009D6F07 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		A83F39EF1C524451009D6F07 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		A8F2B8B41C5269090031B5AE /* TwitterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterAPI.h; sourceTree = "<group>"; };
+		A8F2B8B51C5269090031B5AE /* TwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAPI.m; sourceTree = "<group>"; };
+		B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +60,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7699DF51400B2D04EE13B98D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */,
+				2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A83F39B91C523E2B009D6F07 = {
 			isa = PBXGroup;
 			children = (
 				A83F39C41C523E2B009D6F07 /* MegaApplicationTwitterCiklum */,
 				A83F39C31C523E2B009D6F07 /* Products */,
+				7699DF51400B2D04EE13B98D /* Pods */,
+				E2AADDB293A5E759AC83D6E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +99,20 @@
 			children = (
 				A83F39C81C523E2B009D6F07 /* AppDelegate.h */,
 				A83F39C91C523E2B009D6F07 /* AppDelegate.m */,
+				A8F2B8B41C5269090031B5AE /* TwitterAPI.h */,
+				A8F2B8B51C5269090031B5AE /* TwitterAPI.m */,
+				A800FD171C542766006E8CD8 /* TweetsParse.h */,
+				A800FD181C542766006E8CD8 /* TweetsParse.m */,
+				A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */,
+				A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */,
+				A8F2B8B31C5267200031B5AE /* Model */,
+				A83F39E51C523EB2009D6F07 /* CoreData */,
 				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
 				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
 				A83F39CE1C523E2B009D6F07 /* Main.storyboard */,
 				A83F39D41C523E2B009D6F07 /* Assets.xcassets */,
 				A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */,
 				A83F39D91C523E2B009D6F07 /* Info.plist */,
-				A83F39D11C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodeld */,
 				A83F39C51C523E2B009D6F07 /* Supporting Files */,
 			);
 			path = MegaApplicationTwitterCiklum;
@@ -82,6 +126,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A83F39E51C523EB2009D6F07 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A83F39E21C523EA8009D6F07 /* CoreDataInterface.h */,
+				A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */,
+				A83F39DF1C523E4D009D6F07 /* CoreDataStack.h */,
+				A83F39E01C523E4D009D6F07 /* CoreDataStack.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		A8F2B8B31C5267200031B5AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */,
+				A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */,
+				A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */,
+				A83F39EE1C524451009D6F07 /* Tweet.h */,
+				A83F39EF1C524451009D6F07 /* Tweet.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E2AADDB293A5E759AC83D6E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +164,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A83F39DC1C523E2B009D6F07 /* Build configuration list for PBXNativeTarget "MegaApplicationTwitterCiklum" */;
 			buildPhases = (
+				92DF6DAB72C43245B0D58684 /* Check Pods Manifest.lock */,
 				A83F39BE1C523E2B009D6F07 /* Sources */,
 				A83F39BF1C523E2B009D6F07 /* Frameworks */,
 				A83F39C01C523E2B009D6F07 /* Resources */,
+				D0B30002DFCC5DCAE52D459C /* Embed Pods Frameworks */,
+				70FF4D41F9DDD52CEA6E4760 /* Copy Pods Resources */,
+				A851DCBA1C539A3C00D2D1AB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,15 +227,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70FF4D41F9DDD52CEA6E4760 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92DF6DAB72C43245B0D58684 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A851DCBA1C539A3C00D2D1AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6a99cf49b002079464fc038daca30b8585afa5ab 15e8f9322a3c301f24529bce033f808c47c8f5011b668697721bb5dace9d3baa";
+		};
+		D0B30002DFCC5DCAE52D459C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A83F39BE1C523E2B009D6F07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83F39E11C523E4D009D6F07 /* CoreDataStack.m in Sources */,
+				A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */,
 				A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */,
 				A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */,
+				A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */,
+				A83F39F11C524451009D6F07 /* Tweet.m in Sources */,
+				A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */,
 				A83F39C71C523E2B009D6F07 /* main.m in Sources */,
-				A83F39D31C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodeld in Sources */,
+				A800FD191C542766006E8CD8 /* TweetsParse.m in Sources */,
+				A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */,
+				A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +413,7 @@
 		};
 		A83F39DD1C523E2B009D6F07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MegaApplicationTwitterCiklum/Info.plist;
@@ -277,6 +425,7 @@
 		};
 		A83F39DE1C523E2B009D6F07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MegaApplicationTwitterCiklum/Info.plist;
@@ -305,17 +454,18 @@
 				A83F39DE1C523E2B009D6F07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A83F39D11C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodeld */ = {
+		A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A83F39D21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodel */,
+				A83F39D21C523E2B009D6F07 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = A83F39D21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.xcdatamodel */;
-			path = MegaApplicationTwitterCiklum.xcdatamodeld;
+			currentVersion = A83F39D21C523E2B009D6F07 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
