@@ -21,11 +21,10 @@
 
 @implementation TweetsParse
 
-- (instancetype)initWithTweetsDictionary:(TwitterAPI *)tw
+- (instancetype)initWithTweetsDictionary
 {
     self = [super init];
     if (self) {
-        self.twitterApi = tw;
         [self initObjects];
     }
     return self;
@@ -35,13 +34,11 @@
 {
     self.arrayOfTweetts = [NSMutableArray new];
     self.userTimelineDictionray = [NSDictionary new];
-    self.twitterApi = [TwitterAPI new];
 }
 
 -(void)parseJsonUsertimeline:(NSString *)since_id cout:(NSUInteger)count
 {
-    NSDictionary *params = @{@"count":[NSString stringWithFormat:@"%lu", count]};
-    self.userTimelineDictionray = [self.twitterApi getUserHomeTimelineWithParams:params];
+
 
 }
 

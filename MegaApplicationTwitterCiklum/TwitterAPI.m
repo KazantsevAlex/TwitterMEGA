@@ -17,12 +17,23 @@
 
 @implementation TwitterAPI
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.twitter = [Twitter new];
+        self.apiClient = [TWTRAPIClient new];
+    }
+    return self;
+}
+
 -(void)loginAction
 {
     [[Twitter sharedInstance]logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
         if (session) {
             NSLog(@"log in as %@", [session userName]);
-            [self initAPIWithUserID:[session userID]];
+            [self setupApiClientWithUserId:[session userID]];
+            [self getUserHomeTimelineWithParams:nil];
         }
         else
         {
@@ -31,37 +42,43 @@
     }];
 }
 
-- (void)initAPIWithUserID:(NSString *)userId
+-(void)setupApiClientWithUserId:(NSString *)userID
 {
-    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userId];
+    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
--(void)executeRequestWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters
+
+-(void)executeRequestWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters block:(void(^)(BOOL successOperation))completion
 {
-    NSError *errorConnection = nil;
-    NSURLRequest *request = [self.apiClient URLRequestWithMethod:method URL:url parameters:parameters error:&errorConnection];
-    
+    NSError *clientError = nil;
+    NSURLRequest *request = [self.apiClient URLRequestWithMethod:method
+                                                             URL:url
+                                                      parameters:parameters
+                                                           error:&clientError];
     if (request) {
         [self.apiClient sendTwitterRequest:request
                                 completion:^(NSURLResponse *response,
                                              NSData *data,
                                              NSError *connectionError) {
-             if (data) {
-                 NSError *jsonError;
-                 NSDictionary *json = [NSJSONSerialization
-                                       JSONObjectWithData:data
-                                       options:0
-                                       error:&jsonError];
-                 
-                 NSLog(@"JSON DATA %@ COUTN %lu", json, [json count]);
-             }
-             else {
-                 NSLog(@"Error: %@", connectionError);
-             }
-         }];
+            
+            if (data) {
+                NSError *jsonError;
+                NSDictionary *json = [NSJSONSerialization
+                                      JSONObjectWithData:data
+                                      options:0
+                                      error:&jsonError];
+                
+                NSLog(@"json %@", json);
+                completion(YES);
+            }
+            else {
+                NSLog(@"Error : %@", [connectionError localizedDescription]);
+            }
+        }];
+ 
     }
-    else
-    {
-      NSLog(@"Error: %@", [errorConnection localizedDescription]);
+    else {
+        NSLog(@"Error client: %@", [clientError localizedDescription]);
+        completion(NO);
     }
 }
 
@@ -69,9 +86,11 @@
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
-    [self executeRequestWithMethod:type url:url parameters:params];
+    NSDictionary *sd = @{};
     
-    
+    [self executeRequestWithMethod:url url:type parameters:sd block:^(BOOL successOperation) {
+        NSLog(@"Success %d", successOperation);
+    }];
     return nil;
 }
 
