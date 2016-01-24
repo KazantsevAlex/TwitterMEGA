@@ -260,7 +260,7 @@
 		};
 		A851DCBA1C539A3C00D2D1AB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -270,6 +270,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6a99cf49b002079464fc038daca30b8585afa5ab 15e8f9322a3c301f24529bce033f808c47c8f5011b668697721bb5dace9d3baa";
+			showEnvVarsInLog = 0;
 		};
 		D0B30002DFCC5DCAE52D459C /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -348,7 +349,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

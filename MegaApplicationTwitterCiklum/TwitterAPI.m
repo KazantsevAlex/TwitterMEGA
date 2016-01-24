@@ -22,7 +22,6 @@
     self = [super init];
     if (self) {
         self.twitter = [Twitter new];
-        self.apiClient = [TWTRAPIClient new];
     }
     return self;
 }
@@ -47,15 +46,15 @@
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
 
--(void)executeRequestWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters block:(void(^)(BOOL successOperation))completion
+-(void)executeRequestWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters block:(void(^)(id object))success
 {
     NSError *clientError = nil;
-    NSURLRequest *request = [self.apiClient URLRequestWithMethod:method
+    NSURLRequest *request = [[[Twitter sharedInstance]APIClient] URLRequestWithMethod:method
                                                              URL:url
                                                       parameters:parameters
                                                            error:&clientError];
     if (request) {
-        [self.apiClient sendTwitterRequest:request
+        [[[Twitter sharedInstance]APIClient] sendTwitterRequest:request
                                 completion:^(NSURLResponse *response,
                                              NSData *data,
                                              NSError *connectionError) {
@@ -68,7 +67,7 @@
                                       error:&jsonError];
                 
                 NSLog(@"json %@", json);
-                completion(YES);
+                success(@"YES");
             }
             else {
                 NSLog(@"Error : %@", [connectionError localizedDescription]);
@@ -78,7 +77,7 @@
     }
     else {
         NSLog(@"Error client: %@", [clientError localizedDescription]);
-        completion(NO);
+        success(@"NO");
     }
 }
 
@@ -88,8 +87,8 @@
     NSString *type = @"GET";
     NSDictionary *sd = @{};
     
-    [self executeRequestWithMethod:url url:type parameters:sd block:^(BOOL successOperation) {
-        NSLog(@"Success %d", successOperation);
+    [self executeRequestWithMethod:url url:type parameters:sd block:^(id object) {
+        NSLog(@"Success %@", object);
     }];
     return nil;
 }
