@@ -10,7 +10,7 @@
 
 @interface TwitterAPI()
 @property(nonatomic, strong) Twitter *twitter;
-@property TweetsParse *wtParse;
+@property (nonatomic, strong) TWTRAPIClient *apiClient;
 
 @end
 
@@ -19,11 +19,11 @@
 -(void)loginAction
 {
     [[Twitter sharedInstance]logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
-        if (session) {
+        if (session)
+        {
+            [self initApiClient:[session userID]];
             NSLog(@"log in as %@", [session userName]);
             [self getUserHomeTimelineWithParams:nil];
-             
-           
         }
         else
         {
@@ -32,44 +32,42 @@
     }];
 }
 
--(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)(BOOL successOperation, NSDictionary* json))completion
+-(void)initApiClient:(NSString *)userID
 {
-//    NSString *statusesShowEndpoint = [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
-//    NSDictionary *params = @{};
+    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
+}
+
+-(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
+{
     NSError *clientError;
-    NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
+    NSURLRequest *request = [self.apiClient
                              URLRequestWithMethod:type
                              URL:URLRequest
                              parameters:parametrs
                              error:&clientError];
     if (request) {
-        [[[Twitter sharedInstance] APIClient]
-         sendTwitterRequest:request
-         completion:^(NSURLResponse *response,
-                      NSData *data,
-                      NSError *connectionError) {
+        [self.apiClient sendTwitterRequest:request
+                                completion:^(NSURLResponse *response,
+                                             NSData *data,
+                                             NSError *connectionError) {
              if (data) {
-                 // handle the response data e.g.
                  NSError *jsonError;
                  NSDictionary *json = [NSJSONSerialization
                                        JSONObjectWithData:data
                                        options:0
                                        error:&jsonError];
-                 
-                 //json dictionary parse json in objects methode
-               //  NSLog(@"%@", json);
-                 completion(YES, json);
+                 success(json);
              }
              else {
                  NSLog(@"Error: %@", connectionError);
              }
          }];
     }
-    else {
+    else
+    {
         NSLog(@"Error: %@", clientError);
-       completion(NO, nil);
+        success(nil);
     }
-
 }
 
 -(void)getUserHomeTimelineWithParams:(NSDictionary *)params
@@ -78,12 +76,12 @@
     NSString *type = @"GET";
     NSDictionary *sd = @{@"count":@"4"};
     
-    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(BOOL successOperation, NSDictionary *json) {
+    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(id object) {
         
-        self.wtParse = [[TweetsParse alloc]initWithTweetsDictionary:json];
-        [self.wtParse someMagicWithTweets];
+        //self.wtParse = [[TweetsParse alloc]initWithTweetsDictionary:json];
+       // [self.wtParse someMagicWithTweets];
         
-            NSLog(@"%@ cout %lu", [json valueForKey:@"created_at"], [json count]);
+            NSLog(@"%@ cout %lu", [object valueForKey:@"created_at"], [object count]);
 
     }];
 }

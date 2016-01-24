@@ -11,8 +11,8 @@
 #import <TwitterKit/TwitterKit.h>
 
 
-static NSString *consumerKey = @"F0iFM1SCFrE2o5GBWrNrr406J";
-static NSString *consumerSecret = @"Kx7tJxTk6JeRlFMmkYnpyFEb7BTkh6QooBx4ML78f40SnfEAre";
+static NSString *consumerKey = @"nrq96Exckh06IEpOlpDDqEWte";
+static NSString *consumerSecret = @"AburHB5U0NerpEOFqEMfhc3RqO15bZpX9bPnQEFW7Pf07WaOVb";
 
 @interface AppDelegate ()
 
