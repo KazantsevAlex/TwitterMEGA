@@ -12,28 +12,37 @@
 
 @property(nonatomic, strong)NSDictionary *jsonData;
 @property  (nonatomic, strong)NSMutableArray *array;
+@property (nonatomic, strong) TwitterAPI *twitterApi;
+
+@property (nonatomic, strong)NSDictionary *userTimelineDictionray;
+@property (nonatomic, strong) NSMutableArray *arrayOfTweetts;
+
 @end
 
 @implementation TweetsParse
 
-- (instancetype)initWithTweetsDictionary:(NSDictionary *) json
+- (instancetype)initWithTweetsDictionary:(TwitterAPI *)tw
 {
     self = [super init];
     if (self) {
-        [self initObjects:json];
+        self.twitterApi = tw;
+        [self initObjects];
     }
     return self;
 }
 
--(void)initObjects:(NSDictionary *) json;
+-(void)initObjects
 {
-    self.jsonData = json;
+    self.arrayOfTweetts = [NSMutableArray new];
+    self.userTimelineDictionray = [NSDictionary new];
+    self.twitterApi = [TwitterAPI new];
 }
 
--(void)someMagicWithTweets
+-(void)parseJsonUsertimeline:(NSString *)since_id cout:(NSUInteger)count
 {
-    NSLog(@"VALUE FIR KEY %@", [self.jsonData valueForKey:@"created_at"][0]);
-    
+    NSDictionary *params = @{@"count":[NSString stringWithFormat:@"%lu", count]};
+    self.userTimelineDictionray = [self.twitterApi getUserHomeTimelineWithParams:params];
+
 }
 
 @end

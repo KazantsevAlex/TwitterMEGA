@@ -10,10 +10,13 @@
 
 @implementation Tweet
 
-@dynamic profileName;
-@dynamic text;
-@dynamic pictureURL;
-@dynamic tweetID;
+@dynamic createDate;
+@dynamic favoriteCount;
 @dynamic mediaURL;
+@dynamic pictureURL;
+@dynamic profileName;
+@dynamic retweetCount;
+@dynamic text;
+@dynamic tweetID;
 
 @end

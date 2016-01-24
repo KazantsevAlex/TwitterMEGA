@@ -13,5 +13,7 @@
 @interface TwitterAPI : NSObject
 
 -(void)loginAction;
+-(NSDictionary *)getUserHomeTimelineWithParams:(NSDictionary *)params;
+
 
 @end
