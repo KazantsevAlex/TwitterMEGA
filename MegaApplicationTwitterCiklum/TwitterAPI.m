@@ -9,6 +9,8 @@
 #import "TwitterAPI.h"
 
 @interface TwitterAPI()
+
+@property (nonatomic, strong)TweetsParse *parse;
 @property(nonatomic, strong) Twitter *twitter;
 @property (nonatomic, strong) TWTRAPIClient *apiClient;
 
@@ -23,6 +25,7 @@
         {
             [self initApiClient:[session userID]];
             NSLog(@"log in as %@", [session userName]);
+            
             [self getUserHomeTimelineWithParams:nil];
         }
         else
@@ -34,6 +37,7 @@
 
 -(void)initApiClient:(NSString *)userID
 {
+    self.parse = [TweetsParse new];
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
 
@@ -74,16 +78,11 @@
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
-    NSDictionary *sd = @{@"count":@"4"};
-    
-    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(id object) {
-        
-        //self.wtParse = [[TweetsParse alloc]initWithTweetsDictionary:json];
-       // [self.wtParse someMagicWithTweets];
-        
-            NSLog(@"%@ cout %lu", [object valueForKey:@"created_at"], [object count]);
-
+    NSDictionary *sd = @{@"count":@"6"};
+    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^void(id object) {
+        NSLog(@"%@", [object valueForKey:@"id"]);
     }];
+    
 }
 
 

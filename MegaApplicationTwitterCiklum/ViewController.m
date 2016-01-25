@@ -12,17 +12,29 @@
 
 @property(nonatomic, strong)TwitterAPI *twitter;
 
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.twitter = [TwitterAPI new];
+    [self initObjects];
+
     
     [self.twitter loginAction];
+
+    
+
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)initObjects
+{
+    self.twitter = [TwitterAPI new];
+   
 }
 
 - (void)didReceiveMemoryWarning {

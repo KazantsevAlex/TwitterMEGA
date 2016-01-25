@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TwitterAPI.h"
+
+@class TwitterAPI;
 
 @interface TweetsParse : NSObject
 
-
-- (instancetype)initWithTweetsDictionary:(NSDictionary *) json;
--(void)someMagicWithTweets;
 
 @end
