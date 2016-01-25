@@ -12,7 +12,6 @@
 
 @interface TwitterAPI : NSObject
 
-- (instancetype)init;
 - (void)loginAction;
 - (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
 

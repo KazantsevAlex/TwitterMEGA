@@ -38,11 +38,14 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [self.twitter getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    
+    
+    [self.twitter getUserHomeTimelineWithCount:@"3" sinceID:nil block:^(id object) {
         //NSLog(@"%@", object);
         for (NSDictionary *dict in object) {
-            
-            NSLog(@"dict %@", [dict valueForKey:@"id"] );
+            TweetParse *wtwet = [[TweetParse alloc]initWithDictionary:dict];
+            [wtwet setupTweetData];
+            NSLog(@"dict %@", wtwet.text );
         }
         
     }];
