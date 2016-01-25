@@ -14,7 +14,7 @@
 
 @interface TweetsParse : NSObject
 
-- (instancetype)initWithTweetsDictionary;
--(void)parseJsonUsertimeline:(NSString *)since_id cout:(NSUInteger)count;
+- (instancetype)initWithTwitterApi:(TwitterAPI *)api;
+-(void)madic;
 
 @end

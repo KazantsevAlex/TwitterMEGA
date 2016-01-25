@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSDecimalNumber *retweetCount;
 @property (nullable, nonatomic, retain) NSString *text;
 @property (nullable, nonatomic, retain) NSString *tweetID;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

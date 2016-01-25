@@ -8,6 +8,10 @@
 
 #import "Tweet.h"
 
+@interface Tweet()
+
+@end
+
 @implementation Tweet
 
 @dynamic createDate;

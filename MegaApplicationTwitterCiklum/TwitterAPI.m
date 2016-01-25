@@ -28,11 +28,13 @@
 
 -(void)loginAction
 {
-    [[Twitter sharedInstance]logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
-        if (session) {
+    [self.twitter logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
+        if (session)
+        {
+            [self initApiClient:[session userID]];
             NSLog(@"log in as %@", [session userName]);
-            [self setupApiClientWithUserId:[session userID]];
-            [self getUserHomeTimelineWithParams:nil];
+            
+          //  [self getUserHomeTimelineWithParams:nil];
         }
         else
         {
@@ -41,57 +43,51 @@
     }];
 }
 
--(void)setupApiClientWithUserId:(NSString *)userID
+-(void)initApiClient:(NSString *)userID
 {
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
 
--(void)executeRequestWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters block:(void(^)(id object))success
+-(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
 {
-    NSError *clientError = nil;
-    NSURLRequest *request = [[[Twitter sharedInstance]APIClient] URLRequestWithMethod:method
-                                                             URL:url
-                                                      parameters:parameters
-                                                           error:&clientError];
+    NSError *clientError;
+    NSURLRequest *request = [self.apiClient
+                             URLRequestWithMethod:type
+                             URL:URLRequest
+                             parameters:parametrs
+                             error:&clientError];
     if (request) {
-        [[[Twitter sharedInstance]APIClient] sendTwitterRequest:request
+        [self.apiClient sendTwitterRequest:request
                                 completion:^(NSURLResponse *response,
                                              NSData *data,
                                              NSError *connectionError) {
-            
-            if (data) {
-                NSError *jsonError;
-                NSDictionary *json = [NSJSONSerialization
-                                      JSONObjectWithData:data
-                                      options:0
-                                      error:&jsonError];
-                
-                NSLog(@"json %@", json);
-                success(@"YES");
-            }
-            else {
-                NSLog(@"Error : %@", [connectionError localizedDescription]);
-            }
-        }];
- 
+                                    if (data) {
+                                        NSError *jsonError;
+                                        NSDictionary *json = [NSJSONSerialization
+                                                              JSONObjectWithData:data
+                                                              options:0
+                                                              error:&jsonError];
+                                        success(json);
+                                    }
+                                    else {
+                                        NSLog(@"Error: %@", connectionError);
+                                    }
+                                }];
     }
-    else {
-        NSLog(@"Error client: %@", [clientError localizedDescription]);
-        success(@"NO");
+    else
+    {
+        NSLog(@"Error: %@", clientError);
+        success(nil);
     }
 }
 
--(NSDictionary *)getUserHomeTimelineWithParams:(NSDictionary *)params
+-(void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
-    NSDictionary *sd = @{};
-    
-    [self executeRequestWithMethod:url url:type parameters:sd block:^(id object) {
-        NSLog(@"Success %@", object);
+    NSDictionary *sd = @{@"count":count};
+    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(id object) {
+        success(object);
     }];
-    return nil;
 }
-
-
 @end
