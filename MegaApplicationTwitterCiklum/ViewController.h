@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "TwitterAPI.h"
-#import "TweetsParse.h"
+#import "Tweet.h"
+#import "CoreDataInterface.h"
+#import "CoreDataStack.h"
+#import "TweetParse.h"
 
 @interface ViewController : UIViewController
 

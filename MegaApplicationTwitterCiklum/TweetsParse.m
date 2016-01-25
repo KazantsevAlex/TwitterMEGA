@@ -10,17 +10,30 @@
 
 @interface TweetsParse()
 
-
-@property(nonatomic, strong) TwitterAPI *twApi;
-
 @property(nonatomic, strong)NSDictionary *jsonData;
 @property  (nonatomic, strong)NSMutableArray *array;
+@property TwitterAPI *twAPI;
 
 @end
 
 @implementation TweetsParse
 
+- (instancetype)initWithTwitterApi:(TwitterAPI *)api
+{
+    self = [super init];
+    if (self) {
+        self.twAPI = api;
+    }
+    return self;
+}
 
+-(void)madic
+{
+    
+    NSLog(@"MAGIS IS MAGIC");
+    
+    [self.twAPI getUserHomeTimelineWithCount:@"27" sinceID:@"1"];
+}
 
 
 @end

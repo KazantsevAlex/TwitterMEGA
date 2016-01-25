@@ -13,6 +13,7 @@
 @interface TwitterAPI : NSObject
 
 -(void)loginAction;
--(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success;
+- (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
+
 
 @end

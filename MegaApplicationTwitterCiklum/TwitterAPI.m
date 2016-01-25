@@ -10,7 +10,6 @@
 
 @interface TwitterAPI()
 
-@property (nonatomic, strong)TweetsParse *parse;
 @property(nonatomic, strong) Twitter *twitter;
 @property (nonatomic, strong) TWTRAPIClient *apiClient;
 
@@ -18,15 +17,22 @@
 
 @implementation TwitterAPI
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.twitter = [Twitter new];
+    }
+    return self;
+}
+
 -(void)loginAction
 {
-    [[Twitter sharedInstance]logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
+    [self.twitter logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
         if (session)
         {
             [self initApiClient:[session userID]];
             NSLog(@"log in as %@", [session userName]);
-            
-            [self getUserHomeTimelineWithParams:nil];
         }
         else
         {
@@ -37,7 +43,6 @@
 
 -(void)initApiClient:(NSString *)userID
 {
-    self.parse = [TweetsParse new];
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
 
@@ -54,6 +59,7 @@
                                 completion:^(NSURLResponse *response,
                                              NSData *data,
                                              NSError *connectionError) {
+
              if (data) {
                  NSError *jsonError;
                  NSDictionary *json = [NSJSONSerialization
@@ -74,16 +80,14 @@
     }
 }
 
--(void)getUserHomeTimelineWithParams:(NSDictionary *)params
+-(void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
-    NSDictionary *sd = @{@"count":@"6"};
-    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^void(id object) {
-        NSLog(@"%@", [object valueForKey:@"id"]);
+    NSDictionary *sd = @{@"count":count};
+    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(id object) {
+        success(object);
     }];
     
 }
-
-
 @end
