@@ -56,7 +56,7 @@
                              URL:URLRequest
                              parameters:parametrs
                              error:&clientError];
-    if (request) {
+//    if (request) {
         [self.apiClient sendTwitterRequest:request
                                 completion:^(NSURLResponse *response,
                                              NSData *data,
@@ -73,12 +73,12 @@
                                         NSLog(@"Error: %@", connectionError);
                                     }
                                 }];
-    }
-    else
-    {
-        NSLog(@"Error: %@", clientError);
-        success(nil);
-    }
+//    }
+//    else
+//    {
+//        NSLog(@"Error: %@", clientError);
+//        success(nil);
+//    }
 }
 
 -(void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success

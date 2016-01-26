@@ -18,12 +18,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 
-
-//@property BOOL showingOption;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonTop;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonBottom;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonRemove;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonShare;
-
-
 @end
