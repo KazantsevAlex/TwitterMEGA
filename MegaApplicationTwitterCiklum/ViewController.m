@@ -62,6 +62,9 @@
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
+    
+   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
 }
 
 @end

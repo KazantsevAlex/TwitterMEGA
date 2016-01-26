@@ -14,5 +14,6 @@
 @interface CoreDataInterface : NSObject
 
 -(void)addTweet:(TweetModel *)tweet;
-
+-(id)getTweet;
+- (NSUInteger)tweetsInStore;
 @end
