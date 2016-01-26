@@ -1,18 +1,17 @@
 //
-//  TweetParse.h
+//  TweetModel.h
 //  MegaApplicationTwitterCiklum
 //
-//  Created by Казанцев Алексей on 1/25/16.
+//  Created by Alexandr Lobanov on 1/25/16.
 //  Copyright © 2016 Alexandr Lobanov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface TweetParse : NSObject
+@interface TweetModel : NSObject
 
 @property(nonatomic, strong, readonly) NSString *text;
 @property(nonatomic, strong, readonly) NSString *profileName;
-@property(nonatomic, strong, readonly) NSString *nickname;
 @property(nonatomic, strong, readonly) NSString *createData;
 @property(nonatomic, strong, readonly) NSString *pictureURL;
 @property(nonatomic, strong, readonly) NSString *mediaURL;
@@ -23,6 +22,5 @@
 
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
--(void)setupTweetData;
 
 @end

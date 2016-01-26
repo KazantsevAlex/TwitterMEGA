@@ -8,19 +8,16 @@
 
 #import "Tweet.h"
 
-@interface Tweet()
-
-@end
-
 @implementation Tweet
 
-@dynamic createDate;
-@dynamic favoriteCount;
-@dynamic mediaURL;
-@dynamic pictureURL;
-@dynamic profileName;
-@dynamic retweetCount;
 @dynamic text;
+@dynamic profileName;
+@dynamic createData;
+@dynamic pictureURL;
+@dynamic mediaURL;
+@dynamic retweetCount;
+@dynamic favoriteCount;
 @dynamic tweetID;
+@dynamic descriptionTw;
 
 @end

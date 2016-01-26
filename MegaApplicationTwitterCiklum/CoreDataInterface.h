@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreDataStack.h"
+#import "TweetModel.h"
 #import "Tweet.h"
 
 @interface CoreDataInterface : NSObject
+
+-(void)addTweet:(TweetModel *)tweet;
 
 @end

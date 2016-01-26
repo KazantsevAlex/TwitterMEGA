@@ -12,6 +12,7 @@
 
 @property(nonatomic, strong) TwitterAPI *twitter;
 @property (nonatomic, strong) CoreDataInterface *interface;
+@property (nonatomic, strong) NSManagedObject *context;
 
 
 
@@ -45,16 +46,11 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    
-    
-    [self.twitter getUserHomeTimelineWithCount:@"3" sinceID:nil block:^(id object) {
-        //NSLog(@"%@", object);
+    [self.twitter getUserHomeTimelineWithCount:@"20" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
-            TweetParse *wtwet = [[TweetParse alloc]initWithDictionary:dict];
-            [wtwet setupTweetData];
-            NSLog(@"dict %@", wtwet.text );
+           TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
+            [self.interface addTweet:tw];
         }
-        
     }];
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
