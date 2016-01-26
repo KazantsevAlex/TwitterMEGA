@@ -56,7 +56,17 @@
 
 -(id)getTweet
 {
-    return nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Person"
+                                                   inManagedObjectContext:self.context];
+    [request setEntity:description];
+    NSError * er = nil;
+    self.array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return self.array;
+}
+
+- (NSUInteger)tweetsInStore {
+    return [[self getTweet ]count];
 }
 
 @end
