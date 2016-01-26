@@ -11,8 +11,7 @@
 #import "Tweet.h"
 #import "CoreDataInterface.h"
 #import "CoreDataStack.h"
-#import "TweetParse.h"
-
+#import "TweetModel.h"
 
 @interface ViewController : UIViewController
 

@@ -10,8 +10,8 @@
 
 @interface CoreDataInterface()
 
-@property(nonatomic, strong)CoreDataStack *coreDataStack;
-@property(nonatomic, strong)NSManagedObjectContext * context;
+@property(nonatomic, strong) CoreDataStack *coreDataStack;
+@property(nonatomic, strong) NSManagedObjectContext * context;
 @property(nonatomic, strong) NSMutableArray *array;
 
 @end
@@ -33,10 +33,10 @@
     return [self.coreDataStack managedObjectContext];
 }
 
--(void)addTweet:(Tweet *)tweet
+-(void)addTweet:(TweetModel *)tweet
 {
     Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
-    tw.tweetID = tweet.tweetID;
+    tw.tweetID = [NSString stringWithFormat:@"%@",tweet.tweetID];
     tw.text = tweet.text;
     tw.pictureURL = tweet.pictureURL;
     tw.profileName = tweet.profileName;
@@ -44,13 +44,19 @@
     
     NSError *errorSave = nil;
     if (![self.context save:&errorSave]) {
-        //class with alerrt view
+        NSLog(@"error save object model");
     }
     else
     {
+        NSLog(@"Save complete");
         [self.context save:nil];
     }
     
+}
+
+-(id)getTweet
+{
+    return nil;
 }
 
 @end

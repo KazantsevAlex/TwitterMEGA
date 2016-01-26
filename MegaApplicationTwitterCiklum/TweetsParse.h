@@ -10,11 +10,14 @@
 #import "TwitterAPI.h"
 #import "Tweet.h"
 
+
 @class TwitterAPI;
 
 @interface TweetsParse : NSObject
 
+
 - (instancetype)initWithTwitterApi:(TwitterAPI *)api;
 -(void)madic;
+
 
 @end

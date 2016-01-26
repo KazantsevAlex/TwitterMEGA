@@ -10,12 +10,13 @@
 
 @interface TweetsParse()
 
+@property(nonatomic, strong)NSDictionary *jsonData;
+@property  (nonatomic, strong)NSMutableArray *array;
 @property TwitterAPI *twAPI;
 
 @end
 
 @implementation TweetsParse
-
 
 - (instancetype)initWithTwitterApi:(TwitterAPI *)api
 {
@@ -33,5 +34,6 @@
     
     [self.twAPI getUserHomeTimelineWithCount:@"27" sinceID:@"1"];
 }
+
 
 @end

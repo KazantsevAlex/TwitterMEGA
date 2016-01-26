@@ -12,21 +12,29 @@
 
 @property(nonatomic, strong) TwitterAPI *twitter;
 @property (nonatomic, strong) CoreDataInterface *interface;
+@property (nonatomic, strong) NSManagedObject *context;
+
+
 
 @end
 
 @implementation ViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initObjects];
+    
+    [self.twitter loginAction];
+
+    // Do any additional setup after loading the view, typically from a nib.
+
+}
 
 -(void)initObjects
 {
+    self.twitter = [TwitterAPI new];
     self.interface = [CoreDataInterface new];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.twitter = [[TwitterAPI alloc]init];
-    [self.twitter loginAction];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,16 +46,11 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    
-    
-    [self.twitter getUserHomeTimelineWithCount:@"3" sinceID:nil block:^(id object) {
-        //NSLog(@"%@", object);
+    [self.twitter getUserHomeTimelineWithCount:@"20" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
-            TweetParse *wtwet = [[TweetParse alloc]initWithDictionary:dict];
-            [wtwet setupTweetData];
-            NSLog(@"dict %@", wtwet.text );
+           TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
+            [self.interface addTweet:tw];
         }
-        
     }];
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
