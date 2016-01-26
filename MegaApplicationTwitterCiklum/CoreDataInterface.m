@@ -57,7 +57,7 @@
 -(id)getTweet
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Person"
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
     NSError * er = nil;
