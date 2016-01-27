@@ -19,7 +19,6 @@
 @property(nonatomic, strong) NSString *favoriteCount;
 @property(nonatomic, strong) NSString *tweetID;
 @property(nonatomic, strong) NSString *descriptionTw;
-@property(nonatomic, strong) NSDictionary *sourceDic;
 
 @end
 
@@ -30,12 +29,12 @@
     self = [super init];
     if (self) {
         self.text = dict[@"text"];
-        self.profileName = dict[@"name"];
+        self.profileName = dict[@"user"][@"name"];
         self.createData = dict[@"created_at"];
-        self.pictureURL = dict[@"profile_image_url"];
+        self.pictureURL = dict[@"user"][@"profile_image_url"];
         self.mediaURL = dict[@"media_url"];
         self.retweetCount = dict[@"retweet_count"];
-        self.favoriteCount = dict[@"favorited"];
+        self.favoriteCount = dict[@"favourites_count"];
         self.tweetID = dict[@"id"];
         self.descriptionTw = dict[@"description"];
     }

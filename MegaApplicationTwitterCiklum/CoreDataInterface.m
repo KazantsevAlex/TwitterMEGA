@@ -41,7 +41,8 @@
     tw.pictureURL = tweet.pictureURL;
     tw.profileName = tweet.profileName;
     tw.mediaURL = tweet.mediaURL;
-    
+    tw.createData = tweet.createData;
+    tw.favoriteCount = tweet.favoriteCount;
     NSError *errorSave = nil;
     if (![self.context save:&errorSave]) {
         NSLog(@"error save object model");

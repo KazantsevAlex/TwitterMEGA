@@ -46,10 +46,10 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [self.twitter getUserHomeTimelineWithCount:@"20" sinceID:nil block:^(id object) {
+    [self.twitter getUserHomeTimelineWithCount:@"5" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
            TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
-            [self.interface addTweet:tw];
+            [self.interface addTweet:tw];            
         }
     }];
     
@@ -64,7 +64,7 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     
-   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
+   //NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:2] valueForKey:@"text"]);
 }
 
 @end
