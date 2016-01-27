@@ -1,5 +1,5 @@
 //
-//  Tweet+CoreDataProperties.m
+//  User+CoreDataProperties.m
 //  MegaApplicationTwitterCiklum
 //
 //  Created by Казанцев Алексей on 1/27/16.
@@ -9,19 +9,18 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Tweet+CoreDataProperties.h"
+#import "User+CoreDataProperties.h"
 
-@implementation Tweet (CoreDataProperties)
+@implementation User (CoreDataProperties)
 
-@dynamic createData;
-@dynamic descriptionTw;
-@dynamic favoriteCount;
-@dynamic mediaURL;
-@dynamic pictureURL;
-@dynamic profileName;
-@dynamic retweetCount;
-@dynamic text;
-@dynamic tweetID;
+@dynamic userID;
+@dynamic userName;
+@dynamic userDescription;
+@dynamic userLocation;
+@dynamic userUrl;
+@dynamic userFollowers;
+@dynamic profilePicture;
+@dynamic backgroundProfilePicture;
 @dynamic relationship;
 
 @end

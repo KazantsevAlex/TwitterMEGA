@@ -12,7 +12,6 @@
 
 @property(nonatomic, strong) TwitterAPI *twitter;
 @property (nonatomic, strong) CoreDataInterface *interface;
-@property (nonatomic, strong) NSManagedObject *context;
 
 
 
@@ -23,11 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initObjects];
-    
     [self.twitter loginAction];
-
-    // Do any additional setup after loading the view, typically from a nib.
-
 }
 
 -(void)initObjects
@@ -53,18 +48,21 @@
         }
     }];
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+  // NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    if ([[segue identifier] isEqualToString:@"showUserTimeLine"]) {
+        TimeLineTableViewController *viewContr = [segue destinationViewController];
+        [viewContr setCoreData:self.interface];
+    }
     
-    
+<<<<<<< HEAD
    //NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:2] valueForKey:@"text"]);
+=======
+>>>>>>> 0263b8690f2687abeeda4220273a232639c2494f
 }
 
 @end

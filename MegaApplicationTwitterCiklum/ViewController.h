@@ -12,6 +12,7 @@
 #import "CoreDataInterface.h"
 #import "CoreDataStack.h"
 #import "TweetModel.h"
+#import "TimeLineTableViewController.h"
 
 @interface ViewController : UIViewController
 

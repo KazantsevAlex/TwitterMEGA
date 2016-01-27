@@ -12,7 +12,7 @@
 
 @interface TwitterAPI : NSObject
 
--(void)loginAction;
+- (void)loginAction;
 - (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
 
 

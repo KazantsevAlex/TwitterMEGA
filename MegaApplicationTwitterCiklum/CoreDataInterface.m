@@ -10,8 +10,8 @@
 
 @interface CoreDataInterface()
 
-@property(nonatomic, strong)CoreDataStack *coreDataStack;
-@property(nonatomic, strong)NSManagedObjectContext * context;
+@property(nonatomic, strong) CoreDataStack *coreDataStack;
+@property(nonatomic, strong) NSManagedObjectContext * context;
 @property(nonatomic, strong) NSMutableArray *array;
 
 @end
@@ -55,7 +55,7 @@
     
 }
 
--(id)getTweet
+-(NSArray *)getTweet
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"

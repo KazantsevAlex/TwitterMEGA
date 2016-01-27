@@ -11,7 +11,7 @@
 @interface ErrorAlertView()
 
 @property (copy, nonatomic) NSString *alertTtitle;
-@property (copy, nonatomic) NSString *allertMessage;
+@property (copy, nonatomic) NSString *alertMessage;
 
 @end
 
