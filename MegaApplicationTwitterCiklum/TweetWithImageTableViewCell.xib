@@ -66,7 +66,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageProfilePicture" destination="4Zj-pF-qjW" id="TxP-jK-VjK"/>
-                <outlet property="madiaImageTweet" destination="VIF-TO-4nr" id="1Oj-rS-2cc"/>
+                <outlet property="mediaImageTweet" destination="VIF-TO-4nr" id="Dra-Z5-VZe"/>
                 <outlet property="messageLabel" destination="o76-Gy-Ma6" id="pn4-OH-LKN"/>
                 <outlet property="nameLabel" destination="A6y-KX-00M" id="y2R-jp-RKV"/>
                 <outlet property="viewTweetContent" destination="H2p-sc-9uM" id="EIj-xg-XqC"/>

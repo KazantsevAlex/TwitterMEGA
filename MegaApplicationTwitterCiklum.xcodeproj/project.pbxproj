@@ -11,7 +11,10 @@
 		0CE65A8A1C5620A3002C2A4D /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65A881C5620A3002C2A4D /* TweetTableViewCell.xib */; };
 		0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A8C1C5620B8002C2A4D /* TweetWithImageTableViewCell.m */; };
 		0CE65A8F1C5620B8002C2A4D /* TweetWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65A8D1C5620B8002C2A4D /* TweetWithImageTableViewCell.xib */; };
-		0CE65A921C5628B0002C2A4D /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A911C5628B0002C2A4D /* MainTableViewController.m */; };
+		0CE65A9B1C5816C1002C2A4D /* TableViewDataSourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A9A1C5816C1002C2A4D /* TableViewDataSourse.m */; };
+		0CE65A9E1C58EBA7002C2A4D /* TimeLineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */; };
+		0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */; };
+		0CE65AA41C591187002C2A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA21C591187002C2A4D /* User.m */; };
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
 		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
@@ -36,8 +39,14 @@
 		0CE65A8B1C5620B8002C2A4D /* TweetWithImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetWithImageTableViewCell.h; sourceTree = "<group>"; };
 		0CE65A8C1C5620B8002C2A4D /* TweetWithImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetWithImageTableViewCell.m; sourceTree = "<group>"; };
 		0CE65A8D1C5620B8002C2A4D /* TweetWithImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetWithImageTableViewCell.xib; sourceTree = "<group>"; };
-		0CE65A901C5628B0002C2A4D /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
-		0CE65A911C5628B0002C2A4D /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		0CE65A991C5816C1002C2A4D /* TableViewDataSourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDataSourse.h; sourceTree = "<group>"; };
+		0CE65A9A1C5816C1002C2A4D /* TableViewDataSourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSourse.m; sourceTree = "<group>"; };
+		0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineTableViewController.h; sourceTree = "<group>"; };
+		0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineTableViewController.m; sourceTree = "<group>"; };
+		0CE65A9F1C591187002C2A4D /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0CE65AA11C591187002C2A4D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0CE65AA21C591187002C2A4D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.release.xcconfig"; sourceTree = "<group>"; };
 		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
 		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
@@ -129,13 +138,15 @@
 				A8F2B8B51C5269090031B5AE /* TwitterAPI.m */,
 				A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */,
 				A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */,
-				0CE65A901C5628B0002C2A4D /* MainTableViewController.h */,
-				0CE65A911C5628B0002C2A4D /* MainTableViewController.m */,
+				0CE65A991C5816C1002C2A4D /* TableViewDataSourse.h */,
+				0CE65A9A1C5816C1002C2A4D /* TableViewDataSourse.m */,
 				0CE65A851C56203D002C2A4D /* TableViewItems */,
 				A8F2B8B31C5267200031B5AE /* Model */,
 				A83F39E51C523EB2009D6F07 /* CoreData */,
 				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
 				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
+				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
+				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
 				A83F39CE1C523E2B009D6F07 /* Main.storyboard */,
 				A83F39D41C523E2B009D6F07 /* Assets.xcassets */,
 				A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */,
@@ -170,6 +181,10 @@
 				A852E8151C56C4AD004C3477 /* TweetModel.h */,
 				A852E8161C56C4AD004C3477 /* TweetModel.m */,
 				A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */,
+				0CE65A9F1C591187002C2A4D /* User+CoreDataProperties.h */,
+				0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */,
+				0CE65AA11C591187002C2A4D /* User.h */,
+				0CE65AA21C591187002C2A4D /* User.m */,
 				A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */,
 				A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */,
 				A83F39EE1C524451009D6F07 /* Tweet.h */,
@@ -327,17 +342,20 @@
 			files = (
 				A83F39E11C523E4D009D6F07 /* CoreDataStack.m in Sources */,
 				A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */,
-				0CE65A921C5628B0002C2A4D /* MainTableViewController.m in Sources */,
 				A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */,
 				0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */,
+				0CE65AA41C591187002C2A4D /* User.m in Sources */,
+				0CE65A9B1C5816C1002C2A4D /* TableViewDataSourse.m in Sources */,
 				A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */,
 				A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */,
 				A83F39F11C524451009D6F07 /* Tweet.m in Sources */,
 				A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */,
 				A83F39C71C523E2B009D6F07 /* main.m in Sources */,
 				A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */,
+				0CE65A9E1C58EBA7002C2A4D /* TimeLineTableViewController.m in Sources */,
 				A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */,
 				0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */,
+				0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */,
 				A852E8171C56C4AD004C3477 /* TweetModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

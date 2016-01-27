@@ -11,13 +11,18 @@
 @implementation TweetTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
+- (void)fillCellWith:(TweetModel *)tweetModel {
+    
+    self.nameLabel.text = tweetModel.profileName;
+    self.messageLabel.text = tweetModel.text;
+    self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
+}
+
 
 @end

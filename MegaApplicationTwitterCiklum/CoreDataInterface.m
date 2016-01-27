@@ -54,7 +54,7 @@
     
 }
 
--(id)getTweet
+-(NSArray *)getTweet
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"

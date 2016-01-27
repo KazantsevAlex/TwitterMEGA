@@ -90,4 +90,45 @@
     }];
     
 }
+
+
+// ПЕРЕПРОВЕРИТЬ ВСЕ ID!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SDFGSDFGSDFGSDFsdlkfhvalsdjvkjasdbkj
+//skdjfgksljfh
+-(void)getTimelineUserWithID:(NSString *)userID
+                       count:(NSUInteger)count
+                     sinceID:(NSString *)sinceID
+                       maxID:(NSString *)maxID
+                       block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"userdID": userID,
+                             @"count":[NSNumber numberWithInteger: count],
+                             @"sinceID": sinceID,
+                             @"maxID":maxID};
+    NSString *url = @"";
+    NSString *type = @"GET";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+    
+}
+
+-(void)setUserProfile:(NSString *)name
+             location:(NSString *)location
+          description:(NSString *)description
+              userUrl:(NSString *)userUrl
+                block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"name": name,
+                             @"location":location,
+                             @"description": description,
+                             @"url":userUrl};
+    NSString *url = @"";
+    NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+    
+}
 @end
