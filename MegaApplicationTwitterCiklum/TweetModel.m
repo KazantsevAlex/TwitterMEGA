@@ -33,8 +33,8 @@
         self.createData = dict[@"created_at"];
         self.pictureURL = dict[@"user"][@"profile_image_url"];
         self.mediaURL = dict[@"media_url"];
-        self.retweetCount = dict[@"retweet_count"];
-        self.favoriteCount = dict[@"favourites_count"];
+        self.retweetCount = dict[@"retweeted_status"][@"retweet_count"];
+        self.favoriteCount = [NSString stringWithFormat:@"%@",dict[@"favorite_count"]];
         self.tweetID = dict[@"id"];
         self.descriptionTw = dict[@"description"];
     }

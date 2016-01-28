@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewDataSourse.h"
+#import "CoreDataInterface.h"
 
 @interface TimeLineTableViewController : UIViewController
 

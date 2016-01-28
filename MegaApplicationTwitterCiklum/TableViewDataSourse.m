@@ -29,35 +29,15 @@
 
 - (void)configure:(UITableView *)tableView {
     
-    tableView.dataSource  = self;
-    tableView.delegate = self;
-    
-    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
-    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-//    [tableView registerNib:[UINib nibWithNibName:@"TweetWithImageTableViewCell" bundle:nil]
-//    forCellReuseIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    
-    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-    TweetModel *tweetObject = [self.tweetDataObjects objectAtIndex:indexPath.row];
-    
-    cell.nameLabel.text = [NSString stringWithFormat:@"%@", tweetObject.text];
-
-//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row]];
-    
-    return cell;
+    return nil;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%lu", (unsigned long)[self.interface tweetsInStore]);
-    return [self.interface tweetsInStore];
+    return 0;
 }
 
 

@@ -91,20 +91,17 @@
     
 }
 
-
-// ПЕРЕПРОВЕРИТЬ ВСЕ ID!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SDFGSDFGSDFGSDFsdlkfhvalsdjvkjasdbkj
-//skdjfgksljfh
 -(void)getTimelineUserWithID:(NSString *)userID
                        count:(NSUInteger)count
                      sinceID:(NSString *)sinceID
                        maxID:(NSString *)maxID
                        block:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"userdID": userID,
+    NSDictionary *params = @{@"user_id": userID,
                              @"count":[NSNumber numberWithInteger: count],
-                             @"sinceID": sinceID,
-                             @"maxID":maxID};
-    NSString *url = @"";
+                             @"since_id": sinceID,
+                             @"max_id":maxID};
+    NSString *url = @"https://api.twitter.com/1.1/statuses/user_timeline.json";
     NSString *type = @"GET";
     
     [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
@@ -123,7 +120,7 @@
                              @"location":location,
                              @"description": description,
                              @"url":userUrl};
-    NSString *url = @"";
+    NSString *url = @"https://api.twitter.com/1.1/account/update_profile.json";
     NSString *type = @"POST";
     
     [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
@@ -131,4 +128,6 @@
     }];
     
 }
+
+//-(void)postTweetWithText:(NSString *)text
 @end

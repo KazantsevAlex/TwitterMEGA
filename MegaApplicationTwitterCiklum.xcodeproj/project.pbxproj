@@ -17,6 +17,7 @@
 		0CE65AA41C591187002C2A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA21C591187002C2A4D /* User.m */; };
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
 		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
+		A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
 		A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C91C523E2B009D6F07 /* AppDelegate.m */; };
 		A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39CC1C523E2B009D6F07 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
 		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
 		A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorAlertView.m; sourceTree = "<group>"; };
+		A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEditViewController.h; sourceTree = "<group>"; };
+		A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileEditViewController.m; sourceTree = "<group>"; };
 		A83F39C21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaApplicationTwitterCiklum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83F39C61C523E2B009D6F07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A83F39C81C523E2B009D6F07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				A83F39E51C523EB2009D6F07 /* CoreData */,
 				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
 				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
+				A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */,
+				A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */,
 				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
 				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
 				A83F39CE1C523E2B009D6F07 /* Main.storyboard */,
@@ -349,6 +354,7 @@
 				A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */,
 				A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */,
 				A83F39F11C524451009D6F07 /* Tweet.m in Sources */,
+				A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */,
 				A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */,
 				A83F39C71C523E2B009D6F07 /* main.m in Sources */,
 				A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */,

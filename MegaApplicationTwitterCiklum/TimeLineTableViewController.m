@@ -11,9 +11,7 @@
 @interface TimeLineTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) TableViewDataSource *dataSource;
-@property (strong, nonatomic) CoreDataInterface *coreData;
-
+@property (nonatomic,strong) CoreDataInterface *interface;
 
 @end
 
@@ -21,14 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.tableView withData:self.coreData];
-    [self.tableView reloadData];
 }
 
 - (void)setCoreData:(CoreDataInterface *)coreData {
-    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.tableView withData:self.coreData];
-    [self.tableView reloadData];
+    self.interface = coreData;
 }
 
 

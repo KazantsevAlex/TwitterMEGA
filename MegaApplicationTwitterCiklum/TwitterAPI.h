@@ -14,6 +14,15 @@
 
 - (void)loginAction;
 - (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
-
+- (void)getTimelineUserWithID:(NSString *)userID
+                        count:(NSUInteger)count
+                      sinceID:(NSString *)sinceID
+                        maxID:(NSString *)maxID
+                       block:(void(^)(id object))success;
+- (void)setUserProfile:(NSString *)name
+             location:(NSString *)location
+          description:(NSString *)description
+              userUrl:(NSString *)userUrl
+                block:(void(^)(id object))success;
 
 @end
