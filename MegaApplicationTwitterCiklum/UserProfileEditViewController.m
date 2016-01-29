@@ -10,7 +10,6 @@
 
 @interface UserProfileEditViewController ()
 
-@property (nonatomic,strong) TwitterAPI *twitterApi;
 
 @end
 
@@ -18,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[TwitterAPI sharedManager]setUserProfile:@"Alexander" location:@"Ukraine" description:@"change description" userUrl:@"vk.com/username" block:^(id object) {
+        NSLog(@"%@", object);
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -26,10 +28,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setTwitterApi:(TwitterAPI *)twitterApi
-{
-    self.twitterApi = twitterApi;
-}
+
 
 /*
 #pragma mark - Navigation

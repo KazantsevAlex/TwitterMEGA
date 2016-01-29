@@ -11,6 +11,6 @@
 
 @interface UserProfileEditViewController : UIViewController
 
--(void)setTwitterApi:(TwitterAPI *)twitterApi;
+
 
 @end

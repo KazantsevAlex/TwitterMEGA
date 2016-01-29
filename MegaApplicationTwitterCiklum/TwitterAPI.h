@@ -12,6 +12,8 @@
 
 @interface TwitterAPI : NSObject
 
+
++ (id)sharedManager;
 - (void)loginAction;
 - (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
 - (void)getTimelineUserWithID:(NSString *)userID

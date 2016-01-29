@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initObjects];
-    [self.twitter loginAction];
+    [[TwitterAPI sharedManager] loginAction];
 }
 
 -(void)initObjects
@@ -41,7 +41,7 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [self.twitter getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
            TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
             [self.interface addTweet:tw];
@@ -63,7 +63,7 @@
     if([[segue identifier] isEqualToString:@"ChangeUSerInfo"])
     {
         UserProfileEditViewController *vc = [segue destinationViewController];
-        [vc setTwitterApi:self.twitter];
+       
     }
 
 }
