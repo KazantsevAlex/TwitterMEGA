@@ -66,7 +66,7 @@
 }
 
 - (NSUInteger)tweetsInStore {
-    return [[self getTweet ]count];
+    return [[self getTweet]count];
 }
 
 @end

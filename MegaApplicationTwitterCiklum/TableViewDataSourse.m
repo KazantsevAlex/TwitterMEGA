@@ -10,7 +10,7 @@
 
 @interface TableViewDataSource ()
 
-@property (strong, nonatomic) CoreDataInterface *interface;
+@property (strong, nonatomic) CoreDataInterface *interfaceQ;
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
@@ -19,10 +19,11 @@
 @implementation TableViewDataSource
 
 - (instancetype)initWithTableView:(UITableView *)tableView withData:(CoreDataInterface *)interface {
-    
+
     if (self = [super init]) {
         [self configure:tableView];
-        self.interface = interface;
+        self.interfaceQ = interface;
+
     }
     return self;
 }
@@ -32,36 +33,42 @@
     tableView.dataSource  = self;
     tableView.delegate = self;
     
-    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
-    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-//    [tableView registerNib:[UINib nibWithNibName:@"TweetWithImageTableViewCell" bundle:nil]
-//    forCellReuseIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
-
+//    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
+//    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    
-    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-    TweetModel *tweetObject = [self.tweetDataObjects objectAtIndex:indexPath.row];
-    
-    cell.nameLabel.text = [NSString stringWithFormat:@"%@", tweetObject.text];
+    static NSString *CellIdentifier = @"TweetTableViewCell";
+    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
+        
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", self.tweetObjects.text];
+
+        
+//    [cell fillCellWith:[[self.interfaceQ getTweet] objectAtIndex:indexPath.row]];
+    
+//    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
+//    cell = [[TweetTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TweetTableViewCell"];
 //    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row]];
+    
+//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row];
+
+    
+    
+//    TweetModel *tweetObject = [self.tweetDataObjects objectAtIndex:indexPath.row];
+//    NSLog(@"%@", tweetObject);
+    
     
     return cell;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%lu", (unsigned long)[self.interface tweetsInStore]);
-    return [self.interface tweetsInStore];
+//    NSLog(@"%lu", (unsigned long)[self.interface tweetsInStore]);
+    return 5;//[self.interfaceQ tweetsInStore];
 }
 
 
-
-
 @end
-
+    

@@ -11,6 +11,7 @@
 @implementation TweetTableViewCell
 
 - (void)awakeFromNib {
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,6 +21,7 @@
 - (void)fillCellWith:(TweetModel *)tweetModel {
     
     self.nameLabel.text = tweetModel.profileName;
+    NSLog(@"%@",tweetModel.profileName);
     self.messageLabel.text = tweetModel.text;
     self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
 }

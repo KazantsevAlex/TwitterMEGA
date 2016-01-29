@@ -10,7 +10,7 @@
 
 @interface TimeLineTableViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *userTableView;
 @property (strong, nonatomic) TableViewDataSource *dataSource;
 @property (strong, nonatomic) CoreDataInterface *coreData;
 
@@ -21,14 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self setCoreData:self.coreData];
     
-    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.tableView withData:self.coreData];
-    [self.tableView reloadData];
 }
 
 - (void)setCoreData:(CoreDataInterface *)coreData {
-    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.tableView withData:self.coreData];
-    [self.tableView reloadData];
+    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView withData:coreData];
+    [self.userTableView reloadData];
 }
 
 
