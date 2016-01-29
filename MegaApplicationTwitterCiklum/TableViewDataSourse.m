@@ -30,6 +30,7 @@
 
 - (void)configure:(UITableView *)tableView {
     
+<<<<<<< HEAD
     tableView.dataSource  = self;
     tableView.delegate = self;
     
@@ -61,12 +62,22 @@
     
     
     return cell;
+=======
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+>>>>>>> 13ff556578d54e5dfc72f807d70c39f41fc23a8f
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+<<<<<<< HEAD
 //    NSLog(@"%lu", (unsigned long)[self.interface tweetsInStore]);
     return 5;//[self.interfaceQ tweetsInStore];
+=======
+    return 0;
+>>>>>>> 13ff556578d54e5dfc72f807d70c39f41fc23a8f
 }
 
 

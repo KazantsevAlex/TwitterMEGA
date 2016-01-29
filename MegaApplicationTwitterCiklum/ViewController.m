@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initObjects];
-    [self.twitter loginAction];
+    [[TwitterAPI sharedManager] loginAction];
 }
 
 -(void)initObjects
@@ -41,7 +41,7 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [self.twitter getUserHomeTimelineWithCount:@"20" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
            TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
             [self.interface addTweet:tw];
@@ -49,7 +49,13 @@
     }];
     
     
+<<<<<<< HEAD
    NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
+=======
+    [self.twitter setUserProfile:@"ALexander" location:@"Ukraine" description:@"Set up descriotion from own app" userUrl:@"vk.com/user" block:^(id object) {
+        NSLog(@"%@", object);
+    }];
+>>>>>>> 13ff556578d54e5dfc72f807d70c39f41fc23a8f
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -58,7 +64,12 @@
         TimeLineTableViewController *viewContr = [segue destinationViewController];
         [viewContr setCoreData:self.interface];
     }
-    
+    if([[segue identifier] isEqualToString:@"ChangeUSerInfo"])
+    {
+        UserProfileEditViewController *vc = [segue destinationViewController];
+       
+    }
+
 }
 
 @end
