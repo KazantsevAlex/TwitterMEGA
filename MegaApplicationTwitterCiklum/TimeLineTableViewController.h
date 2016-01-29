@@ -10,7 +10,7 @@
 #import "TableViewDataSourse.h"
 #import "CoreDataInterface.h"
 
-@interface TimeLineTableViewController : UIViewController
+@interface TimeLineTableViewController : UITableViewController
 
 - (void)setCoreData:(CoreDataInterface *)coreData;
 

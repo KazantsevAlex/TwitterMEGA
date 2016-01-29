@@ -15,13 +15,13 @@
 		0CE65A9E1C58EBA7002C2A4D /* TimeLineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */; };
 		0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */; };
 		0CE65AA41C591187002C2A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA21C591187002C2A4D /* User.m */; };
+		0CE65AAC1C5B9B77002C2A4D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */; };
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
 		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
 		A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
 		A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C91C523E2B009D6F07 /* AppDelegate.m */; };
 		A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39CC1C523E2B009D6F07 /* ViewController.m */; };
-		A83F39D01C523E2B009D6F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83F39CE1C523E2B009D6F07 /* Main.storyboard */; };
 		A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */; };
 		A83F39D51C523E2B009D6F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83F39D41C523E2B009D6F07 /* Assets.xcassets */; };
 		A83F39D81C523E2B009D6F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */; };
@@ -48,6 +48,7 @@
 		0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0CE65AA11C591187002C2A4D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		0CE65AA21C591187002C2A4D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.release.xcconfig"; sourceTree = "<group>"; };
 		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
 		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		A83F39C91C523E2B009D6F07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A83F39CB1C523E2B009D6F07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A83F39CC1C523E2B009D6F07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A83F39CF1C523E2B009D6F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A83F39D21C523E2B009D6F07 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A83F39D41C523E2B009D6F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83F39D71C523E2B009D6F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */,
 				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
 				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
-				A83F39CE1C523E2B009D6F07 /* Main.storyboard */,
+				0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */,
 				A83F39D41C523E2B009D6F07 /* Assets.xcassets */,
 				A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */,
 				A83F39D91C523E2B009D6F07 /* Info.plist */,
@@ -271,8 +271,8 @@
 				A83F39D81C523E2B009D6F07 /* LaunchScreen.storyboard in Resources */,
 				0CE65A8F1C5620B8002C2A4D /* TweetWithImageTableViewCell.xib in Resources */,
 				A83F39D51C523E2B009D6F07 /* Assets.xcassets in Resources */,
-				A83F39D01C523E2B009D6F07 /* Main.storyboard in Resources */,
 				0CE65A8A1C5620A3002C2A4D /* TweetTableViewCell.xib in Resources */,
+				0CE65AAC1C5B9B77002C2A4D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,14 +369,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A83F39CE1C523E2B009D6F07 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A83F39CF1C523E2B009D6F07 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -48,28 +48,26 @@
         }
     }];
     
-    
-<<<<<<< HEAD
-   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
-=======
+//   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
+   
     [self.twitter setUserProfile:@"ALexander" location:@"Ukraine" description:@"Set up descriotion from own app" userUrl:@"vk.com/user" block:^(id object) {
         NSLog(@"%@", object);
     }];
->>>>>>> 13ff556578d54e5dfc72f807d70c39f41fc23a8f
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"showUserTimeLine"]) {
-        TimeLineTableViewController *viewContr = [segue destinationViewController];
-        [viewContr setCoreData:self.interface];
-    }
-    if([[segue identifier] isEqualToString:@"ChangeUSerInfo"])
-    {
-        UserProfileEditViewController *vc = [segue destinationViewController];
-       
-    }
 
 }
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    if ([[segue identifier] isEqualToString:@"showUserTimeLine"]) {
+//        TimeLineTableViewController *viewContr = [segue destinationViewController];
+//        [viewContr setCoreData:self.interface];
+//    }
+//    if([[segue identifier] isEqualToString:@"ChangeUSerInfo"])
+//    {
+//        UserProfileEditViewController *vc = [segue destinationViewController];
+//       
+//    }
+//
+//}
 
 @end

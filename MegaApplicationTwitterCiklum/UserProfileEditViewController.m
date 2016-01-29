@@ -17,10 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[TwitterAPI sharedManager]setUserProfile:@"Alexander" location:@"Ukraine" description:@"change description" userUrl:@"vk.com/username" block:^(id object) {
-        NSLog(@"%@", object);
-    }];
-    // Do any additional setup after loading the view.
+//    [[TwitterAPI sharedManager]setUserProfile:@"Alexander" location:@"Ukraine" description:@"change description" userUrl:@"vk.com/username" block:^(id object) {
+//        NSLog(@"%@", object);
+//    }];
+//    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
