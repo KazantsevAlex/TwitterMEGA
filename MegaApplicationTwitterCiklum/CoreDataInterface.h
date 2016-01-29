@@ -14,6 +14,7 @@
 
 @interface CoreDataInterface : NSObject
 
++ (id)sharedManager;
 - (void)addTweet:(TweetModel *)tweet;
 - (NSArray *)getTweet;
 - (NSUInteger)tweetsInStore;

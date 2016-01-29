@@ -41,10 +41,10 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"10" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
            TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
-            [self.interface addTweet:tw];
+            [[CoreDataInterface sharedManager] addTweet:tw];
         }
     }];
     

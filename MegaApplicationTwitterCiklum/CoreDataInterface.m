@@ -18,6 +18,17 @@
 
 @implementation CoreDataInterface
 
++ (id)sharedManager
+{
+    static CoreDataInterface *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
+
 - (instancetype)init
 {
     self = [super init];

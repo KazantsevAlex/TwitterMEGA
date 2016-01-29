@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="width" constant="91" id="4BN-Lw-U78"/>
                                 </constraints>
                                 <state key="normal" title="TimeLine"/>
+                                <connections>
+                                    <action selector="ButtonAction:" destination="KAy-Cr-boe" eventType="touchUpInside" id="dAF-M0-D2g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-B9-V1r">
                                 <rect key="frame" x="257" y="203" width="86" height="30"/>
@@ -98,6 +101,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="n7W-uE-F1p"/>
+                    <connections>
+                        <outlet property="userTableView" destination="8KS-eI-Nw5" id="jAs-6H-kDd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6a-Fg-wcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

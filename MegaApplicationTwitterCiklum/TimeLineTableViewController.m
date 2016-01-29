@@ -20,13 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setCoreData:self.coreData];
+    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
+    [self.userTableView reloadData];
+    NSLog(@"DIMA LOH");
     
 }
 
-- (void)setCoreData:(CoreDataInterface *)coreData {
-    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView withData:coreData];
-    [self.userTableView reloadData];
+- (void)setCoreData {
+
 }
 
 

@@ -20,4 +20,12 @@
     // Configure the view for the selected state
 }
 
+- (void)fillCellWith:(TweetModel *)tweetModel {
+    
+    self.nameLabel.text = tweetModel.profileName;
+    self.messageLabel.text = tweetModel.text;
+    self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
+    self.mediaImageTweet.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.mediaURL]]];
+}
+
 @end

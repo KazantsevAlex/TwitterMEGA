@@ -17,6 +17,6 @@
 
 @property (nonatomic, strong) TweetModel *tweetObjects;
 
-- (instancetype)initWithTableView:(UITableView *)tableView withData:(CoreDataInterface *)interface;
+- (instancetype)initWithTableView:(UITableView *)tableView;
 
 @end
