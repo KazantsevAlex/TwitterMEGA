@@ -188,11 +188,11 @@
 				A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */,
 				0CE65A9F1C591187002C2A4D /* User+CoreDataProperties.h */,
 				0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */,
-				A83F39EE1C524451009D6F07 /* Tweet.h */,
 				0CE65AA11C591187002C2A4D /* User.h */,
 				0CE65AA21C591187002C2A4D /* User.m */,
 				A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */,
 				A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */,
+				A83F39EE1C524451009D6F07 /* Tweet.h */,
 				A83F39EF1C524451009D6F07 /* Tweet.m */,
 			);
 			name = Model;

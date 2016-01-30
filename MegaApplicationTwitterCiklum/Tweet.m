@@ -19,6 +19,6 @@
 @dynamic favoriteCount;
 @dynamic tweetID;
 @dynamic descriptionTw;
-
+@dynamic pictureData;
 
 @end
