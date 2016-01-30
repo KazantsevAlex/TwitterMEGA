@@ -18,5 +18,6 @@
 @property (nonatomic, strong) TweetModel *tweetObjects;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
+- (void)refreshArray;
 
 @end

@@ -29,6 +29,11 @@
     return self;
 }
 
+-(void)refreshArray
+{
+    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+}
+
 - (void)configure:(UITableView *)tableView {
     
     tableView.dataSource  = self;
