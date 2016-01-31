@@ -29,6 +29,11 @@
     return self;
 }
 
+-(void)refreshArray
+{
+    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+}
+
 - (void)configure:(UITableView *)tableView {
     
     tableView.dataSource  = self;
@@ -63,21 +68,6 @@
 
     }
     
-
-        
-//    [cell fillCellWith:[[self.interfaceQ getTweet] objectAtIndex:indexPath.row]];
-    
-//    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-//    cell = [[TweetTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TweetTableViewCell"];
-//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row]];
-    
-//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row];
-
-    
-    
-//    TweetModel *tweetObject = [self.tweetDataObjects objectAtIndex:indexPath.row];
-//    NSLog(@"%@", tweetObject);
-    
     
     return tempCell;
 }
@@ -87,9 +77,10 @@
     return [[CoreDataInterface sharedManager] tweetsInStore];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150.f;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    return ?;
+//}
 
 
 @end

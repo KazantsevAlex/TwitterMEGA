@@ -12,6 +12,9 @@
 
 - (void)awakeFromNib {
     
+    self.imageProfilePicture.layer.cornerRadius = 5;
+    self.imageProfilePicture.clipsToBounds = YES;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

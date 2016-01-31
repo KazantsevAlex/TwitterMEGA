@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0B0B681C5E82EF00F49D93 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */; };
+		0C0B0B6B1C5E871300F49D93 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */; };
 		0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A871C5620A3002C2A4D /* TweetTableViewCell.m */; };
 		0CE65A8A1C5620A3002C2A4D /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65A881C5620A3002C2A4D /* TweetTableViewCell.xib */; };
 		0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A8C1C5620B8002C2A4D /* TweetWithImageTableViewCell.m */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C0B0B661C5E82EF00F49D93 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		0C0B0B691C5E871300F49D93 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0CE65A861C5620A3002C2A4D /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		0CE65A871C5620A3002C2A4D /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
 		0CE65A881C5620A3002C2A4D /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 				A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */,
 				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
 				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
+				0C0B0B661C5E82EF00F49D93 /* SplashScreenViewController.h */,
+				0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */,
+				0C0B0B691C5E871300F49D93 /* LoginViewController.h */,
+				0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */,
 				0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */,
 				A83F39D41C523E2B009D6F07 /* Assets.xcassets */,
 				A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */,
@@ -188,11 +198,11 @@
 				A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */,
 				0CE65A9F1C591187002C2A4D /* User+CoreDataProperties.h */,
 				0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */,
-				A83F39EE1C524451009D6F07 /* Tweet.h */,
 				0CE65AA11C591187002C2A4D /* User.h */,
 				0CE65AA21C591187002C2A4D /* User.m */,
 				A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */,
 				A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */,
+				A83F39EE1C524451009D6F07 /* Tweet.h */,
 				A83F39EF1C524451009D6F07 /* Tweet.m */,
 			);
 			name = Model;
@@ -349,6 +359,8 @@
 				A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */,
 				A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */,
 				0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */,
+				0C0B0B6B1C5E871300F49D93 /* LoginViewController.m in Sources */,
+				0C0B0B681C5E82EF00F49D93 /* SplashScreenViewController.m in Sources */,
 				0CE65AA41C591187002C2A4D /* User.m in Sources */,
 				0CE65A9B1C5816C1002C2A4D /* TableViewDataSourse.m in Sources */,
 				A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */,

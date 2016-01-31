@@ -12,6 +12,5 @@
 
 @interface TimeLineTableViewController : UITableViewController
 
-- (void)setCoreData:(CoreDataInterface *)coreData;
 
 @end

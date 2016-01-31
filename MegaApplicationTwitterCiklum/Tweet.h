@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *favoriteCount;
 @property (nullable, nonatomic, retain) NSString *tweetID;
 @property (nullable, nonatomic, retain) NSString *descriptionTw;
+@property (nullable, nonatomic, retain) NSData *pictureData;
 
 @end
 

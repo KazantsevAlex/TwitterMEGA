@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *userTableView;
 @property (strong, nonatomic) TableViewDataSource *dataSource;
-@property (strong, nonatomic) CoreDataInterface *coreData;
 
 @end
 
@@ -21,15 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
-    [self.userTableView reloadData];
-    NSLog(@"Init dataSourse");
-    
+   
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor grayColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(getLatestLoans)
+                  forControlEvents:UIControlEventValueChanged];
+#warning временные настройки
+    self.tableView.estimatedRowHeight = 140.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
-- (void)setCoreData {
 
+-(void)getLatestLoans
+{
+    NSLog(@"Pull to refresh");
+    [self.dataSource refreshArray];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
-
 
 
 

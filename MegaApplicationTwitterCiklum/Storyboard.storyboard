@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VKA-y3-0yT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fov-zM-lBR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Notification-->
         <scene sceneID="WXz-qh-TqR">
             <objects>
                 <viewController id="KAy-Cr-boe" customClass="ViewController" sceneMemberID="viewController">
@@ -52,13 +52,15 @@
                             <constraint firstItem="zjq-OI-trj" firstAttribute="centerX" secondItem="cM1-bk-hhm" secondAttribute="centerX" id="yoY-rh-uqU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="OtD-Zv-4Ca"/>
+                    <tabBarItem key="tabBarItem" title="Notification" image="notification_bar_button" selectedImage="notification_bar_button" id="OtD-Zv-4Ca">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JD8-SF-Lqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="-25"/>
+            <point key="canvasLocation" x="1319" y="1216"/>
         </scene>
-        <!--Item-->
+        <!--Messages-->
         <scene sceneID="ojh-e6-LtO">
             <objects>
                 <viewController id="Q28-X0-3H9" customClass="UserProfileEditViewController" sceneMemberID="viewController">
@@ -71,13 +73,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lu8-Rz-ml8"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="message_bar_button" selectedImage="message_bar_button" id="lu8-Rz-ml8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85z-Qa-Y6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="612"/>
+            <point key="canvasLocation" x="1975" y="1216"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
+        <scene sceneID="m99-it-3BF">
+            <objects>
+                <viewController id="Xa8-de-zXI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0EP-dD-W3n"/>
+                        <viewControllerLayoutGuide type="bottom" id="SgC-UB-zMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbQ-BF-H7g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_bar_button" selectedImage="profile_bar_button" id="Rce-02-lom"/>
+                    <navigationItem key="navigationItem" id="9lq-H6-Dgd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7N-1L-y5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2643" y="1216"/>
+        </scene>
+        <!--Timeline-->
         <scene sceneID="2K9-9m-hCZ">
             <objects>
                 <tableViewController id="bRC-8u-Rbc" customClass="TimeLineTableViewController" sceneMemberID="viewController">
@@ -85,29 +107,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O5I-M4-HfN">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O5I-M4-HfN" id="v4h-Th-pPg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="bRC-8u-Rbc" id="cOl-pf-Lq5"/>
                             <outlet property="delegate" destination="bRC-8u-Rbc" id="7Mh-oS-rYc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="n7W-uE-F1p"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="home_bar_button" selectedImage="home_bar_button" id="n7W-uE-F1p"/>
                     <connections>
                         <outlet property="userTableView" destination="8KS-eI-Nw5" id="jAs-6H-kDd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6a-Fg-wcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="1126"/>
+            <point key="canvasLocation" x="679" y="1216"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GAA-Zc-SoX">
@@ -119,14 +131,108 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="bRC-8u-Rbc" kind="relationship" relationship="viewControllers" id="T9d-2y-ic6"/>
                         <segue destination="KAy-Cr-boe" kind="relationship" relationship="viewControllers" id="dBf-G3-oTu"/>
                         <segue destination="Q28-X0-3H9" kind="relationship" relationship="viewControllers" id="Hxm-xJ-S2N"/>
-                        <segue destination="bRC-8u-Rbc" kind="relationship" relationship="viewControllers" id="T9d-2y-ic6"/>
+                        <segue destination="Xa8-de-zXI" kind="relationship" relationship="viewControllers" id="eL6-VH-R1P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HF0-ak-Mwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="620"/>
+            <point key="canvasLocation" x="1583" y="404"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="9co-fp-yIt">
+            <objects>
+                <viewController id="pe1-rq-860" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pht-hx-1cC"/>
+                        <viewControllerLayoutGuide type="bottom" id="olM-nG-Rca"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a8f-ni-iyI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twtr-bird-start-logo" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-A5-eoL">
+                                <rect key="frame" x="225" y="70" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="bbI-KC-mQD"/>
+                                    <constraint firstAttribute="height" constant="150" id="dAC-wd-1hx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cdc-A5-eoL" firstAttribute="top" secondItem="pht-hx-1cC" secondAttribute="bottom" constant="50" id="Jub-H3-XTA"/>
+                            <constraint firstItem="cdc-A5-eoL" firstAttribute="centerX" secondItem="a8f-ni-iyI" secondAttribute="centerX" id="z0I-ap-V08"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="thN-GJ-cqw"/>
+                    <connections>
+                        <segue destination="VKA-y3-0yT" kind="show" identifier="ToProfile" id="MNB-Cp-IBQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNB-65-isa" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="404"/>
+        </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="tY6-fB-0Bn">
+            <objects>
+                <viewController id="fov-zM-lBR" customClass="SplashScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9os-Kv-As9"/>
+                        <viewControllerLayoutGuide type="bottom" id="v1M-7O-Voq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DdX-Vn-rr8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twtr-bird-start-logo" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-rg-5sl">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5a3-Gr-cwH"/>
+                                    <constraint firstAttribute="width" constant="150" id="9dn-a0-XYv"/>
+                                    <constraint firstAttribute="height" constant="150" id="GgJ-96-qIZ"/>
+                                    <constraint firstAttribute="width" constant="150" id="jDw-t1-Svi"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9dn-a0-XYv"/>
+                                        <exclude reference="jDw-t1-Svi"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8iK-rg-5sl" firstAttribute="centerX" secondItem="DdX-Vn-rr8" secondAttribute="centerX" id="0zw-gR-oJT"/>
+                            <constraint firstItem="8iK-rg-5sl" firstAttribute="top" secondItem="9os-Kv-As9" secondAttribute="bottom" constant="205" id="fcL-k2-zgZ"/>
+                            <constraint firstItem="8iK-rg-5sl" firstAttribute="top" secondItem="9os-Kv-As9" secondAttribute="bottom" constant="205" id="mS7-FP-8Qj"/>
+                            <constraint firstItem="8iK-rg-5sl" firstAttribute="centerY" secondItem="DdX-Vn-rr8" secondAttribute="centerY" id="zVa-yX-Bnv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fcL-k2-zgZ"/>
+                                <exclude reference="mS7-FP-8Qj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="splashScreenImageView" destination="8iK-rg-5sl" id="Yxj-CD-Ash"/>
+                        <segue destination="pe1-rq-860" kind="showDetail" identifier="LogInTwiiter" animates="NO" id="ZqK-RZ-mO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guq-hQ-5UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="404"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_bar_button" width="48" height="48"/>
+        <image name="message_bar_button" width="48" height="48"/>
+        <image name="notification_bar_button" width="48" height="48"/>
+        <image name="profile_bar_button" width="48" height="48"/>
+        <image name="twtr-bird-start-logo" width="300" height="300"/>
+    </resources>
 </document>

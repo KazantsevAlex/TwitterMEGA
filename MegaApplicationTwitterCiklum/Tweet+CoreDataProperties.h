@@ -2,7 +2,7 @@
 //  Tweet+CoreDataProperties.h
 //  MegaApplicationTwitterCiklum
 //
-//  Created by Казанцев Алексей on 1/27/16.
+//  Created by Alexandr Lobanov on 1/30/16.
 //  Copyright © 2016 Alexandr Lobanov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -10,6 +10,7 @@
 //
 
 #import "Tweet.h"
+#import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,7 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *retweetCount;
 @property (nullable, nonatomic, retain) NSString *text;
 @property (nullable, nonatomic, retain) NSString *tweetID;
-@property (nullable, nonatomic, retain) NSManagedObject *relationship;
+@property (nullable, nonatomic, retain) NSData *pictureData;
+@property (nullable, nonatomic, retain) User *relationship;
 
 @end
 
