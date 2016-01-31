@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
     [self.userTableView reloadData];
-    NSLog(@"DIMA LOH");
+    NSLog(@"Init dataSourse");
     
 }
 

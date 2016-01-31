@@ -22,7 +22,7 @@
     
     self.nameLabel.text = tweetModel.profileName;
     self.messageLabel.text = tweetModel.text;
-  //  self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
+    self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
 }
 
 -(void)prepareForReuse
