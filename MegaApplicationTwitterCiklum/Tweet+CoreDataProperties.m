@@ -2,7 +2,7 @@
 //  Tweet+CoreDataProperties.m
 //  MegaApplicationTwitterCiklum
 //
-//  Created by Alexandr Lobanov on 1/30/16.
+//  Created by Alexandr Lobanov on 1/31/16.
 //  Copyright © 2016 Alexandr Lobanov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,16 +13,15 @@
 
 @implementation Tweet (CoreDataProperties)
 
-@dynamic createData;
-@dynamic descriptionTw;
-@dynamic favoriteCount;
-@dynamic mediaURL;
-@dynamic pictureURL;
-@dynamic profileName;
-@dynamic retweetCount;
+@dynamic created_at;
+@dynamic favorite_count;
+@dynamic favorited;
+@dynamic idTweet;
+@dynamic id_str;
+@dynamic lang;
+@dynamic retweet_count;
+@dynamic retweeted;
 @dynamic text;
-@dynamic tweetID;
-@dynamic pictureData;
-@dynamic relationship;
+@dynamic user;
 
 @end
