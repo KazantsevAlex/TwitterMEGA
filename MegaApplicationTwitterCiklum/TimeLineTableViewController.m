@@ -24,13 +24,13 @@
     self.refreshControl.backgroundColor = [UIColor grayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
-                            action:@selector(getLatestLoans)
+                            action:@selector(getLatestLoads)
                   forControlEvents:UIControlEventValueChanged];
 }
 
 
 
--(void)getLatestLoans
+-(void)getLatestLoads
 {
     NSLog(@"Pull to refresh");
     [self.dataSource refreshArray];

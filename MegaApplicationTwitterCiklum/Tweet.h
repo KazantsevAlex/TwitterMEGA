@@ -13,16 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Tweet : NSManagedObject
 
-@property (nullable, nonatomic, retain) NSString *text;
-@property (nullable, nonatomic, retain) NSString *profileName;
-@property (nullable, nonatomic, retain) NSString *createData;
-@property (nullable, nonatomic, retain) NSString *pictureURL;
-@property (nullable, nonatomic, retain) NSString *mediaURL;
-@property (nullable, nonatomic, retain) NSString *retweetCount;
-@property (nullable, nonatomic, retain) NSString *favoriteCount;
-@property (nullable, nonatomic, retain) NSString *tweetID;
-@property (nullable, nonatomic, retain) NSString *descriptionTw;
-@property (nullable, nonatomic, retain) NSData *pictureData;
+-(void)setupValuesWithDictionary:(NSDictionary *)dict;
 
 @end
 

@@ -11,7 +11,6 @@
 #import "Tweet.h"
 #import "CoreDataInterface.h"
 #import "CoreDataStack.h"
-#import "TweetModel.h"
 #import "TimeLineTableViewController.h"
 #import "UserProfileEditViewController.h"
 

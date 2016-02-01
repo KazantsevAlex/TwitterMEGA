@@ -82,7 +82,7 @@
         <!--Profile-->
         <scene sceneID="m99-it-3BF">
             <objects>
-                <viewController id="Xa8-de-zXI" sceneMemberID="viewController">
+                <viewController id="Xa8-de-zXI" customClass="UserProfileEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0EP-dD-W3n"/>
                         <viewControllerLayoutGuide type="bottom" id="SgC-UB-zMu"/>
@@ -90,10 +90,54 @@
                     <view key="view" contentMode="scaleToFill" id="zbQ-BF-H7g">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DfQ-ig-wVj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="hyU-sH-gYn" customClass="ProfileHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1F-9c-fCL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BF4-xh-IMJ">
+                                            <rect key="frame" x="8" y="92" width="100" height="100"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-aw-Pz7">
+                                            <rect key="frame" x="519" y="36" width="39" height="30"/>
+                                            <state key="normal" title="tweet"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuz-Bk-rlr">
+                                            <rect key="frame" x="444" y="36" width="47" height="30"/>
+                                            <state key="normal" title="search"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oSg-Ky-KR1">
+                                        <rect key="frame" x="0.0" y="228" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oSg-Ky-KR1" id="hk4-GE-wxx">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_bar_button" selectedImage="profile_bar_button" id="Rce-02-lom"/>
                     <navigationItem key="navigationItem" id="9lq-H6-Dgd"/>
+                    <connections>
+                        <outlet property="posttweetButton" destination="PDk-aw-Pz7" id="g7I-6C-Lf9"/>
+                        <outlet property="searchButton" destination="Wuz-Bk-rlr" id="6b4-ng-1oC"/>
+                        <outlet property="userBackroundImageView" destination="w1F-9c-fCL" id="qaW-YL-1G3"/>
+                        <outlet property="userPictireImageView" destination="BF4-xh-IMJ" id="tVo-G8-LBk"/>
+                        <outlet property="userTweetsTableView" destination="DfQ-ig-wVj" id="zqI-BW-XYC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7N-1L-y5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

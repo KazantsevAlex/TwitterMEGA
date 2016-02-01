@@ -8,6 +8,12 @@
 
 #import "ProfileHeaderView.h"
 
+@interface ProfileHeaderView()
+
+
+
+@end
+
 @implementation ProfileHeaderView
 
 /*

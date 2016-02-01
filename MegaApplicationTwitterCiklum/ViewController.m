@@ -41,14 +41,21 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"15" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
-           TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
-            [[CoreDataInterface sharedManager] addTweet:tw];
-            NSLog(@"Start of tweet OBJECT---- %@  ------END OF OBJECT", dict);
+            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
         }
     }];
     
+
+//    [[TwitterAPI sharedManager]  getUserFollowers:@"20"block:^(id object) {
+//        for (NSArray *dict in object) {
+//            NSLog(@"Start of tweet OBJECT---- %@  ------END OF OBJECT",[dict objectAtIndex:1][@"users"]);
+//        }
+//    }];
+    
+    
+    //[[dict valueForKey:@"user"]valueForKey:@"description"]
 //   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
    
 //    [self.twitter setUserProfile:@"ALexander" location:@"Ukraine" description:@"Set up descriotion from own app" userUrl:@"vk.com/user" block:^(id object) {

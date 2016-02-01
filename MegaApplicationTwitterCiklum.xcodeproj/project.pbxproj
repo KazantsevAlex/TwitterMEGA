@@ -27,9 +27,8 @@
 		A83F39D81C523E2B009D6F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */; };
 		A83F39E11C523E4D009D6F07 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39E01C523E4D009D6F07 /* CoreDataStack.m */; };
 		A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */; };
-		A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */; };
 		A83F39F11C524451009D6F07 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39EF1C524451009D6F07 /* Tweet.m */; };
-		A852E8171C56C4AD004C3477 /* TweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A852E8161C56C4AD004C3477 /* TweetModel.m */; };
+		A84B41311C5E79A200C49DAA /* Tweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B41301C5E79A200C49DAA /* Tweet+CoreDataProperties.m */; };
 		A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2B8B51C5269090031B5AE /* TwitterAPI.m */; };
 /* End PBXBuildFile section */
 
@@ -69,12 +68,10 @@
 		A83F39E01C523E4D009D6F07 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		A83F39E21C523EA8009D6F07 /* CoreDataInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataInterface.h; sourceTree = "<group>"; };
 		A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataInterface.m; sourceTree = "<group>"; };
-		A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tweet+CoreDataProperties.h"; sourceTree = "<group>"; };
-		A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tweet+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A83F39EE1C524451009D6F07 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		A83F39EF1C524451009D6F07 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		A852E8151C56C4AD004C3477 /* TweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetModel.h; sourceTree = "<group>"; };
-		A852E8161C56C4AD004C3477 /* TweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetModel.m; sourceTree = "<group>"; };
+		A84B412F1C5E79A200C49DAA /* Tweet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tweet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A84B41301C5E79A200C49DAA /* Tweet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tweet+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A8F2B8B41C5269090031B5AE /* TwitterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterAPI.h; sourceTree = "<group>"; };
 		A8F2B8B51C5269090031B5AE /* TwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAPI.m; sourceTree = "<group>"; };
 		B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,15 +180,13 @@
 		A8F2B8B31C5267200031B5AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A852E8151C56C4AD004C3477 /* TweetModel.h */,
-				A852E8161C56C4AD004C3477 /* TweetModel.m */,
 				A83F39D11C523E2B009D6F07 /* DataModel.xcdatamodeld */,
 				0CE65A9F1C591187002C2A4D /* User+CoreDataProperties.h */,
 				0CE65AA01C591187002C2A4D /* User+CoreDataProperties.m */,
 				0CE65AA11C591187002C2A4D /* User.h */,
 				0CE65AA21C591187002C2A4D /* User.m */,
-				A83F39EC1C524451009D6F07 /* Tweet+CoreDataProperties.h */,
-				A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */,
+				A84B412F1C5E79A200C49DAA /* Tweet+CoreDataProperties.h */,
+				A84B41301C5E79A200C49DAA /* Tweet+CoreDataProperties.m */,
 				A83F39EE1C524451009D6F07 /* Tweet.h */,
 				A83F39EF1C524451009D6F07 /* Tweet.m */,
 			);
@@ -241,7 +236,7 @@
 				TargetAttributes = {
 					A83F39C11C523E2B009D6F07 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 7X8LN444F9;
+						DevelopmentTeam = PG7L77DKWJ;
 					};
 				};
 			};
@@ -355,14 +350,13 @@
 				A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */,
 				A83F39F11C524451009D6F07 /* Tweet.m in Sources */,
 				A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */,
-				A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */,
 				A83F39C71C523E2B009D6F07 /* main.m in Sources */,
 				A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */,
 				0CE65A9E1C58EBA7002C2A4D /* TimeLineTableViewController.m in Sources */,
 				A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */,
+				A84B41311C5E79A200C49DAA /* Tweet+CoreDataProperties.m in Sources */,
 				0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */,
 				0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */,
-				A852E8171C56C4AD004C3477 /* TweetModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +465,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MegaApplicationTwitterCiklum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.MegaApplicationTwitterCiklum";
+				PRODUCT_BUNDLE_IDENTIFIER = MegaApplicationTwitterCiklum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -486,7 +480,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MegaApplicationTwitterCiklum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.MegaApplicationTwitterCiklum";
+				PRODUCT_BUNDLE_IDENTIFIER = MegaApplicationTwitterCiklum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

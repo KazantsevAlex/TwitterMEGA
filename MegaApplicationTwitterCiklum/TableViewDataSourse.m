@@ -19,7 +19,7 @@
 
 @implementation TableViewDataSource
 
-- (instancetype)initWithTableView:(UITableView *)tableView {
+- (instancetype)initWithTableView:(UITableView *)tableView  {
 
     if (self = [super init]) {
         [self configure:tableView];
@@ -48,25 +48,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    TweetModel *tweet = [self.tweetArray objectAtIndex:indexPath.row];
+    Tweet *tweet = [self.tweetArray objectAtIndex:indexPath.row];
     
     UITableViewCell *tempCell;
     
-    if (tweet.mediaURL) {
-        tempCell = nil;
-        TweetWithImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
-        [cell fillCellWith:tweet];
-        tempCell = cell;
-        
-    }
-    else {
-        tempCell = nil;
-        TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-        tempCell = cell;
-        [cell fillCellWith:tweet];
-        NSLog(@"%@", tweet.mediaURL);
-
-    }
+//    if (tweet.mediaURL) {
+//        tempCell = nil;
+//        TweetWithImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
+//        [cell fillCellWith:tweet];
+//        tempCell = cell;
+//        
+//    }
+//    else {
+//        tempCell = nil;
+//        TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
+//        tempCell = cell;
+//        [cell fillCellWith:tweet];
+//        NSLog(@"%@", tweet.mediaURL);
+//
+//    }
     
 
         
@@ -84,12 +84,12 @@
 //    NSLog(@"%@", tweetObject);
     
     
-    return tempCell;
+    return nil;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[CoreDataInterface sharedManager] tweetsInStore];
+    return 0;//[[CoreDataInterface sharedManager] tweetsInStore];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -91,7 +91,9 @@
     }
 }
 
--(void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success
+-(void)getUserHomeTimelineWithCount:(NSString *)count
+                            sinceID:(NSString *)tweetId
+                              block:(void(^)(id object))success
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
@@ -103,15 +105,16 @@
 }
 
 -(void)getTimelineUserWithID:(NSString *)userID
-                       count:(NSUInteger)count
+                       count:(NSString *)count
                      sinceID:(NSString *)sinceID
                        maxID:(NSString *)maxID
                        block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"user_id": userID,
-                             @"count":[NSNumber numberWithInteger: count],
+                             @"count": count,
                              @"since_id": sinceID,
-                             @"max_id":maxID};
+                             @"max_id":maxID
+                             };
     NSString *url = @"https://api.twitter.com/1.1/statuses/user_timeline.json";
     NSString *type = @"GET";
     
@@ -138,6 +141,17 @@
         success(object);
     }];
     
+}
+
+-(void)getUserFollowers:(NSString *)count block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"count": count};
+    NSString *url = @"https://api.twitter.com/1.1/followers/list.json";
+    NSString *type = @"GET";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
 }
 
 //-(void)postTweetWithText:(NSString *)text

@@ -10,6 +10,14 @@
 
 @interface UserProfileEditViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *userTweetsTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *userBackroundImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *userPictireImageView;
+@property (weak, nonatomic) IBOutlet UIButton *posttweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+
+@property (nonatomic,strong) CoreDataInterface *interface;
+@property (nonatomic, strong) TableViewDataSource *dataSource;
 
 @end
 
@@ -17,6 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTweetsTableView];
+    
+    [[TwitterAPI sharedManager] getTimelineUserWithID:@"" count:@"5" sinceID:@"" maxID:@""  block:^(id object) {
+     for (NSDictionary *dict in object) {
+        // TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
+         //[[CoreDataInterface sharedManager] addTweet:tw];
+         NSLog(@"USER ID---- %@  ------END OF OBJECT", dict);
+     }
+    }];
+    
 //    [[TwitterAPI sharedManager]setUserProfile:@"Alexander" location:@"Ukraine" description:@"change description" userUrl:@"vk.com/username" block:^(id object) {
 //        NSLog(@"%@", object);
 //    }];

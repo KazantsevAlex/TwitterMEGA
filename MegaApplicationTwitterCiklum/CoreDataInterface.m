@@ -44,18 +44,23 @@
     return [self.coreDataStack managedObjectContext];
 }
 
--(void)addTweet:(TweetModel *)tweet
+-(void)addTweetWithDictionary:(NSDictionary *)dict
 {
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
-    tw.tweetID = [NSString stringWithFormat:@"%@",tweet.tweetID];
-    tw.text = tweet.text;
-    tw.pictureURL = tweet.pictureURL;
-    tw.profileName = tweet.profileName;
-    tw.mediaURL = tweet.mediaURL;
-    tw.createData = tweet.createData;
-    tw.favoriteCount = tweet.favoriteCount;
+    
+    [tw setupValuesWithDictionary:dict];
+    [user setupValuesWithDictionary:dict];
+    
+    for (User *us in [self getUser]) {
+        if (user.idUser == us.idUser) {
+              [user addTweetsObject:tw];
+        }
+    }
+   
     NSError *errorSave = nil;
-    if (![self.context save:&errorSave]) {
+    if (![self.context save:&errorSave])
+    {
         NSLog(@"error save object model");
     }
     else
@@ -63,7 +68,6 @@
         NSLog(@"Save complete");
         [self.context save:nil];
     }
-    
 }
 
 -(NSArray *)getTweet
@@ -75,6 +79,19 @@
     NSError * er = nil;
     self.array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
     return self.array;
+}
+-(NSArray *)getUser
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"User"
+                                                   inManagedObjectContext:self.context];
+    [request setEntity:description];
+    NSError * er = nil;
+    self.array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return self.array;
+}
+- (NSUInteger)usersInStore {
+    return [[self getUser]count];
 }
 
 - (NSUInteger)tweetsInStore {

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TweetModel.h"
+#import "Tweet.h"
 
 @interface TweetTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
 
@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 
-- (void)fillCellWith:(TweetModel *)tweetModel;
+- (void)fillCellWith:(Tweet *)tweetModel;
 
 @end

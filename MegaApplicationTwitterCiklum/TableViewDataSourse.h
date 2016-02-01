@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "TweetModel.h"
 #import "CoreDataInterface.h"
 #import "TweetTableViewCell.h"
 #import "TweetWithImageTableViewCell.h"
 
 @interface TableViewDataSource : NSObject <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) TweetModel *tweetObjects;
+@property (nonatomic, strong) Tweet *tweetObjects;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
 - (void)refreshArray;

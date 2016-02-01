@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TwitterAPI.h"
+#import "CoreDataInterface.h"
+#import "TableViewDataSourse.h"
 
 @interface UserProfileEditViewController : UIViewController
 
