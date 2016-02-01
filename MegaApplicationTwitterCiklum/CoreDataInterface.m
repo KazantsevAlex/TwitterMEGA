@@ -12,7 +12,9 @@
 
 @property(nonatomic, strong) CoreDataStack *coreDataStack;
 @property(nonatomic, strong) NSManagedObjectContext * context;
-@property(nonatomic, strong) NSMutableArray *array;
+@property(nonatomic, strong) NSMutableArray *userArray;
+@property(nonatomic, strong) NSMutableArray *tweetsArray;
+
 
 @end
 
@@ -49,15 +51,18 @@
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
     
-    [tw setupValuesWithDictionary:dict];
-    [user setupValuesWithDictionary:dict];
+    [user fillUpUserEntityWithDictionary:dict];
+    [tw fillUpTweetEntityWithDictionary:dict];
+   
     
     for (User *us in [self getUser]) {
         if (user.idUser == us.idUser) {
               [user addTweetsObject:tw];
+            NSLog(@"user %@",user.id_str);
+            NSLog(@"us   %@",us.id_str);
         }
     }
-   
+    NSLog(@"Tweets %@", user.tweets);
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
     {
@@ -77,8 +82,8 @@
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
     NSError * er = nil;
-    self.array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-    return self.array;
+    self.tweetsArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return self.tweetsArray;
 }
 -(NSArray *)getUser
 {
@@ -87,9 +92,10 @@
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
     NSError * er = nil;
-    self.array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-    return self.array;
+    self.userArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return self.userArray;
 }
+
 - (NSUInteger)usersInStore {
     return [[self getUser]count];
 }

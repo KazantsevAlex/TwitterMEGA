@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Tweet : NSManagedObject
 
--(void)setupValuesWithDictionary:(NSDictionary *)dict;
+-(void)fillUpTweetEntityWithDictionary:(NSDictionary *)dict;
 
 @end
 

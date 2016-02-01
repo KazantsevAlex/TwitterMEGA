@@ -11,7 +11,7 @@
 
 @implementation User
 
--(void)setupValuesWithDictionary:(NSDictionary *)dict
+-(void)fillUpUserEntityWithDictionary:(NSDictionary *)dict
 {
     self.contributors_enabled = dict[@"user"][@"contributors_enabled"];
     self.created_at =  dict[@"user"][@"created_at"];

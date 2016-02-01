@@ -10,7 +10,7 @@
 
 @implementation Tweet
 
--(void)setupValuesWithDictionary:(NSDictionary *)dict
+-(void)fillUpTweetEntityWithDictionary:(NSDictionary *)dict
 {
     self.text = dict[@"text"];
     self.created_at =  dict[@"created_at"];
