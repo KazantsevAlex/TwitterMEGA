@@ -154,5 +154,39 @@
     }];
 }
 
+-(void)likeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"id": idTweet,
+                             @"include_entities": @"false"};
+    NSString *url = @"https://api.twitter.com/1.1/favorites/create.json";
+    NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
+
+-(void)unlikeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"id": idTweet,
+                             @"include_entities": [NSNumber numberWithBool:false]};
+    NSString *url = @"https://api.twitter.com/1.1/favorites/destroy.json";
+    NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
+
+-(void)postStatusWithText:(NSString *)statusText block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"status": statusText};
+    NSString *url = @"https://api.twitter.com/1.1/statuses/update.json";
+    NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
 //-(void)postTweetWithText:(NSString *)text
 @end

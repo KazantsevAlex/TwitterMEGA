@@ -48,6 +48,21 @@
 
 -(void)addTweetWithDictionary:(NSDictionary *)dict
 {
+    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%k == %@", @"userID", 10];
+    [requst setPredicate:predicate];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc]initWithKey:@"userID" ascending:YES];
+    [requst setSortDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
+    
+    NSError *er = nil;
+    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    
+    
+    
+    
+    
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
     

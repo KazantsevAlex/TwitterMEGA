@@ -37,6 +37,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)postStatusAction:(id)sender {
+    
+    [[TwitterAPI sharedManager]postStatusWithText:@"Do you know 'tweet' in  REST API called 'status'?" block:^(id object) {
+        NSLog(@"object %@", object);
+    }];
+}
+- (IBAction)likeButtonAction:(id)sender {
+    
+    [[TwitterAPI sharedManager]likeTweetwithID:@"694284083124375553" block:^(id object) {
+        NSLog(@"Liked!");
+    }];
+}
 
 
 - (IBAction)ButtonAction:(id)sender {

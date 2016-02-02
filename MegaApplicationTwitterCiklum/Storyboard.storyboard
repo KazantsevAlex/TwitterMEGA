@@ -33,6 +33,9 @@
                                     <constraint firstAttribute="width" constant="86" id="mc2-61-pvH"/>
                                 </constraints>
                                 <state key="normal" title="Segue-1"/>
+                                <connections>
+                                    <action selector="postStatusAction:" destination="KAy-Cr-boe" eventType="touchUpInside" id="Wex-54-56R"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjq-OI-trj">
                                 <rect key="frame" x="277" y="295" width="46" height="30"/>
@@ -40,6 +43,9 @@
                                     <constraint firstAttribute="width" constant="46" id="b0F-Ep-6Qf"/>
                                 </constraints>
                                 <state key="normal" title="Auth"/>
+                                <connections>
+                                    <action selector="likeButtonAction:" destination="KAy-Cr-boe" eventType="touchUpInside" id="W3N-Ek-Zqj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

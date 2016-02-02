@@ -31,4 +31,13 @@
 
 -(void)getUserFollowers:(NSString *)count
                   block:(void(^)(id object))success;
+-(void)likeTweetwithID:(NSString *)idTweet
+                 block:(void(^)(id object))success;
+
+-(void)unlikeTweetwithID:(NSString *)idTweet
+                   block:(void(^)(id object))success;
+
+-(void)postStatusWithText:(NSString *)statusText
+                    block:(void(^)(id object))success;
+
 @end
