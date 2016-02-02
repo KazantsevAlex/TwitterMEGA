@@ -50,34 +50,42 @@
 {
     NSFetchRequest *requst = [[NSFetchRequest alloc]init];
     NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
+    [requst setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%k == %@", @"userID", 10];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"userID", dict[@"user"][@"id"]];
+    
+    
     [requst setPredicate:predicate];
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc]initWithKey:@"userID" ascending:YES];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc]initWithKey:@"idUser" ascending:YES];
+    
+
     [requst setSortDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
+    
+ 
     
     NSError *er = nil;
     NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
     
+    NSLog(@"fecht %@", fecht);
     
     
     
     
-    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+   // User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
     
-    [user fillUpUserEntityWithDictionary:dict];
+    //[user fillUpUserEntityWithDictionary:dict];
     [tw fillUpTweetEntityWithDictionary:dict];
    
     
     for (User *us in [self getUser]) {
-        if (user.idUser == us.idUser) {
-              [user addTweetsObject:tw];
-            NSLog(@"user %@",user.id_str);
-            NSLog(@"us   %@",us.id_str);
-        }
+//        if (user.idUser == us.idUser) {
+//              [user addTweetsObject:tw];
+//            NSLog(@"user %@",user.id_str);
+//            NSLog(@"us   %@",us.id_str);
+//        }
     }
-    NSLog(@"Tweets %@", user.tweets);
+    //NSLog(@"Tweets %@", user.tweets);
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
     {

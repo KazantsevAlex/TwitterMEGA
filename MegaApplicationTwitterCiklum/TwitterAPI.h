@@ -40,4 +40,13 @@
 -(void)postStatusWithText:(NSString *)statusText
                     block:(void(^)(id object))success;
 
+-(void)destroyStatusWithText:(NSString *)statusText
+                       block:(void(^)(id object))success;
+
+-(void)retweetStatusStatusWithText:(NSString *)statusText
+                             block:(void(^)(id object))success;
+
+-(void)unretweetStatusStatusWithText:(NSString *)statusText
+                               block:(void(^)(id object))success;
+
 @end
