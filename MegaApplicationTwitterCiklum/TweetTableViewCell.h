@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageProfilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
 
 
 - (void)fillCellWith:(TweetModel *)tweetModel;
