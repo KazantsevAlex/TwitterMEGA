@@ -39,21 +39,21 @@
 
 - (IBAction)postStatusAction:(id)sender {
     
-    [[TwitterAPI sharedManager]postStatusWithText:@"Do you know 'tweet' in  REST API called 'status'?" block:^(id object) {
-        NSLog(@"object %@", object);
-    }];
+//    [[TwitterAPI sharedManager]postStatusWithText:@"Do you know 'tweet' in  REST API called 'status'?" block:^(id object) {
+//        NSLog(@"object %@", object);
+//    }];
 }
 - (IBAction)likeButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]likeTweetwithID:@"694284083124375553" block:^(id object) {
-        NSLog(@"Liked!");
+   [ [TwitterAPI sharedManager]TESTs:@"s" block:^(id object) {
+        NSLog(@"%@",object);
     }];
 }
 
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"15" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
             [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
         }

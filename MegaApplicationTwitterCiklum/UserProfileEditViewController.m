@@ -27,13 +27,13 @@
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTweetsTableView];
     
-    [[TwitterAPI sharedManager] getTimelineUserWithID:@"" count:@"5" sinceID:@"" maxID:@""  block:^(id object) {
-     for (NSDictionary *dict in object) {
-        // TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
-         //[[CoreDataInterface sharedManager] addTweet:tw];
-         NSLog(@"USER ID---- %@  ------END OF OBJECT", dict);
-     }
-    }];
+//    [[TwitterAPI sharedManager] getTimelineUserWithID:@"" count:@"5" sinceID:@"" maxID:@""  block:^(id object) {
+//     for (NSDictionary *dict in object) {
+//        // TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
+//         //[[CoreDataInterface sharedManager] addTweet:tw];
+//         NSLog(@"USER ID---- %@  ------END OF OBJECT", dict);
+//     }
+//    }];
     
 //    [[TwitterAPI sharedManager]setUserProfile:@"Alexander" location:@"Ukraine" description:@"change description" userUrl:@"vk.com/username" block:^(id object) {
 //        NSLog(@"%@", object);

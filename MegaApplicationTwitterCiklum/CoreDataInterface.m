@@ -52,40 +52,31 @@
     NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
     [requst setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"userID", dict[@"user"][@"id"]];
+    NSString *userId = dict[@"user"][@"id_str"];
     
-    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userId];
     [requst setPredicate:predicate];
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc]initWithKey:@"idUser" ascending:YES];
-    
-
-    [requst setSortDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
-    
- 
     
     NSError *er = nil;
     NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    NSLog(@"%@",fecht);
     
-    NSLog(@"fecht %@", fecht);
-    
-    
-    
-    
-   // User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
-    Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
-    
-    //[user fillUpUserEntityWithDictionary:dict];
-    [tw fillUpTweetEntityWithDictionary:dict];
-   
-    
-    for (User *us in [self getUser]) {
-//        if (user.idUser == us.idUser) {
-//              [user addTweetsObject:tw];
-//            NSLog(@"user %@",user.id_str);
-//            NSLog(@"us   %@",us.id_str);
-//        }
+    if ([fecht count] == 0) {
+        User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+        [uniqUser fillUpUserEntityWithDictionary:dict];
+        Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+        [tw fillUpTweetEntityWithDictionary:dict];
+        [uniqUser addTweetsObject:tw];
     }
-    //NSLog(@"Tweets %@", user.tweets);
+    User *user;
+    if ([fecht count] > 0) {
+        user = [fecht objectAtIndex:0];
+    }
+    Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+    [tw fillUpTweetEntityWithDictionary:dict];
+    [user addTweetsObject:tw];
+
+    
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
     {

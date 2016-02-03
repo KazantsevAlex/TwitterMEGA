@@ -189,17 +189,6 @@
     }];
 }
 
--(void)destroyStatusWithText:(NSString *)statusText block:(void(^)(id object))success
-{
-    NSDictionary *params = @{@"status": statusText};
-    NSString *url = @"https://api.twitter.com/1.1/statuses/destroy/:id.json";
-    NSString *type = @"POST";
-    
-    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
-        success(object);
-    }];
-}
-
 -(void)retweetStatusStatusWithText:(NSString *)statusText block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"status": statusText};
@@ -221,5 +210,18 @@
         success(object);
     }];
 }
+
+
+-(void)TESTs:(NSString *)statusText block:(void(^)(id object))success
+{
+    NSDictionary *params = @{@"status": statusText};
+    NSString *url = @"https://api.twitter.com/1.1/application/rate_limit_status.json";
+    NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
+
 
 @end
