@@ -23,5 +23,6 @@
 @dynamic retweeted;
 @dynamic text;
 @dynamic user;
+@dynamic mediaUrl;
 
 @end

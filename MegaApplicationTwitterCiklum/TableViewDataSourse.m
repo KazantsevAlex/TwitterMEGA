@@ -23,7 +23,7 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+      //  self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
 
     }
     return self;

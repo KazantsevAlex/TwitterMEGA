@@ -53,9 +53,10 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"150" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"5" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
             [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+           // NSLog(@"IMAGE SEARCH %@",dict );
         }
     }];
     

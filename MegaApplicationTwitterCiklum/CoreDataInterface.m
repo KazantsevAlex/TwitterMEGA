@@ -90,7 +90,7 @@
     }
 }
 
--(NSArray *)getTweet
+-(NSArray *)getUserHomeTimeline
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
@@ -100,7 +100,7 @@
     self.tweetsArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
     return self.tweetsArray;
 }
--(NSArray *)getUser
+-(NSArray *)getUserWithId:(NSString *) userID
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"User"
@@ -112,11 +112,11 @@
 }
 
 - (NSUInteger)usersInStore {
-    return [[self getUser]count];
+    return [self.userArray count];
 }
 
 - (NSUInteger)tweetsInStore {
-    return [[self getTweet]count];
+    return [[self getUserHomeTimeline]count];
 }
 
 @end

@@ -7,6 +7,7 @@
         <attribute name="id_str" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idTweet" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lang" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="retweet_count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="retweeted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,7 +40,7 @@
         <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tweet" inverseName="user" inverseEntity="Tweet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tweet" positionX="-209" positionY="-499" width="128" height="193"/>
+        <element name="Tweet" positionX="-209" positionY="-499" width="128" height="210"/>
         <element name="TwitterObject" positionX="-398" positionY="-630" width="128" height="45"/>
         <element name="User" positionX="-549" positionY="-513" width="128" height="388"/>
     </elements>
