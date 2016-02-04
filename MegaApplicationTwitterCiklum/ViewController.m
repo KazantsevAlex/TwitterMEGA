@@ -53,13 +53,13 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"15" sinceID:nil block:^(id object) {
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"150" sinceID:nil block:^(id object) {
         for (NSDictionary *dict in object) {
             [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
         }
     }];
     
-
+    
 //    [[TwitterAPI sharedManager]  getUserFollowers:@"20"block:^(id object) {
 //        for (NSArray *dict in object) {
 //            NSLog(@"Start of tweet OBJECT---- %@  ------END OF OBJECT",[dict objectAtIndex:1][@"users"]);

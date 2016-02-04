@@ -51,9 +51,7 @@
     NSFetchRequest *requst = [[NSFetchRequest alloc]init];
     NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
     [requst setEntity:entity];
-    
     NSString *userId = dict[@"user"][@"id_str"];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userId];
     [requst setPredicate:predicate];
     
@@ -68,14 +66,17 @@
         [tw fillUpTweetEntityWithDictionary:dict];
         [uniqUser addTweetsObject:tw];
     }
-    User *user;
-    if ([fecht count] > 0) {
-        user = [fecht objectAtIndex:0];
+    else
+    {
+        User *user;
+        if ([fecht count] > 0)
+        {
+            user = [fecht objectAtIndex:0];
+        }
+        Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+        [tw fillUpTweetEntityWithDictionary:dict];
+        [user addTweetsObject:tw];
     }
-    Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
-    [tw fillUpTweetEntityWithDictionary:dict];
-    [user addTweetsObject:tw];
-
     
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
