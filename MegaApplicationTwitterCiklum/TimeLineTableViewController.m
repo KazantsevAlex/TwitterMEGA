@@ -18,6 +18,8 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
+    [[TwitterAPI sharedManager]loginAction];
+    [self getLatestLoans];
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
    
@@ -35,6 +37,7 @@
 
 -(void)getLatestLoans
 {
+    
     NSLog(@"Pull to refresh");
     [self.dataSource refreshArray];
     [self.tableView reloadData];

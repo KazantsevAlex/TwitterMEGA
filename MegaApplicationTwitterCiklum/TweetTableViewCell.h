@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TweetModel.h"
+#import "Tweet.h"
 
 @interface TweetTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
 
@@ -22,6 +22,6 @@
 
 
 
-- (void)fillCellWith:(TweetModel *)tweetModel;
+- (void)fillCellWith:(Tweet *)tweetModel;
 
 @end

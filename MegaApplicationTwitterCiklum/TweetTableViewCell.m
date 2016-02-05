@@ -21,13 +21,12 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)fillCellWith:(TweetModel *)tweetModel {
+#warning show tweet using twitterObject
+- (void)fillCellWith:(Tweet *)tweetModel {
     
-    self.nameLabel.text = tweetModel.profileName;
-    self.messageLabel.text = tweetModel.text;
-    self.userNameLabel.text = tweetModel.favoriteCount;
-    self.timestampLabel.text = tweetModel.createData;
-    self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
+//    self.messageLabel.text = tweetModel.text;
+//    self.timestampLabel.text = tweetModel.created_at;
+//    self.imageProfilePicture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tweetModel.pictureURL]]];
     
 #warning TEMP
     [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-off.png"] forState:UIControlStateNormal];
