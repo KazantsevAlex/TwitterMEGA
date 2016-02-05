@@ -15,8 +15,10 @@
 @interface CoreDataInterface : NSObject
 
 + (id)sharedManager;
-- (void)addTweet:(TweetModel *)tweet;
+-(void)addTweetWithDictionary:(NSDictionary *)dict;
 - (NSArray *)getTweet;
+- (NSArray *)getUser;
 - (NSUInteger)tweetsInStore;
+- (NSUInteger)usersInStore;
 
 @end

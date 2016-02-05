@@ -10,15 +10,21 @@
 
 @implementation Tweet
 
-@dynamic text;
-@dynamic profileName;
-@dynamic createData;
-@dynamic pictureURL;
-@dynamic mediaURL;
-@dynamic retweetCount;
-@dynamic favoriteCount;
-@dynamic tweetID;
-@dynamic descriptionTw;
-@dynamic pictureData;
+-(void)fillUpTweetEntityWithDictionary:(NSDictionary *)dict
+{
+    self.text = dict[@"text"];
+    self.created_at =  dict[@"created_at"];
+    self.favorite_count = dict[@"favorite_count"];
+    self.favorited =  dict[@"favorited"];
+    self.idTweet = dict[@"id"];
+    self.id_str =  dict[@"id_str"];
+    self.retweet_count =  dict[@"retweet_count"];
+    self.retweeted = dict[@"retweeted"];
+    self.lang = dict[@"lang"];
+    if (dict[@"extended_entities"]) {
+        self.mediaUrl = dict[@"extended_entities"][@"media"][0][@"media_url"];
+        NSLog(@"%@",dict[@"extended_entities"][@"media"][0][@"media_url"]);
+    }
+}
 
 @end

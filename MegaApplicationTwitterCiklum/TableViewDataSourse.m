@@ -23,7 +23,7 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+       // self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
 
     }
     return self;
@@ -31,7 +31,7 @@
 
 -(void)refreshArray
 {
-    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+    //self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
 }
 
 - (void)configure:(UITableView *)tableView {
@@ -74,13 +74,13 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[CoreDataInterface sharedManager] tweetsInStore];
+    return 0;//[[CoreDataInterface sharedManager] tweetsInStore];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    return ?;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return 185;
+}
 
 
 @end

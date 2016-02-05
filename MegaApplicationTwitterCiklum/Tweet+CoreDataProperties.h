@@ -2,7 +2,7 @@
 //  Tweet+CoreDataProperties.h
 //  MegaApplicationTwitterCiklum
 //
-//  Created by Alexandr Lobanov on 1/30/16.
+//  Created by Alexandr Lobanov on 1/31/16.
 //  Copyright © 2016 Alexandr Lobanov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,17 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Tweet (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *createData;
-@property (nullable, nonatomic, retain) NSString *descriptionTw;
-@property (nullable, nonatomic, retain) NSString *favoriteCount;
-@property (nullable, nonatomic, retain) NSString *mediaURL;
-@property (nullable, nonatomic, retain) NSString *pictureURL;
-@property (nullable, nonatomic, retain) NSString *profileName;
-@property (nullable, nonatomic, retain) NSString *retweetCount;
+@property (nullable, nonatomic, retain) NSString *created_at;
+@property (nullable, nonatomic, retain) NSNumber *favorite_count;
+@property (nullable, nonatomic, retain) NSNumber *favorited;
+@property (nullable, nonatomic, retain) NSNumber *idTweet;
+@property (nullable, nonatomic, retain) NSString *id_str;
+@property (nullable, nonatomic, retain) NSString *lang;
+@property (nullable, nonatomic, retain) NSNumber *retweet_count;
+@property (nullable, nonatomic, retain) NSNumber *retweeted;
 @property (nullable, nonatomic, retain) NSString *text;
-@property (nullable, nonatomic, retain) NSString *tweetID;
-@property (nullable, nonatomic, retain) NSData *pictureData;
-@property (nullable, nonatomic, retain) User *relationship;
+@property (nullable, nonatomic, retain) NSString *mediaUrl;
+@property (nullable, nonatomic, retain) User *user;
 
 @end
 
