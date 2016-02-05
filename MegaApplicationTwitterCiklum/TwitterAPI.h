@@ -15,7 +15,10 @@
 
 + (id)sharedManager;
 - (void)loginAction;
-- (void)getUserHomeTimelineWithCount:(NSString *)count sinceID:(NSString *)tweetId block:(void(^)(id object))success;
+-(void)getUserHomeTimelineWithCount:(NSString *)count
+                            sinceID:(NSString *)tweetId
+                              maxID:(NSString *)maxID
+                              block:(void(^)(id object))success;
 
 - (void)getTimelineUserWithID:(NSString *)userID
                         count:(NSString *)count

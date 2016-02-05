@@ -12,7 +12,7 @@
 
 @property(nonatomic, strong) TwitterAPI *twitter;
 @property (nonatomic, strong) CoreDataInterface *interface;
-
+@property (nonatomic, strong) __block NSString *sinceID;
 
 
 @end
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initObjects];
+    self.sinceID = @"";
     [[TwitterAPI sharedManager] loginAction];
 }
 
@@ -53,9 +54,16 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"5" sinceID:nil block:^(id object) {
+    NSString *count = @"50";
+    __block NSUInteger i = 0;
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:self.sinceID maxID:@"" block:^(id object) {
         for (NSDictionary *dict in object) {
             [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+            i++;
+            if ([object count] == i) {
+              self.sinceID = dict[@"id_str"];
+            }
+
            // NSLog(@"IMAGE SEARCH %@",dict );
         }
     }];

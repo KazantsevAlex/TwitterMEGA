@@ -92,16 +92,36 @@
 }
 
 -(void)getUserHomeTimelineWithCount:(NSString *)count
-                            sinceID:(NSString *)tweetId
+                            sinceID:(NSString *)sinceID
+                              maxID:(NSString *)maxID
                               block:(void(^)(id object))success
 {
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
-    NSDictionary *sd = @{@"count":count};
-    [self executeQueryRequest:url queryMethod:type withParameters:sd block:^(id object) {
+    NSDictionary *params =  [self setParamByStringLenghtSinceID:sinceID maxID:maxID count:count];
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
         success(object);
     }];
     
+}
+
+-(NSDictionary *)setParamByStringLenghtSinceID:(NSString *)sinceID maxID:(NSString *)maxID count:(NSString *)count
+{
+    NSDictionary *params = nil;
+    if (([sinceID length] && [maxID length]) == 0)
+    {
+        params = @{@"count":count};
+    }
+    if ([sinceID length] > 0) {
+        params = @{@"count":count,
+                        @"since_id":sinceID};
+    }
+    if ([maxID length] >0) {
+        params = @{@"count":count,
+                        @"max_id":maxID};
+    }
+    
+    return params;
 }
 
 -(void)getTimelineUserWithID:(NSString *)userID

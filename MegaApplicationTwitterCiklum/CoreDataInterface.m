@@ -57,7 +57,7 @@
     
     NSError *er = nil;
     NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
-    NSLog(@"%@",fecht);
+   // NSLog(@"%@",fecht);
     
     if ([fecht count] == 0) {
         User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
