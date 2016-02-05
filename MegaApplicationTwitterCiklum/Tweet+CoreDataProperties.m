@@ -23,5 +23,9 @@
 @dynamic retweeted;
 @dynamic text;
 @dynamic user;
+<<<<<<< HEAD
+=======
+@dynamic mediaUrl;
+>>>>>>> fdb61e6fc68e8cb6ab15d8dcea10f75c4a9f2a61
 
 @end

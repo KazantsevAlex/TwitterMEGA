@@ -13,6 +13,7 @@
 @property (strong, nonatomic) CoreDataInterface *interfaceQ;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *tweetArray;
+@property (nonatomic, strong) __block NSString *sinceID;
 
 @end
 
@@ -23,7 +24,8 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+       // self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+        [self refreshArray];
 
     }
     return self;
@@ -31,7 +33,21 @@
 
 -(void)refreshArray
 {
-    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+    //self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
+    NSString *count = @"70";
+    __block NSUInteger i = 0;
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
+        for (NSDictionary *dict in object) {
+            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+            i++;
+            if ([object count] == i) {
+                self.sinceID = dict[@"id_str"];
+            }
+            
+            // NSLog(@"IMAGE SEARCH %@",dict );
+        }
+    }];
+
 }
 
 - (void)configure:(UITableView *)tableView {
@@ -48,11 +64,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    TweetModel *tweet = [self.tweetArray objectAtIndex:indexPath.row];
+    Tweet *tweet = [self.tweetArray objectAtIndex:indexPath.row];
     
     UITableViewCell *tempCell;
     
-    if (tweet.mediaURL) {
+    if (tweet.mediaUrl) {
         tempCell = nil;
         TweetWithImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
         [cell fillCellWith:tweet];
@@ -64,24 +80,9 @@
         TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
         tempCell = cell;
         [cell fillCellWith:tweet];
-        NSLog(@"%@", tweet.mediaURL);
+     //   NSLog(@"%@", tweet.mediaURL);
 
     }
-    
-
-        
-//    [cell fillCellWith:[[self.interfaceQ getTweet] objectAtIndex:indexPath.row]];
-    
-//    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-//    cell = [[TweetTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TweetTableViewCell"];
-//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row]];
-    
-//    [cell fillCellWith:[[self.interface getTweet] objectAtIndex:indexPath.row];
-
-    
-    
-//    TweetModel *tweetObject = [self.tweetDataObjects objectAtIndex:indexPath.row];
-//    NSLog(@"%@", tweetObject);
     
     
     return tempCell;
@@ -89,11 +90,12 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[CoreDataInterface sharedManager] tweetsInStore];
+    return 0;//[[CoreDataInterface sharedManager] tweetsInStore];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150.f;
+
+    return 185;
 }
 
 

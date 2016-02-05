@@ -12,7 +12,7 @@
 
 @property(nonatomic, strong) TwitterAPI *twitter;
 @property (nonatomic, strong) CoreDataInterface *interface;
-
+@property (nonatomic, strong) __block NSString *sinceID;
 
 
 @end
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initObjects];
+    self.sinceID = @"";
     [[TwitterAPI sharedManager] loginAction];
 }
 
@@ -29,7 +30,7 @@
 {
     self.twitter = [TwitterAPI new];
     self.interface = [CoreDataInterface new];
-   
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,28 +38,55 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)postStatusAction:(id)sender {
+    
+    //    [[TwitterAPI sharedManager]postStatusWithText:@"Do you know 'tweet' in  REST API called 'status'?" block:^(id object) {
+    //        NSLog(@"object %@", object);
+    //    }];
+}
+- (IBAction)likeButtonAction:(id)sender {
+    
+    [ [TwitterAPI sharedManager]TESTs:@"s" block:^(id object) {
+        NSLog(@"%@",object);
+    }];
+}
 
 
 - (IBAction)ButtonAction:(id)sender {
     
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:@"1" sinceID:nil block:^(id object) {
+    NSString *count = @"70";
+    __block NSUInteger i = 0;
+    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
         for (NSDictionary *dict in object) {
-           TweetModel *tw = [[TweetModel alloc]initWithDictionary:dict];
-            [[CoreDataInterface sharedManager] addTweet:tw];
-            NSLog(@"Start of tweet OBJECT---- %@  ------END OF OBJECT", dict);
+            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+            i++;
+            if ([object count] == i) {
+                self.sinceID = dict[@"id_str"];
+            }
+            
+            // NSLog(@"IMAGE SEARCH %@",dict );
         }
     }];
     
-//   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
-   
-//    [self.twitter setUserProfile:@"ALexander" location:@"Ukraine" description:@"Set up descriotion from own app" userUrl:@"vk.com/user" block:^(id object) {
-//        NSLog(@"%@", object);
-//    }];
-
+    
+    //    [[TwitterAPI sharedManager]  getUserFollowers:@"20"block:^(id object) {
+    //        for (NSArray *dict in object) {
+    //            NSLog(@"Start of tweet OBJECT---- %@  ------END OF OBJECT",[dict objectAtIndex:1][@"users"]);
+    //        }
+    //    }];
+    
+    
+    //[[dict valueForKey:@"user"]valueForKey:@"description"]
+    //   NSLog(@"%@",[[[self.interface getTweet]objectAtIndex:5] valueForKey:@"text"]);
+    
+    //    [self.twitter setUserProfile:@"ALexander" location:@"Ukraine" description:@"Set up descriotion from own app" userUrl:@"vk.com/user" block:^(id object) {
+    //        NSLog(@"%@", object);
+    //    }];
+    
 }
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
+//
 //    if ([[segue identifier] isEqualToString:@"showUserTimeLine"]) {
 //        TimeLineTableViewController *viewContr = [segue destinationViewController];
 //        [viewContr setCoreData:self.interface];
@@ -72,3 +100,4 @@
 //}
 
 @end
+

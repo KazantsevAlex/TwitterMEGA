@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *retweet_count;
 @property (nullable, nonatomic, retain) NSNumber *retweeted;
 @property (nullable, nonatomic, retain) NSString *text;
+<<<<<<< HEAD
+=======
+@property (nullable, nonatomic, retain) NSString *mediaUrl;
+>>>>>>> fdb61e6fc68e8cb6ab15d8dcea10f75c4a9f2a61
 @property (nullable, nonatomic, retain) User *user;
 
 @end

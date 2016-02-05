@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "TweetModel.h"
+#import "Tweet.h"
+#import "TwitterAPI.h"
 #import "CoreDataInterface.h"
 #import "TweetTableViewCell.h"
 #import "TweetWithImageTableViewCell.h"
