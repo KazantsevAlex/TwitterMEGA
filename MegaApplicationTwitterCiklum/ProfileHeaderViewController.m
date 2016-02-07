@@ -33,6 +33,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configProfileViewStyle];
+}
+
+
+
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    [self layoutBackgroundImageView];
+    [self layoutProfileImageBaseView];
+    [self layoutNavigationTitleView];
+    [self updateNavigationBarAppearance];
+    
+}
+
+- (void)configProfileViewStyle {
     
     self.defaultViewHeight = self.view.frame.size.height;
     self.defaultBackgroundImageViewHeight = self.backgroundImageView.frame.size.height;
@@ -52,17 +68,6 @@
     self.profileImageBaseView.frame = frame;
 }
 
-
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
-    [self layoutBackgroundImageView];
-    [self layoutProfileImageBaseView];
-    [self layoutNavigationTitleView];
-    [self updateNavigationBarAppearance];
-    
-}
-
 - (CGFloat)minimumViewHeight {
     return self.navigationBarView.frame.size.height + self.segmentBaseView.frame.size.height;
 }
@@ -70,20 +75,25 @@
 - (void)layoutBackgroundImageView {
     CGFloat navigationBarHeight = self.navigationBarView.frame.size.height;
     
+    CGFloat y = 0;
+    CGFloat height = 0;
+    
     CGRect frame = self.backgroundImageView.frame;
     
     CGFloat diff = self.view.frame.size.height - self.defaultViewHeight;
+    
     if (diff >= 0) {
-        frame.size.height = self.defaultBackgroundImageViewHeight + diff;
-        frame.origin.y = 0;
+        height = self.defaultBackgroundImageViewHeight + diff;
+        y = 0;
     } else {
-        frame.size.height = self.defaultBackgroundImageViewHeight;
-        if (diff > navigationBarHeight - self.defaultBackgroundImageViewHeight) {
-            frame.origin.y = diff;
-        } else {
-            frame.origin.y = navigationBarHeight - self.defaultBackgroundImageViewHeight;
-        }
+        height = self.defaultBackgroundImageViewHeight;
+        
+        y = MAX(diff, navigationBarHeight - self.defaultBackgroundImageViewHeight);
     }
+    
+    frame.size.height = height;
+    
+    frame.origin.y = y;
     
     self.backgroundImageView.frame = frame;
 }

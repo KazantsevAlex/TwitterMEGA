@@ -18,7 +18,6 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
-    [[TwitterAPI sharedManager]loginAction];
     [self getLatestLoans];
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];

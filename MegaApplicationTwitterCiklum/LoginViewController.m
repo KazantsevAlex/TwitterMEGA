@@ -17,10 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     TWTRLogInButton* logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session,
     NSError* error) {
         if (session) {
+            [[TwitterAPI sharedManager]loginAction];
             [self performSegueWithIdentifier:@"ToProfile" sender:self];
         } else {
             NSLog(@"error: %@", [error localizedDescription]);
@@ -28,6 +28,9 @@
     }];
     logInButton.center = self.view.center;
     [self.view addSubview:logInButton];
+}
+- (IBAction)loginAction:(id)sender {
+ 
 }
 
 - (void)didReceiveMemoryWarning {

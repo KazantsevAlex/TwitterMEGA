@@ -36,7 +36,10 @@
     }
     return self;
 }
-
+-(NSString *)getUserSessionName
+{
+    return [self.apiClient userID];
+}
 -(void)loginAction
 {
     [self.twitter logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {

@@ -90,8 +90,7 @@
     }
 }
 
--(NSArray *)getUserHomeTimeline
-{
+-(NSArray *)getUserHomeTimeline {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
                                                    inManagedObjectContext:self.context];
@@ -100,8 +99,9 @@
     self.tweetsArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
     return self.tweetsArray;
 }
--(NSArray *)getUserWithId:(NSString *) userID
-{
+
+-(NSArray *)getUserWithId:(NSString *) userID {
+    
 #warning  use predicate to get user wirh seleccted ID
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"User"

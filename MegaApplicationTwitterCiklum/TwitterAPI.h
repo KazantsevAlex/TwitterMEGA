@@ -13,7 +13,7 @@
 @interface TwitterAPI : NSObject
 
 
-
+-(NSString *)getUserSessionName;
 + (id)sharedManager;
 - (void)loginAction;
 -(void)getUserHomeTimelineWithCount:(NSString *)count

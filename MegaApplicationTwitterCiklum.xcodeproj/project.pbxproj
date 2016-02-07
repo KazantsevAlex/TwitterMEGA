@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C0B0B681C5E82EF00F49D93 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */; };
 		0C0B0B6B1C5E871300F49D93 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */; };
+		0C0B0BA91C64109000F49D93 /* ProfileHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0BA81C64109000F49D93 /* ProfileHeaderViewController.m */; };
+		0C0B0BAF1C6410DC00F49D93 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B0BAE1C6410DC00F49D93 /* ProfileTableViewController.m */; };
 		0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A871C5620A3002C2A4D /* TweetTableViewCell.m */; };
 		0CE65A8A1C5620A3002C2A4D /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65A881C5620A3002C2A4D /* TweetTableViewCell.xib */; };
 		0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65A8C1C5620B8002C2A4D /* TweetWithImageTableViewCell.m */; };
@@ -40,6 +42,10 @@
 		0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 		0C0B0B691C5E871300F49D93 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0C0B0BA71C64109000F49D93 /* ProfileHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderViewController.h; sourceTree = "<group>"; };
+		0C0B0BA81C64109000F49D93 /* ProfileHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderViewController.m; sourceTree = "<group>"; };
+		0C0B0BAD1C6410DC00F49D93 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		0C0B0BAE1C6410DC00F49D93 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 		0CE65A861C5620A3002C2A4D /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		0CE65A871C5620A3002C2A4D /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
 		0CE65A881C5620A3002C2A4D /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
@@ -98,6 +104,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0B0BA61C63B09100F49D93 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
+				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
+				A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */,
+				A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */,
+				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
+				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
+				0C0B0B661C5E82EF00F49D93 /* SplashScreenViewController.h */,
+				0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */,
+				0C0B0B691C5E871300F49D93 /* LoginViewController.h */,
+				0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */,
+				0C0B0BA71C64109000F49D93 /* ProfileHeaderViewController.h */,
+				0C0B0BA81C64109000F49D93 /* ProfileHeaderViewController.m */,
+				0C0B0BAD1C6410DC00F49D93 /* ProfileTableViewController.h */,
+				0C0B0BAE1C6410DC00F49D93 /* ProfileTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		0CE65A851C56203D002C2A4D /* TableViewItems */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,16 +179,7 @@
 				0CE65A851C56203D002C2A4D /* TableViewItems */,
 				A8F2B8B31C5267200031B5AE /* Model */,
 				A83F39E51C523EB2009D6F07 /* CoreData */,
-				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
-				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
-				A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */,
-				A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */,
-				0CE65A9C1C58EBA7002C2A4D /* TimeLineTableViewController.h */,
-				0CE65A9D1C58EBA7002C2A4D /* TimeLineTableViewController.m */,
-				0C0B0B661C5E82EF00F49D93 /* SplashScreenViewController.h */,
-				0C0B0B671C5E82EF00F49D93 /* SplashScreenViewController.m */,
-				0C0B0B691C5E871300F49D93 /* LoginViewController.h */,
-				0C0B0B6A1C5E871300F49D93 /* LoginViewController.m */,
+				0C0B0BA61C63B09100F49D93 /* ViewControllers */,
 				0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */,
 				A83F39D41C523E2B009D6F07 /* Assets.xcassets */,
 				A83F39D61C523E2B009D6F07 /* LaunchScreen.storyboard */,
@@ -360,6 +378,7 @@
 				A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */,
 				0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */,
 				0C0B0B6B1C5E871300F49D93 /* LoginViewController.m in Sources */,
+				0C0B0BAF1C6410DC00F49D93 /* ProfileTableViewController.m in Sources */,
 				0C0B0B681C5E82EF00F49D93 /* SplashScreenViewController.m in Sources */,
 				0CE65AA41C591187002C2A4D /* User.m in Sources */,
 				0CE65A9B1C5816C1002C2A4D /* TableViewDataSourse.m in Sources */,
@@ -372,6 +391,7 @@
 				A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */,
 				0CE65A9E1C58EBA7002C2A4D /* TimeLineTableViewController.m in Sources */,
 				A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */,
+				0C0B0BA91C64109000F49D93 /* ProfileHeaderViewController.m in Sources */,
 				0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */,
 				0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */,
 				A852E8171C56C4AD004C3477 /* TweetModel.m in Sources */,
