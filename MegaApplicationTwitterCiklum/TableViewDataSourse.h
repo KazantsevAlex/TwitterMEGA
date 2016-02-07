@@ -16,7 +16,7 @@
 
 @interface TableViewDataSource : NSObject <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) TweetModel *tweetObjects;
+//@property (nonatomic, strong) TweetModel *tweetObjects;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
 - (void)refreshArray;

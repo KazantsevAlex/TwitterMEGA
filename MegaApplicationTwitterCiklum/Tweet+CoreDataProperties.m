@@ -25,4 +25,5 @@
 @dynamic user;
 @dynamic mediaUrl;
 
+
 @end

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreDataStack.h"
-#import "TweetModel.h"
 #import "Tweet.h"
 #import <CoreData/CoreData.h>
 
