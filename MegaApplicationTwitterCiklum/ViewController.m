@@ -54,7 +54,7 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    NSString *count = @"70";
+    NSString *count = @"10";
     __block NSUInteger i = 0;
     [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
         for (NSDictionary *dict in object) {

@@ -15,7 +15,9 @@
 
 -(NSString *)getUserSessionName;
 + (id)sharedManager;
+
 - (void)loginAction;
+
 -(void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)tweetId
                               maxID:(NSString *)maxID
@@ -35,6 +37,7 @@
 
 -(void)getUserFollowers:(NSString *)count
                   block:(void(^)(id object))success;
+
 -(void)likeTweetwithID:(NSString *)idTweet
                  block:(void(^)(id object))success;
 
@@ -49,6 +52,8 @@
 
 -(void)unretweetStatusStatusWithText:(NSString *)statusText
                                block:(void(^)(id object))success;
+
+
 
 -(void)TESTs:(NSString *)statusText block:(void(^)(id object))success;
 

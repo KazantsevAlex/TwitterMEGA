@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TweetModel.h"
 #import "CoreDataInterface.h"
 #import "TweetTableViewCell.h"
 #import "TweetWithImageTableViewCell.h"

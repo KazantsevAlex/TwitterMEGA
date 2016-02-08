@@ -57,9 +57,9 @@
     
     NSError *er = nil;
     NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
-    // NSLog(@"%@",fecht);
     
-    if ([fecht count] == 0) {
+    if ([fecht count] == 0)
+    {
         User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
         [uniqUser fillUpUserEntityWithDictionary:dict];
         Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
@@ -85,9 +85,23 @@
     }
     else
     {
-        NSLog(@"Save complete");
         [self.context save:nil];
     }
+}
+
+-(void)clearTweetStore
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Tweet"];
+    [fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError *error;
+    NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *object in fetchedObjects)
+    {
+        [self.context deleteObject:object];
+    }
+    error = nil;
+    [self.context save:&error];
 }
 
 -(NSArray *)getUserHomeTimeline {
@@ -101,8 +115,7 @@
 }
 
 -(NSArray *)getUserWithId:(NSString *) userID {
-    
-#warning  use predicate to get user wirh seleccted ID
+    #warning  use predicate to get user wirh seleccted ID
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"User"
                                                    inManagedObjectContext:self.context];

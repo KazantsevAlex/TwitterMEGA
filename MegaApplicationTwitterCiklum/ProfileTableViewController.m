@@ -72,7 +72,7 @@
     [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
     forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
     
-    TweetModel *tweet = [self.tweetArray1 objectAtIndex:indexPath.row];
+    Tweet *tweet = [self.tweetArray1 objectAtIndex:indexPath.row];
     
     TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
     [cell fillCellWith:tweet];
