@@ -34,7 +34,7 @@
     self.userNameLabel.text = tweetModel.user.screen_name;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.favorite_count];
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.retweet_count];
-    
+
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",tweetModel.user.profile_image_url]];
     

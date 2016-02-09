@@ -144,6 +144,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A82AE9D11C689F9700968CCA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */,
+				A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */,
+				A83F39C81C523E2B009D6F07 /* AppDelegate.h */,
+				A83F39C91C523E2B009D6F07 /* AppDelegate.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		A83F39B91C523E2B009D6F07 = {
 			isa = PBXGroup;
 			children = (
@@ -165,16 +176,13 @@
 		A83F39C41C523E2B009D6F07 /* MegaApplicationTwitterCiklum */ = {
 			isa = PBXGroup;
 			children = (
-				A83F39C81C523E2B009D6F07 /* AppDelegate.h */,
-				A83F39C91C523E2B009D6F07 /* AppDelegate.m */,
+				A8F2B8B31C5267200031B5AE /* Model */,
+				A82AE9D11C689F9700968CCA /* New Group */,
 				A8F2B8B41C5269090031B5AE /* TwitterAPI.h */,
 				A8F2B8B51C5269090031B5AE /* TwitterAPI.m */,
-				A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */,
-				A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */,
 				0CE65A991C5816C1002C2A4D /* TableViewDataSourse.h */,
 				0CE65A9A1C5816C1002C2A4D /* TableViewDataSourse.m */,
 				0CE65A851C56203D002C2A4D /* TableViewItems */,
-				A8F2B8B31C5267200031B5AE /* Model */,
 				A83F39E51C523EB2009D6F07 /* CoreData */,
 				0C0B0BA61C63B09100F49D93 /* ViewControllers */,
 				0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */,

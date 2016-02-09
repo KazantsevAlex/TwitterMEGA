@@ -28,9 +28,7 @@
     [self.refreshControl addTarget:self
                             action:@selector(getLatestLoans)
                   forControlEvents:UIControlEventValueChanged];
-//#warning временные настройки
-//    self.tableView.estimatedRowHeight = 140.0;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
 }
 
 

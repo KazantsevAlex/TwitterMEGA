@@ -16,10 +16,11 @@
 
 + (id)sharedManager;
 - (void)addTweetWithDictionary:(NSDictionary *)dict;
-- (NSArray *)getTweet;
-- (NSArray *)getUser;
 - (NSUInteger)tweetsInStore;
 - (NSUInteger)usersInStore;
 - (NSArray *)getUserHomeTimeline;
+-(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId;
+-(User *)getUserWithId:(NSString *) userID;
+- (void)clearTweetStore;
 
 @end

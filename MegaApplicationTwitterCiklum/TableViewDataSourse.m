@@ -25,16 +25,27 @@
     if (self = [super init]) {
         [self configure:tableView];
         self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+
         [self refreshArray];
 
     }
     return self;
 }
 
+- (void)configure:(UITableView *)tableView {
+    
+    tableView.dataSource  = self;
+    tableView.delegate = self;
+    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
+    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
+    [tableView registerNib:[UINib nibWithNibName:@"TweetWithImageTableViewCell" bundle:nil]
+    forCellReuseIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
+}
+
 -(void)refreshArray
 {
-    //self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getTweet];
-    NSString *count = @"70";
+    
+    NSString *count = @"20";
     __block NSUInteger i = 0;
     [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
         for (NSDictionary *dict in object) {
@@ -43,24 +54,13 @@
             if ([object count] == i) {
                 self.sinceID = dict[@"id_str"];
             }
-            
-            // NSLog(@"IMAGE SEARCH %@",dict );
         }
     }];
-
+    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getUserHomeTimeline];
+    //[[CoreDataInterface sharedManager]clearTweetStore];
 }
 
-- (void)configure:(UITableView *)tableView {
-    
-    tableView.dataSource  = self;
-    tableView.delegate = self;
-    
-    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
-    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-    [tableView registerNib:[UINib nibWithNibName:@"TweetWithImageTableViewCell" bundle:nil]
-    forCellReuseIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
-}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -103,6 +103,20 @@
 //    }
 //   
     return height;
+}
+
+- (void)scrollViewDidScroll: (UIScrollView *)scroll {
+    // UITableView only moves in one direction, y axis
+    CGFloat currentOffset = scroll.contentOffset.y;
+    CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
+    
+    if (maximumOffset - currentOffset <= 150.0) {
+        NSLog(@"Endpoint more");
+    }
+    // Change 10.0 to adjust the distance from bottom
+    if (maximumOffset - currentOffset <= 10.0) {
+        NSLog(@"download more");
+    }
 }
 
 
