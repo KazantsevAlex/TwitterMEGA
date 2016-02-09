@@ -69,10 +69,7 @@
     else
     {
         User *user;
-        if ([fecht count] > 0)
-        {
-            user = [fecht objectAtIndex:0];
-        }
+        user = [fecht objectAtIndex:0];
         Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
         [tw fillUpTweetEntityWithDictionary:dict];
         [user addTweetsObject:tw];
@@ -92,8 +89,7 @@
 -(void)clearTweetStore
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Tweet"];
-    [fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    
+    [fetchRequest setIncludesPropertyValues:NO];
     NSError *error;
     NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *object in fetchedObjects)
@@ -114,15 +110,28 @@
     return self.tweetsArray;
 }
 
--(NSArray *)getUserWithId:(NSString *) userID {
-    #warning  use predicate to get user wirh seleccted ID
+-(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId {
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
+                                                   inManagedObjectContext:self.context];
+    [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", tweetId];
+    [request setPredicate:predicate];
+    NSError * er = nil;
+    NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return [array lastObject];
+}
+
+-(User *)getUserWithId:(NSString *) userID {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"User"
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userID];
+    [request setPredicate:predicate];
     NSError * er = nil;
-    self.userArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-    return self.userArray;
+    NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+    return [array lastObject];
 }
 
 - (NSUInteger)usersInStore {
