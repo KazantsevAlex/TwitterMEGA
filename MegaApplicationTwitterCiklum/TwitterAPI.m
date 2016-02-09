@@ -135,11 +135,7 @@
                        maxID:(NSString *)maxID
                        block:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"user_id": userID,
-                             @"count": count,
-                             @"since_id": sinceID,
-                             @"max_id":maxID
-                             };
+    NSDictionary *params =  [self setParamByStringLenghtSinceID:sinceID maxID:maxID count:count];
     NSString *url = @"https://api.twitter.com/1.1/statuses/user_timeline.json";
     NSString *type = @"GET";
     
