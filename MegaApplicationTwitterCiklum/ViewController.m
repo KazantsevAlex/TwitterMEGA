@@ -54,19 +54,26 @@
 
 - (IBAction)ButtonAction:(id)sender {
     
-    NSString *count = @"10";
-    __block NSUInteger i = 0;
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
-        for (NSDictionary *dict in object) {
-            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
-            i++;
-            if ([object count] == i) {
-                self.sinceID = dict[@"id_str"];
-            }
-            
-            // NSLog(@"IMAGE SEARCH %@",dict );
-        }
-    }];
+    
+    
+  [[TwitterAPI sharedManager]TESTs:@"" block:^(id object) {
+      NSLog(@"%@",object);
+      
+  }];
+    
+//    NSString *count = @"10";
+//    __block NSUInteger i = 0;
+//    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
+//        for (NSDictionary *dict in object) {
+//            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+//            i++;
+//            if ([object count] == i) {
+//                self.sinceID = dict[@"id_str"];
+//            }
+//            
+//            // NSLog(@"IMAGE SEARCH %@",dict );
+//        }
+//    }];
     
     
     //    [[TwitterAPI sharedManager]  getUserFollowers:@"20"block:^(id object) {

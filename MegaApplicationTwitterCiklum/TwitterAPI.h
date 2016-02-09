@@ -18,6 +18,9 @@
 
 - (void)loginAction;
 
+
+-(NSString *)getUserSessionID;
+
 -(void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)tweetId
                               maxID:(NSString *)maxID

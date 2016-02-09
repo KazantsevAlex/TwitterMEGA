@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataInterface.h"
+#import "TwitterAPI.h"
+#import "User.h"
 
 @interface ProfileHeaderViewController : UIViewController
 

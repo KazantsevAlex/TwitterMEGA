@@ -36,10 +36,12 @@
     }
     return self;
 }
--(NSString *)getUserSessionName
+
+-(NSString *)getUserSessionID
 {
     return [self.apiClient userID];
 }
+
 -(void)loginAction
 {
     [self.twitter logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
@@ -237,9 +239,9 @@
 
 -(void)TESTs:(NSString *)statusText block:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"status": statusText};
-    NSString *url = @"https://api.twitter.com/1.1/application/rate_limit_status.json";
-    NSString *type = @"POST";
+    NSDictionary *params = @{@"skip_status": @"false"};
+    NSString *url = @"https://api.twitter.com/1.1/account/verify_credentials.json";
+    NSString *type = @"GET";
     
     [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
         success(object);
