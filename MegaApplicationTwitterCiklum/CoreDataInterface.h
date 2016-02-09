@@ -13,11 +13,13 @@
 
 @interface CoreDataInterface : NSObject
 
+
 + (id)sharedManager;
--(void)addTweetWithDictionary:(NSDictionary *)dict;
+- (void)addTweetWithDictionary:(NSDictionary *)dict;
 - (NSArray *)getTweet;
 - (NSArray *)getUser;
 - (NSUInteger)tweetsInStore;
 - (NSUInteger)usersInStore;
+- (NSArray *)getUserHomeTimeline;
 
 @end

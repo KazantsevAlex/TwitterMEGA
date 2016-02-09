@@ -25,9 +25,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KWA-06-tgn">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KWA-06-tgn">
                         <rect key="frame" x="15" y="66" width="297" height="80"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VS5-hM-V1U">
-                        <rect key="frame" x="15" y="151" width="25" height="25"/>
+                        <rect key="frame" x="264" y="153" width="15" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" image="twtr-icn-heart-off"/>
                         <connections>
                             <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kj2-HX-bFs"/>
                         </connections>
@@ -55,21 +55,50 @@
                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SPQ-xb-6ah">
+                        <rect key="frame" x="292" y="153" width="20" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="retweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ziE-MN-gOg">
+                        <rect key="frame" x="226" y="153" width="20" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wjb-HM-ODU">
+                        <rect key="frame" x="193" y="156" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                        <state key="normal" image="retweet_default"/>
+                        <connections>
+                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qvl-vL-r14"/>
+                        </connections>
+                    </button>
                 </subviews>
+                <color key="backgroundColor" red="0.74118134469696972" green="0.74118134469696972" blue="0.74118134469696972" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageProfilePicture" destination="0FP-qb-KVZ" id="JLN-NF-E5q"/>
                 <outlet property="likeButton" destination="VS5-hM-V1U" id="DI5-Ix-XXI"/>
+                <outlet property="likeCountLabel" destination="SPQ-xb-6ah" id="mp5-5e-Cdc"/>
                 <outlet property="messageLabel" destination="KWA-06-tgn" id="Ata-Rs-q3x"/>
                 <outlet property="nameLabel" destination="wkF-fQ-cod" id="Edz-kX-JN7"/>
+                <outlet property="retweetButton" destination="Wjb-HM-ODU" id="E7D-f7-zVn"/>
+                <outlet property="retweetCountLabel" destination="ziE-MN-gOg" id="XyZ-lR-SUw"/>
                 <outlet property="timestampLabel" destination="aiH-Ts-6SS" id="GkB-L7-349"/>
                 <outlet property="userNameLabel" destination="7TB-yQ-TmB" id="7Nw-fO-dWw"/>
                 <outlet property="viewTweetContent" destination="H2p-sc-9uM" id="zkd-Cm-F7A"/>
             </connections>
-            <point key="canvasLocation" x="313" y="115"/>
+            <point key="canvasLocation" x="313" y="114.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="photo_placeholder" width="378" height="378"/>
+        <image name="retweet_default" width="75" height="72"/>
+        <image name="twtr-icn-heart-off" width="15" height="15"/>
     </resources>
 </document>
