@@ -11,7 +11,7 @@
 @interface CoreDataInterface()
 
 @property(nonatomic, strong) CoreDataStack *coreDataStack;
-@property(nonatomic, strong) NSManagedObjectContext * context;
+@property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) NSMutableArray *userArray;
 @property(nonatomic, strong) NSMutableArray *tweetsArray;
 

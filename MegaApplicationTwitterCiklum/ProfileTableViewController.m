@@ -75,7 +75,7 @@
     Tweet *tweet = [self.tweetArray1 objectAtIndex:indexPath.row];
     
     TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    [cell fillCellWith:tweet];
+ 
     
     return cell;
 }

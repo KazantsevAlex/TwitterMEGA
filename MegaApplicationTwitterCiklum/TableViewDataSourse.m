@@ -24,7 +24,8 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getUserHomeTimeline];
+        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+
         [self refreshArray];
 
     }
@@ -62,7 +63,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     Tweet *tweet = [self.tweetArray objectAtIndex:indexPath.row];
     
     UITableViewCell *tempCell;
@@ -79,22 +80,29 @@
         TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
         tempCell = cell;
         [cell fillCellWith:tweet];
-     //   NSLog(@"%@", tweet.mediaURL);
-
+        
     }
     
     
     return tempCell;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[CoreDataInterface sharedManager] tweetsInStore];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    return 185;
+    CGFloat height = 300;
+//    if ( [[[tableView cellForRowAtIndexPath:indexPath]reuseIdentifier]isEqualToString:NSStringFromClass([TweetTableViewCell class])]) {
+//        NSLog(@"tweet");
+//        height = 185;
+//    }
+//    if ([[[tableView cellForRowAtIndexPath:indexPath]reuseIdentifier]isEqualToString:NSStringFromClass([TweetWithImageTableViewCell class])]) {
+//        NSLog(@"media");
+//        height =300;
+//    }
+//   
+    return height;
 }
 
 - (void)scrollViewDidScroll: (UIScrollView *)scroll {
@@ -103,11 +111,11 @@
     CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
     
     if (maximumOffset - currentOffset <= 150.0) {
-        NSLog(@"Endpoint more");
+       // NSLog(@"Endpoint more");
     }
     // Change 10.0 to adjust the distance from bottom
     if (maximumOffset - currentOffset <= 10.0) {
-        NSLog(@"download more");
+       // NSLog(@"download more");
     }
 }
 
