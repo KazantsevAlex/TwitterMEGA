@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
+#import "TwitterAPI.h"
+#import "CoreDataInterface.h"
 
 @interface TweetTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
 

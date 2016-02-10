@@ -133,6 +133,21 @@
     NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
     return [array lastObject];
 }
+-(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav
+{
+    Tweet *tweet = [self getUserHomeTimelineTweetWithId:tweetID];
+    tweet.favorited = [NSNumber numberWithBool:fav];
+    
+    NSError *errorSave = nil;
+    if (![self.context save:&errorSave])
+    {
+        NSLog(@"error save object model");
+    }
+    else
+    {
+        [self.context save:nil];
+    }
+}
 
 - (NSUInteger)usersInStore {
     return [self.userArray count];

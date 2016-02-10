@@ -8,6 +8,12 @@
 
 #import "TweetTableViewCell.h"
 
+@interface TweetTableViewCell()
+
+@property (nonatomic, strong)Tweet *tw;
+
+@end
+
 @implementation TweetTableViewCell
 
 - (void)awakeFromNib {
@@ -21,7 +27,7 @@
     [super setSelected:selected animated:animated];
 }
 - (void)fillCellWith:(Tweet *)tweetModel {
-    
+    self.tw = tweetModel;
     self.messageLabel.text = tweetModel.text;
     self.timestampLabel.text = tweetModel.created_at;
     self.likeButton.selected = [NSNumber numberWithBool:tweetModel.favorited];
@@ -43,18 +49,25 @@
 }
 
 #warning config
-- (IBAction)likeUnlikeButton:(id)sender {
+- (IBAction)likeUnlikeButton:(id)sender  {
     
-    self.likeButton.selected = ![self.likeButton isSelected];
-    if (self.likeButton.selected)
+     NSString *s = self.tw.id_str;
+       
+    if ([NSNumber numberWithBool:self.tw.favorited])
     {
         [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
-        NSLog(@"Selected");
+        [[TwitterAPI sharedManager]unlikeTweetwithID:self.tw.id_str block:^(id object) {
+            NSLog(@"%@",[object valueForKey:@"favorited"]);
+            [[CoreDataInterface sharedManager]tweetWithIDFavorited:self.tw.id_str favorited:NO];
+        }];
     }
     else
     {
-        [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-off.png"] forState:UIControlStateNormal];
-        NSLog(@"Un Selected");    
+        [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
+        [[TwitterAPI sharedManager]likeTweetwithID:self.tw.id_str block:^(id object) {
+             NSLog(@"%@",[object valueForKey:@"favorited"]);
+             [[CoreDataInterface sharedManager]tweetWithIDFavorited:self.tw.id_str favorited:YES];
+        }];
     }
 }
 

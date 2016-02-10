@@ -192,7 +192,7 @@
 -(void)unlikeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"id": idTweet,
-                             @"include_entities": [NSNumber numberWithBool:false]};
+                             @"include_entities": @"false"};
     NSString *url = @"https://api.twitter.com/1.1/favorites/destroy.json";
     NSString *type = @"POST";
     
