@@ -8,6 +8,8 @@ target 'MegaApplicationTwitterCiklum' do
 pod 'Fabric'
 pod 'TwitterKit'
 pod 'TwitterCore'
+pod 'DateTools'
+pod 'MHPrettyDate', '~> 1.1.1'
 
 end
 

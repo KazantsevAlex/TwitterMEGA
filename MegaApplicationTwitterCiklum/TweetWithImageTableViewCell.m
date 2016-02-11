@@ -8,6 +8,12 @@
 
 #import "TweetWithImageTableViewCell.h"
 
+@interface TweetWithImageTableViewCell ()
+
+@property (strong, nonatomic) NSString *tweetId;
+
+@end
+
 @implementation TweetWithImageTableViewCell
 
 - (void)awakeFromNib {
@@ -26,11 +32,19 @@
 - (void)fillCellWith:(Tweet *)tweetModel {
     
     self.messageLabel.text = tweetModel.text;
-    self.timestampLabel.text = tweetModel.created_at;
-    self.likeButton.selected = [NSNumber numberWithBool:tweetModel.favorited];
+    self.likeButton.selected = tweetModel.favorited.boolValue;
+    self.retweetButton.selected = tweetModel.retweeted.boolValue;
     self.nameLabel.text = tweetModel.user.name;
     self.userNameLabel.text = tweetModel.user.screen_name;
+    self.likeCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.favorite_count];
+    self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.retweet_count];
+    self.tweetId = tweetModel.id_str;
     
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+    
+    self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
+
     
     [self getImage:tweetModel.user.profile_image_url view:self.imageProfilePicture];
     
@@ -53,8 +67,47 @@
         }
     }];
     [task resume];
+}
 
+- (IBAction)likeUnlikeButton:(id)sender {
     
+    TwitterAPI *twitterAPI = [TwitterAPI sharedManager];
+    
+    if (self.likeButton.selected == 0)
+    {
+        [twitterAPI likeTweetwithID:self.tweetId block:^(id object) {
+            [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
+            self.likeButton.selected = 1;
+        }];
+    }
+    else if (self.likeButton.selected == 1)
+    {
+        [twitterAPI unlikeTweetwithID:self.tweetId block:^(id object) {
+            [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-off.png"] forState:UIControlStateNormal];
+            self.likeButton.selected = 0;
+            
+        }];
+    }
+    //        self.tweet.favoritesCount = [NSNumber numberWithInt:[self.tweet.favoritesCount intValue]
+}
+
+- (IBAction)retweetButton:(id)sender {
+    
+    TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
+    
+    if (self.retweetButton.selected == 0) {
+        [twitterRetweetApi retweetStatusStatusWithText:self.tweetId block:^(id object) {
+            [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
+            self.retweetButton.selected = 1;
+        }];
+    }
+    else if (self.retweetButton.selected == 1)
+    {
+        [twitterRetweetApi retweetStatusStatusWithText:self.tweetId block:^(id object) {
+            [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
+            self.retweetButton.selected = 0;
+        }];
+    }
 }
 
 @end
