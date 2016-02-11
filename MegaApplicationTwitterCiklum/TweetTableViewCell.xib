@@ -55,7 +55,7 @@
                         <state key="normal" image="twtr-icn-heart-off"/>
                         <state key="selected" image="twtr-icn-heart-on.png"/>
                         <connections>
-                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kj2-HX-bFs"/>
+                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="etQ-mX-F6a"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiH-Ts-6SS">
@@ -92,7 +92,7 @@
                         <state key="normal" image="retweet_default"/>
                         <state key="selected" image="retweet_on"/>
                         <connections>
-                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qvl-vL-r14"/>
+                            <action selector="retweetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7iQ-fm-clS"/>
                         </connections>
                     </button>
                 </subviews>
@@ -129,11 +129,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageProfilePicture" destination="0FP-qb-KVZ" id="JLN-NF-E5q"/>
-                <outlet property="likeButton" destination="VS5-hM-V1U" id="DI5-Ix-XXI"/>
+                <outlet property="likeButton" destination="VS5-hM-V1U" id="lWi-ic-8v5"/>
                 <outlet property="likeCountLabel" destination="SPQ-xb-6ah" id="mp5-5e-Cdc"/>
                 <outlet property="messageLabel" destination="KWA-06-tgn" id="Ata-Rs-q3x"/>
                 <outlet property="nameLabel" destination="wkF-fQ-cod" id="Edz-kX-JN7"/>
-                <outlet property="retweetButton" destination="Wjb-HM-ODU" id="E7D-f7-zVn"/>
+                <outlet property="retweetButton" destination="Wjb-HM-ODU" id="rsh-0V-apa"/>
                 <outlet property="retweetCountLabel" destination="ziE-MN-gOg" id="XyZ-lR-SUw"/>
                 <outlet property="timestampLabel" destination="aiH-Ts-6SS" id="GkB-L7-349"/>
                 <outlet property="userNameLabel" destination="7TB-yQ-TmB" id="7Nw-fO-dWw"/>

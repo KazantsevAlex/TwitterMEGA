@@ -57,7 +57,7 @@
                         <state key="normal" title="Button" image="twtr-icn-heart-off"/>
                         <state key="selected" image="twtr-icn-heart-on"/>
                         <connections>
-                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vLG-Iz-Leh"/>
+                            <action selector="likeUnlikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nmF-eA-17j"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le1-e5-51X">
@@ -97,7 +97,7 @@
                         <state key="normal" image="retweet_default"/>
                         <state key="selected" image="retweet_on"/>
                         <connections>
-                            <action selector="retweetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cpN-Dn-jDS"/>
+                            <action selector="retweetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TvW-sj-WiX"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09K-mZ-FXA">
@@ -148,12 +148,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageProfilePicture" destination="4Zj-pF-qjW" id="kqr-e4-uwU"/>
-                <outlet property="likeButton" destination="Jx8-pn-Bnj" id="qUb-r9-aqv"/>
+                <outlet property="likeButton" destination="Jx8-pn-Bnj" id="wMk-rm-l8R"/>
                 <outlet property="likeCountLabel" destination="le1-e5-51X" id="fI7-jB-BRA"/>
                 <outlet property="mediaImageTweet" destination="VIF-TO-4nr" id="Dra-Z5-VZe"/>
                 <outlet property="messageLabel" destination="MHo-Qb-Y9g" id="zch-g4-c2X"/>
                 <outlet property="nameLabel" destination="qBK-VZ-qXU" id="Afr-Op-9lJ"/>
-                <outlet property="retweetButton" destination="3QJ-cy-49Y" id="df1-O5-K9W"/>
+                <outlet property="retweetButton" destination="3QJ-cy-49Y" id="cRD-0p-cCo"/>
                 <outlet property="retweetCountLabel" destination="1If-OY-YOa" id="nTC-qp-POE"/>
                 <outlet property="timestampLabel" destination="09K-mZ-FXA" id="G4B-ru-PbU"/>
                 <outlet property="userNameLabel" destination="IS6-AZ-Yuc" id="waW-fd-xhx"/>

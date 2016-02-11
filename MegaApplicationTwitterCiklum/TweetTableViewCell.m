@@ -71,9 +71,10 @@
         [twitterLikeApi likeTweetwithID:self.tweetM.id_str block:^(id object) {
             [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
             [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:YES];
-            self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] + 1];
             self.likeButton.selected = 1;
         }];
+        self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] + 1];
+
     }
     else if (self.likeButton.selected == 1)
     {
@@ -82,50 +83,33 @@
             [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:NO];
             self.likeButton.selected = 0;
         }];
+        self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] - 1];
     }
+    self.likeCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.favorite_count];
 }
 
+ - (IBAction)retweetButton:(id)sender {
 
-
-    
-//    if (self.likeButton.selected)
-//
-//    {
-//        [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
-//        [[TwitterAPI sharedManager]unlikeTweetwithID:self.tw.id_str block:^(id object) {
-//            NSLog(@"%@",[object valueForKey:@"favorited"]);
-//            [[CoreDataInterface sharedManager]tweetWithIDFavorited:self.tw.id_str favorited:NO];
-//=======
-//        [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
-//        [[TwitterAPI sharedManager]likeTweetwithID:self.tw.id_str block:^(id object) {
-//             NSLog(@"%@",[object valueForKey:@"favorited"]);
-//             [[CoreDataInterface sharedManager]tweetWithIDFavorited:self.tw.id_str favorited:YES];
-//        }];
-//>>>>>>> 3a1eae3bb22b55a6f26f41e41204823f83cef665
-//    }
-////        self.tweet.favoritesCount = [NSNumber numberWithInt:[self.tweet.favoritesCount intValue]
-//}
-//
-//
-- (IBAction)retweetButton:(id)sender {
-
-    TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
-    
-    if (self.retweetButton.selected == 0) {
-        [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
-            [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
-            self.retweetButton.selected = 1;
-        }];
-    }
-    else if (self.retweetButton.selected == 1)
-    {
-        [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
-            [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
-            self.retweetButton.selected = 0;
-        }];
-    }
+     TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
+     
+     if (self.retweetButton.selected == 0) {
+         [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
+             [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
+             self.retweetButton.selected = 1;
+         }];
+         self.tweetM.retweet_count = [NSNumber numberWithLong:[self.tweetM.retweet_count integerValue] + 1];
+         
+     }
+     else if (self.retweetButton.selected == 1)
+     {
+         [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
+             [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
+             self.retweetButton.selected = 0;
+         }];
+         self.tweetM.retweet_count = [NSNumber numberWithLong:[self.tweetM.retweet_count integerValue] - 1];
+     }
+     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.retweet_count];
 }
-
 
 
 -(void)prepareForReuse
