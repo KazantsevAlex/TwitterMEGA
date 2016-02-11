@@ -105,11 +105,11 @@
     CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
     
     if (maximumOffset - currentOffset <= 150.0) {
-        NSLog(@"Endpoint more");
+       // NSLog(@"Endpoint more");
     }
     // Change 10.0 to adjust the distance from bottom
     if (maximumOffset - currentOffset <= 10.0) {
-        NSLog(@"download more");
+       // NSLog(@"download more");
     }
 }
 

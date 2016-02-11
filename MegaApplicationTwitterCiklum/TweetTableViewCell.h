@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
+#import "TwitterAPI.h"
 #import "CoreDataInterface.h"
 #import "TwitterAPI.h"
 #import "MHPrettyDate.h"

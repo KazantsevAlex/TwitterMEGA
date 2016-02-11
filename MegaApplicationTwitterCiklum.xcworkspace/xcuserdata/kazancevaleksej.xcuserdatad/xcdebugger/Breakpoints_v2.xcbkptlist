@@ -25,28 +25,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MegaApplicationTwitterCiklum/ProfileHeaderViewController.m"
-            timestampString = "476732842.281943"
+            filePath = "MegaApplicationTwitterCiklum/TweetWithImageTableViewCell.m"
+            timestampString = "476885949.274067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-fillProfileView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MegaApplicationTwitterCiklum/TweetTableViewCell.m"
-            timestampString = "476880940.088939"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-likeUnlikeButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -54,15 +38,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MegaApplicationTwitterCiklum/TweetTableViewCell.m"
-            timestampString = "476880940.088939"
+            filePath = "MegaApplicationTwitterCiklum/TweetWithImageTableViewCell.m"
+            timestampString = "476885957.634712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-likeUnlikeButton:"
             landmarkType = "5">
          </BreakpointContent>

@@ -10,7 +10,7 @@
 
 @interface TweetWithImageTableViewCell ()
 
-@property (strong, nonatomic) NSString *tweetId;
+@property (nonatomic, strong) Tweet *tweetM;;
 
 @end
 
@@ -38,7 +38,6 @@
     self.userNameLabel.text = tweetModel.user.screen_name;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.favorite_count];
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.retweet_count];
-    self.tweetId = tweetModel.id_str;
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
@@ -71,24 +70,26 @@
 
 - (IBAction)likeUnlikeButton:(id)sender {
     
-    TwitterAPI *twitterAPI = [TwitterAPI sharedManager];
+    TwitterAPI *twitterLikeApi = [TwitterAPI sharedManager];
+    CoreDataInterface *coreDataLike = [CoreDataInterface sharedManager];
     
     if (self.likeButton.selected == 0)
     {
-        [twitterAPI likeTweetwithID:self.tweetId block:^(id object) {
+        [twitterLikeApi likeTweetwithID:self.tweetM.id_str block:^(id object) {
             [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
+            [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:YES];
+//            self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] + 1];
             self.likeButton.selected = 1;
         }];
     }
     else if (self.likeButton.selected == 1)
     {
-        [twitterAPI unlikeTweetwithID:self.tweetId block:^(id object) {
+        [twitterLikeApi unlikeTweetwithID:self.tweetM.id_str block:^(id object) {
             [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-off.png"] forState:UIControlStateNormal];
+            [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:NO];
             self.likeButton.selected = 0;
-            
         }];
     }
-    //        self.tweet.favoritesCount = [NSNumber numberWithInt:[self.tweet.favoritesCount intValue]
 }
 
 - (IBAction)retweetButton:(id)sender {
@@ -96,14 +97,14 @@
     TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
     
     if (self.retweetButton.selected == 0) {
-        [twitterRetweetApi retweetStatusStatusWithText:self.tweetId block:^(id object) {
+        [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
             [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
             self.retweetButton.selected = 1;
         }];
     }
     else if (self.retweetButton.selected == 1)
     {
-        [twitterRetweetApi retweetStatusStatusWithText:self.tweetId block:^(id object) {
+        [twitterRetweetApi retweetStatusStatusWithText:self.tweetM.id_str block:^(id object) {
             [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
             self.retweetButton.selected = 0;
         }];
