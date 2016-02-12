@@ -12,14 +12,11 @@
 
 @interface TwitterAPI : NSObject
 
+@property(nonatomic, strong, readonly)NSString *ownUserID;
 
--(NSString *)getUserSessionName;
 + (id)sharedManager;
 
 - (void)loginAction;
-
-
--(NSString *)getUserSessionID;
 
 -(void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)tweetId

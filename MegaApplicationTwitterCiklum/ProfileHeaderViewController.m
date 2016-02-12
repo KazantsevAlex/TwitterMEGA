@@ -35,7 +35,7 @@
     [super viewDidLoad];
     [self configProfileViewStyle];
     
-    [self fillProfileView:[[TwitterAPI sharedManager]getUserSessionID]];
+    [self fillProfileView:[[TwitterAPI sharedManager]ownUserID]];
     
     
 }
