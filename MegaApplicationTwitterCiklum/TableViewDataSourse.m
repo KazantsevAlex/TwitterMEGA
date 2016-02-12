@@ -10,7 +10,7 @@
 
 @interface TableViewDataSource ()
 
-@property (strong, nonatomic) CoreDataInterface *interfaceQ;
+//@property (strong, nonatomic) CoreDataInterface *interfaceQ;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *tweetArray;
 @property (nonatomic, strong) __block NSString *sinceID;
@@ -36,14 +36,16 @@
     
     tableView.dataSource  = self;
     tableView.delegate = self;
+    
     [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
     forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
+    
     [tableView registerNib:[UINib nibWithNibName:@"TweetWithImageTableViewCell" bundle:nil]
     forCellReuseIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
+    
 }
 
--(void)refreshArray
-{
+- (void)refreshArray {
     
     NSString *count = @"20";
     __block NSUInteger i = 0;
@@ -78,32 +80,24 @@
     else {
         tempCell = nil;
         TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-        tempCell = cell;
         [cell fillCellWith:tweet];
-        
+        tempCell = cell;
     }
-    
-    
     return tempCell;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [[CoreDataInterface sharedManager] tweetsInStore];
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 300;
-//    if ( [[[tableView cellForRowAtIndexPath:indexPath]reuseIdentifier]isEqualToString:NSStringFromClass([TweetTableViewCell class])]) {
-//        NSLog(@"tweet");
-//        height = 185;
-//    }
-//    if ([[[tableView cellForRowAtIndexPath:indexPath]reuseIdentifier]isEqualToString:NSStringFromClass([TweetWithImageTableViewCell class])]) {
-//        NSLog(@"media");
-//        height =300;
-//    }
-//   
-    return height;
+         
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 185;
+//}
 
 - (void)scrollViewDidScroll: (UIScrollView *)scroll {
     // UITableView only moves in one direction, y axis

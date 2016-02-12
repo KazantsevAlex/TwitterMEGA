@@ -212,9 +212,9 @@
     }];
 }
 
--(void)retweetStatusStatusWithText:(NSString *)statusText block:(void(^)(id object))success
+-(void)retweetStatusStatusWithText:(NSString *)idTweet block:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"status": statusText};
+    NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/retweet/:id.json";
     NSString *type = @"POST";
     
@@ -223,9 +223,9 @@
     }];
 }
 
--(void)unretweetStatusStatusWithText:(NSString *)statusText block:(void(^)(id object))success
+-(void)unretweetStatusStatusWithText:(NSString *)idTweet block:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"status": statusText};
+    NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";
     NSString *type = @"POST";
     
