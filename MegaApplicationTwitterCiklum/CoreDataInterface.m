@@ -131,6 +131,7 @@
     [request setPredicate:predicate];
     NSError * er = nil;
     NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+
     return [array lastObject];
 }
 -(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav

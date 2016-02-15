@@ -12,6 +12,7 @@
 
 @property(nonatomic, strong) Twitter *twitter;
 @property (nonatomic, strong) TWTRAPIClient *apiClient;
+@property(nonatomic, strong)NSString *ownUserID;
 
 @end
 
@@ -50,6 +51,7 @@
         if (session)
         {
             [self initApiClient:[session userID]];
+            self.ownUserID = [session userID];
             NSLog(@"log in as %@", [session userName]);
         }
         else
