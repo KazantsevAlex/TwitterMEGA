@@ -46,7 +46,7 @@
 - (IBAction)likeButtonAction:(id)sender {
     
     [ [TwitterAPI sharedManager]TESTs:@"s" block:^(id object) {
-        NSLog(@"%@",object);
+        NSLog(@"%@",object[@"id"]);
     }];
 }
 
@@ -54,17 +54,53 @@
 - (IBAction)ButtonAction:(id)sender {
     
     
+//    
+//  [[TwitterAPI sharedManager]getTimelineUserWithID:@"2941100471" count:@"20" sinceID:@"" maxID:@"" block:^(id object) {
+//      for (NSDictionary *dict in object) {
+//          NSLog(@"count %lu --- twxt %@", [object count], [dict valueForKey:@"text"]) ;
+//      }
+//      
+//  }];
     
-  [[TwitterAPI sharedManager]getTimelineUserWithID:@"2941100471" count:@"20" sinceID:@"" maxID:@"" block:^(id object) {
-      for (NSDictionary *dict in object) {
-          NSLog(@"count %lu --- twxt %@", [object count], [dict valueForKey:@"text"]) ;
-      }
-      
-  }];
+    __block NSMutableArray *usersID;
+[[TwitterAPI sharedManager]getUserFriend:^(id object) {
     
-//    NSString *count = @"10";
+    usersID = [NSMutableArray arrayWithCapacity:[object count]];
+    for (int i = 0; i < [object[@"ids"] count]; i++ )
+    {
+        if (usersID != nil) {
+        //[usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+        [usersID addObject:[object[@"ids"]objectAtIndex:i]];
+        }
+        else
+        {
+            NSLog(@"user is NIL");
+        }
+    }
+//    
+    NSLog(@"%@", usersID);
+//
+    
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
+            for (NSDictionary *dict in object) {
+                [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+            }
+        }];
+    
+    for (int i = 0; i < [usersID count]; i++) {
+     User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+        NSLog(@"name = %@",k.name );
+    }
+}];
+    
+    
+    //    StoreCoordinator *store = [StoreCoordinator new];
+//    
+//    [store setFavoritedTweetWithId:@"698989521728356352" favorited:false];
+    
+//    NSString *count = @"70";
 //    __block NSUInteger i = 0;
-//    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
+//    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:@"" block:^(id object) {
 //        for (NSDictionary *dict in object) {
 //            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
 //            i++;

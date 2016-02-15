@@ -168,9 +168,9 @@
     
 }
 
--(void)getUserFollowers:(NSString *)count block:(void(^)(id object))success
+-(void)getUserFollowers:(void(^)(id object))success
 {
-    NSDictionary *params = @{@"count": count};
+    NSDictionary *params = @{};
     NSString *url = @"https://api.twitter.com/1.1/followers/list.json";
     NSString *type = @"GET";
     
@@ -178,6 +178,18 @@
         success(object);
     }];
 }
+
+-(void)getUserFriend:(void(^)(id object))success
+{
+    NSDictionary *params = @{};
+    NSString *url = @"https://api.twitter.com/1.1/friends/ids.json";
+    NSString *type = @"GET";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
+
 
 -(void)likeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
 {
@@ -230,6 +242,21 @@
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";
     NSString *type = @"POST";
+    
+    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
+        success(object);
+    }];
+}
+
+
+
+-(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success
+{
+    
+    NSString *ids =[arrayWithIds componentsJoinedByString:@","];
+    NSDictionary *params = @{@"user_id": ids};
+    NSString *url = @"https://api.twitter.com/1.1/users/lookup.json";
+    NSString *type = @"GET";
     
     [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
         success(object);

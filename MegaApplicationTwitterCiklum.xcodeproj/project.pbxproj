@@ -22,6 +22,7 @@
 		0CE65AAC1C5B9B77002C2A4D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */; };
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
 		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
+		A8383C731C70A41200518443 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8383C721C70A41200518443 /* Parser.m */; };
 		A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
 		A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C91C523E2B009D6F07 /* AppDelegate.m */; };
@@ -33,6 +34,7 @@
 		A83F39E41C523EA8009D6F07 /* CoreDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39E31C523EA8009D6F07 /* CoreDataInterface.m */; };
 		A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */; };
 		A83F39F11C524451009D6F07 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39EF1C524451009D6F07 /* Tweet.m */; };
+		A840E0D51C6F537C009BB0D2 /* StoreCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = A840E0D41C6F537C009BB0D2 /* StoreCoordinator.m */; };
 		A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2B8B51C5269090031B5AE /* TwitterAPI.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
 		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
 		A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorAlertView.m; sourceTree = "<group>"; };
+		A8383C711C70A41200518443 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		A8383C721C70A41200518443 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEditViewController.h; sourceTree = "<group>"; };
 		A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileEditViewController.m; sourceTree = "<group>"; };
 		A83F39C21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaApplicationTwitterCiklum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,8 @@
 		A83F39ED1C524451009D6F07 /* Tweet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tweet+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A83F39EE1C524451009D6F07 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		A83F39EF1C524451009D6F07 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		A840E0D31C6F537C009BB0D2 /* StoreCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreCoordinator.h; sourceTree = "<group>"; };
+		A840E0D41C6F537C009BB0D2 /* StoreCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreCoordinator.m; sourceTree = "<group>"; };
 		A8F2B8B41C5269090031B5AE /* TwitterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterAPI.h; sourceTree = "<group>"; };
 		A8F2B8B51C5269090031B5AE /* TwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAPI.m; sourceTree = "<group>"; };
 		B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,10 @@
 				A8F2B8B51C5269090031B5AE /* TwitterAPI.m */,
 				0CE65A991C5816C1002C2A4D /* TableViewDataSourse.h */,
 				0CE65A9A1C5816C1002C2A4D /* TableViewDataSourse.m */,
+				A840E0D31C6F537C009BB0D2 /* StoreCoordinator.h */,
+				A840E0D41C6F537C009BB0D2 /* StoreCoordinator.m */,
+				A8383C711C70A41200518443 /* Parser.h */,
+				A8383C721C70A41200518443 /* Parser.m */,
 				0CE65A851C56203D002C2A4D /* TableViewItems */,
 				A83F39E51C523EB2009D6F07 /* CoreData */,
 				0C0B0BA61C63B09100F49D93 /* ViewControllers */,
@@ -396,6 +406,8 @@
 				A83F39D31C523E2B009D6F07 /* DataModel.xcdatamodeld in Sources */,
 				0C0B0BA91C64109000F49D93 /* ProfileHeaderViewController.m in Sources */,
 				0CE65A891C5620A3002C2A4D /* TweetTableViewCell.m in Sources */,
+				A840E0D51C6F537C009BB0D2 /* StoreCoordinator.m in Sources */,
+				A8383C731C70A41200518443 /* Parser.m in Sources */,
 				0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

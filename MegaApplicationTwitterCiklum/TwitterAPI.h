@@ -17,6 +17,9 @@
 + (id)sharedManager;
 
 - (void)loginAction;
+-(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
+
+-(void)getUserFriend:(void(^)(id object))success;
 
 -(void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)tweetId
@@ -35,8 +38,7 @@
                userUrl:(NSString *)userUrl
                  block:(void(^)(id object))success;
 
--(void)getUserFollowers:(NSString *)count
-                  block:(void(^)(id object))success;
+-(void)getUserFollowers:(void(^)(id object))success;
 
 -(void)likeTweetwithID:(NSString *)idTweet
                  block:(void(^)(id object))success;
