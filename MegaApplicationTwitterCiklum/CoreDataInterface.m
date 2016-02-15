@@ -86,6 +86,11 @@
     }
 }
 
+-(void)addUserWithDictionary:(NSDictionary *)dict
+{
+    
+}
+
 -(void)clearTweetStore
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Tweet"];
@@ -137,7 +142,7 @@
 -(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav
 {
     Tweet *tweet = [self getUserHomeTimelineTweetWithId:tweetID];
-    tweet.favorited = [NSNumber numberWithBool:fav];
+    tweet.favorited = [NSNumber numberWithBool:[NSNumber numberWithBool:fav]];
     
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])

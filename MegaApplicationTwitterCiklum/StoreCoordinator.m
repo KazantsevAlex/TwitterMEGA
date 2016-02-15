@@ -20,11 +20,12 @@ static NSString *tweetsCount = @"100";
 @property(nonatomic, strong) NSString *userSinceId;
 @property(nonatomic, strong) NSString *userMaxId;
 
+@property(nonatomic, strong)NSString *ownUserID;
+
 
 @end
 
 @implementation StoreCoordinator
-
 
 -(NSArray *)getOwnTimeLinePullToRefresh
 {
@@ -38,6 +39,7 @@ static NSString *tweetsCount = @"100";
 
 -(NSArray *)getOwnTimeLine
 {
+    self.ownUserID = [[TwitterAPI sharedManager]ownUserID];
     return [self getTimelineUser:@"" maxId:@""];
 }
 
@@ -127,16 +129,39 @@ static NSString *tweetsCount = @"100";
 }
 -(void)setFavoritedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited
 {
-    [[TwitterAPI sharedManager]likeTweetwithID:tweetID block:^(id object) {
-        
-        //check error code
-        if (!object[@"error"]) {
-            [[CoreDataInterface sharedManager]tweetWithIDFavorited:tweetID favorited:favorited];
-        }
-    }];
+    if (favorited == true) {
+        [[TwitterAPI sharedManager]likeTweetwithID:tweetID block:^(id object) {
+            
+            //check error code
+            if (!object[@"error"]) {
+                [[CoreDataInterface sharedManager]tweetWithIDFavorited:tweetID favorited:favorited];
+            }
+        }];
+    }
+    else
+    {
+        [[TwitterAPI sharedManager]unlikeTweetwithID:tweetID block:^(id object) {
+            //check error code
+            if (!object[@"error"]) {
+                [[CoreDataInterface sharedManager]tweetWithIDFavorited:tweetID favorited:favorited];
+            }
+        }];
+    }
 }
--(void)setRetweetedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited
+-(void)setRetweetedTweetWithId:(NSString *)tweetID retweted:(BOOL)retweeted
 {
+    if (retweeted == true) {
+        [[TwitterAPI sharedManager]retweetStatusStatusWithText:tweetID block:^(id object) {
+            //some code
+        }];
+    }
+    else
+    {
+        [[TwitterAPI sharedManager]unretweetStatusStatusWithText:tweetID block:^(id object) {
+            //code in core data to decrise varible
+        }];
+    }
+    
     
 }
 -(void)postStatus:(NSString *)text
