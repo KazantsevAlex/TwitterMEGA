@@ -50,10 +50,10 @@
 -(void)postStatusWithText:(NSString *)statusText
                     block:(void(^)(id object))success;
 
--(void)retweetStatusStatusWithText:(NSString *)statusText
+-(void)retweetStatus:(NSString *)statusText
                              block:(void(^)(id object))success;
 
--(void)unretweetStatusStatusWithText:(NSString *)statusText
+-(void)unretweetStatus:(NSString *)statusText
                                block:(void(^)(id object))success;
 
 

@@ -14,7 +14,6 @@
 @property (nonatomic, strong) CoreDataInterface *interface;
 @property (nonatomic, strong) __block NSString *sinceID;
 
-
 @end
 
 @implementation ViewController

@@ -11,6 +11,9 @@
 
 @interface LoginViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+
 @end
 
 @implementation LoginViewController
@@ -29,8 +32,17 @@
     logInButton.center = self.view.center;
     [self.view addSubview:logInButton];
 }
+
+- (void)someMethodThatTakesABlock:(void (^)(TwitterAPI *))blockName {
+    
+    [[TwitterAPI sharedManager] loginAction];
+    
+}
+
 - (IBAction)loginAction:(id)sender {
- 
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

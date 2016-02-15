@@ -20,7 +20,7 @@
 {
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:2.0 delay:0.2 options:0 animations:^{
+    [UIView animateWithDuration:1.0 delay:0.2 options:0 animations:^{
         CGRect frame = self.splashScreenImageView.frame;
         frame.origin.y = 70.0;
         self.splashScreenImageView.frame = frame;

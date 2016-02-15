@@ -37,6 +37,8 @@
     return self;
 }
 
+
+
 -(NSString *)getUserSessionID
 {
     return [self.apiClient userID];
@@ -210,7 +212,7 @@
     }];
 }
 
--(void)retweetStatusStatusWithText:(NSString *)idTweet block:(void(^)(id object))success
+-(void)retweetStatus:(NSString *)idTweet block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/retweet/:id.json";
@@ -221,7 +223,7 @@
     }];
 }
 
--(void)unretweetStatusStatusWithText:(NSString *)idTweet block:(void(^)(id object))success
+-(void)unretweetStatus:(NSString *)idTweet block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";
