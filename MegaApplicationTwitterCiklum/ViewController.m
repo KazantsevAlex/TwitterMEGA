@@ -84,14 +84,16 @@
     
         [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
             for (NSDictionary *dict in object) {
-                [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+                [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+               
             }
         }];
-    
+    //разобрать с потоками и выводить в main  потоке 
     for (int i = 0; i < [usersID count]; i++) {
-     User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+        User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
         NSLog(@"name = %@",k.name );
     }
+
 }];
     
     

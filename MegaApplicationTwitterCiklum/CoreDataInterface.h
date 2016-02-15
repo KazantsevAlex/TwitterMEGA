@@ -16,6 +16,7 @@
 
 + (id)sharedManager;
 - (void)addTweetWithDictionary:(NSDictionary *)dict;
+- (void)addUserWithDictionary:(NSDictionary *)dict; 
 - (NSUInteger)tweetsInStore;
 - (NSUInteger)usersInStore;
 - (NSArray *)getUserHomeTimeline;
