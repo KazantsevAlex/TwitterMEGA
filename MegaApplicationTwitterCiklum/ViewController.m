@@ -46,9 +46,6 @@
 }
 - (IBAction)likeButtonAction:(id)sender {
     
-    [ [TwitterAPI sharedManager]TESTs:@"s" block:^(id object) {
-        NSLog(@"%@",object[@"id"]);
-    }];
 }
 
 
@@ -87,12 +84,17 @@
                 [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
                
             }
+            for (int i = 0; i < [usersID count]; i++) {
+                User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                NSLog(@"name = %@",k.name );
+                
+                
+            }
+       
         }];
-    //разобрать с потоками и выводить в main  потоке 
-    for (int i = 0; i < [usersID count]; i++) {
-        User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
-        NSLog(@"name = %@",k.name );
-    }
+    
+    //разобрать с потоками и выводить в main  потоке
+   
 
 }];
     

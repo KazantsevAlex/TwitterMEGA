@@ -13,6 +13,7 @@
 #import "CoreDataInterface.h"
 #import "TweetTableViewCell.h"
 #import "TweetWithImageTableViewCell.h"
+#import "StoreCoordinator.h"
 
 @interface TableViewDataSource : NSObject <UITableViewDataSource,UITableViewDelegate>
 
