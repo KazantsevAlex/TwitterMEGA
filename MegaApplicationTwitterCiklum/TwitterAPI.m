@@ -61,10 +61,10 @@
     }];
 }
 
--(void)initApiClient:(NSString *)userID
-{
-    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
-}
+//-(void)initApiClient:(NSString *)userID
+//{
+//    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
+//}
 
 -(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
 {

@@ -18,10 +18,11 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
-    [self getLatestLoans];
+    
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
-   
+    [self getLatestLoans];
+//    [[TwitterAPI sharedManager] loginAction];
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor grayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
@@ -34,7 +35,6 @@
 
 -(void)getLatestLoans
 {
-    
     NSLog(@"Pull to refresh");
     [self.dataSource refreshArray];
     [self.tableView reloadData];

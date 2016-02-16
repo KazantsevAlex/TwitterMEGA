@@ -17,6 +17,9 @@
 + (id)sharedManager;
 
 - (void)loginAction;
+
+-(void)initApiClient:(NSString *)userID;
+
 -(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
 
 -(void)getUserFriend:(void(^)(id object))success;

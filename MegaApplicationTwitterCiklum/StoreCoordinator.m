@@ -148,22 +148,22 @@ static NSString *tweetsCount = @"100";
         }];
     }
 }
--(void)setRetweetedTweetWithId:(NSString *)tweetID retweted:(BOOL)retweeted
-{
-    if (retweeted == true) {
-        [[TwitterAPI sharedManager]retweetStatusStatusWithText:tweetID block:^(id object) {
-            //some code
-        }];
-    }
-    else
-    {
-        [[TwitterAPI sharedManager]unretweetStatusStatusWithText:tweetID block:^(id object) {
-            //code in core data to decrise varible
-        }];
-    }
-    
-    
-}
+//-(void)setRetweetedTweetWithId:(NSString *)tweetID retweted:(BOOL)retweeted
+//{
+//    if (retweeted == true) {
+//        [[TwitterAPI sharedManager]retweetStatusStatusWithText:tweetID block:^(id object) {
+//            //some code
+//        }];
+//    }
+//    else
+//    {
+//        [[TwitterAPI sharedManager]unretweetStatusStatusWithText:tweetID block:^(id object) {
+//            //code in core data to decrise varible
+//        }];
+//    }
+//    
+//    
+//}
 -(void)postStatus:(NSString *)text
 {
     

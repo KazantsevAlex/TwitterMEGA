@@ -26,17 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+//    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
     
 }
 
 - (void)setHeaderFrame {
+    
     self.headerView = self.tableView.tableHeaderView;
     self.initialFrame = self.headerView.frame;
     self.defaultViewHeight = self.initialFrame.size.height;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:self.initialFrame];
     [self.tableView addSubview:self.headerView];
     self.minimumHeaderViewHeight = self.profileHeaderViewController.minimumViewHeight;
+    
 }
 
 - (void)viewWillLayoutSubviews {
@@ -61,28 +63,9 @@
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Tweet *tweet = [self.tweetArray objectAtIndex:indexPath.row];
-    
-    UITableViewCell *tempCell;
-    
-    if (tweet.mediaUrl) {
-        tempCell = nil;
-        TweetWithImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetWithImageTableViewCell class])];
-        [cell fillCellWith:tweet];
-        tempCell = cell;
-        
-    }
-    else {
-        tempCell = nil;
-        TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
-        [cell fillCellWith:tweet];
-        tempCell = cell;
-    }
-    return tempCell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return nil;
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = self.headerView.frame;
