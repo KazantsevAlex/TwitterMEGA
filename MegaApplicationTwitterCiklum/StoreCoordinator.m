@@ -170,11 +170,73 @@ static NSString *tweetsCount = @"100";
 }
 -(NSArray *)getFriendsList
 {
-    return nil;
+    __block NSMutableArray *usersID;
+    __block NSMutableArray *friendsArray;
+    [[TwitterAPI sharedManager]getUserFriend:^(id object) {
+        usersID = [NSMutableArray arrayWithCapacity:[object count]];
+        for (int i = 0; i < [object[@"ids"] count]; i++ )
+        {
+            if (usersID != nil)
+            {
+                //[usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+                [usersID addObject:[object[@"ids"]objectAtIndex:i]];
+            }
+            else
+            {
+                NSLog(@"user is NIL");
+            }
+        }
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object)
+        {
+            for (NSDictionary *dict in object)
+            {
+                [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+                
+            }
+            for (int i = 0; i < [usersID count]; i++)
+            {
+                User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                [friendsArray addObject:k];
+              //  NSLog(@"%@", k.name);
+            }
+        }];
+    }];
+    return friendsArray;
 }
+
 -(NSArray *)getFollowersList
 {
-    return nil;
+    __block NSMutableArray *usersID;
+    __block NSMutableArray *followersArray;
+    [[TwitterAPI sharedManager]getUserFriend:^(id object) {
+        usersID = [NSMutableArray arrayWithCapacity:[object count]];
+        for (int i = 0; i < [object[@"ids"] count]; i++ )
+        {
+            if (usersID != nil)
+            {
+                [usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+                //[usersID addObject:[object[@"ids"]objectAtIndex:i]];
+            }
+            else
+            {
+                NSLog(@"user is NIL");
+            }
+        }
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object)
+         {
+             for (NSDictionary *dict in object)
+             {
+                 [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+                 
+             }
+             for (int i = 0; i < [usersID count]; i++)
+             {
+                 User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                 [followersArray addObject:k];
+             }
+         }];
+    }];
+    return followersArray;
 }
 -(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl
 {

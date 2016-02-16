@@ -26,8 +26,10 @@
 -(void)setRetweetedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited;
 
 -(void)postStatus:(NSString *)text;
+
 -(NSArray *)getFriendsList;
 -(NSArray *)getFollowersList;
+
 -(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl;
 -(Tweet *)getTweetWithId:(NSString *)tweetId;
 
