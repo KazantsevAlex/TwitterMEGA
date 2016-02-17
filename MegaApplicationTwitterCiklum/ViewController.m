@@ -62,7 +62,7 @@
 //      
 //  }];
     
-    NSLog(@"%lu",[[self.storeCoordinator getFriendsList]count]);
+    NSLog(@"%lu",[[self.storeCoordinator getOwnTimeLine]count]);
     
 
     

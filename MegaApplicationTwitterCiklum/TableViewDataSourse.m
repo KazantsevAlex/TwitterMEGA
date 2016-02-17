@@ -25,9 +25,9 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-//        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
-        self.storeCoordinator = [StoreCoordinator new];
-        self.tweetArray = [self.storeCoordinator getOwnTimeLine];
+        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+//        self.storeCoordinator = [StoreCoordinator new];
+//        self.tweetArray = [self.storeCoordinator getOwnTimeLine];
         [self refreshArray];
 
     }
@@ -79,7 +79,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return  [[self.storeCoordinator getOwnTimeLine]count];
+    return  [self.tweetArray count];
 }
          
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
