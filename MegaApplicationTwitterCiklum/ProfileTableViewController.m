@@ -17,8 +17,6 @@
 @property (nonatomic) CGFloat defaultViewHeight;
 @property (nonatomic) CGFloat minimumHeaderViewHeight;
 
-@property (nonatomic, strong) NSMutableArray *tweetArray;
-
 @end
 
 @implementation ProfileTableViewController
@@ -26,27 +24,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
-    
-}
-
-- (void)setHeaderFrame {
-    
     self.headerView = self.tableView.tableHeaderView;
+    
     self.initialFrame = self.headerView.frame;
     self.defaultViewHeight = self.initialFrame.size.height;
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:self.initialFrame];
-    [self.tableView addSubview:self.headerView];
-    self.minimumHeaderViewHeight = self.profileHeaderViewController.minimumViewHeight;
     
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:self.initialFrame];
+    
+    [self.tableView addSubview:self.headerView];
+    
+    self.minimumHeaderViewHeight = self.profileHeaderViewController.minimumViewHeight;
 }
 
 - (void)viewWillLayoutSubviews {
-    
     [super viewWillLayoutSubviews];
+    
     _initialFrame.size.width = self.tableView.frame.size.width;
-    _headerView.frame = self.initialFrame;    
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
+    self.headerView.frame = self.initialFrame;
+    
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(_headerView.frame.size.height, 0, 0, 0);
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -59,13 +55,26 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return nil;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
+    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
+
+    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
+    return cell;
+}
+
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = self.headerView.frame;
@@ -75,14 +84,14 @@
     CGFloat offsetY = (scrollView.contentOffset.y + scrollView.contentInset.top) * -1;
     _initialFrame.origin.y = offsetY * -1;
     
-    CGFloat limit = self.defaultViewHeight - self.minimumHeaderViewHeight;
+    CGFloat limit = _defaultViewHeight - _minimumHeaderViewHeight;
     if (scrollView.contentOffset.y < limit) {
         _initialFrame.size.height = self.defaultViewHeight + offsetY;
     } else {
         _initialFrame.size.height = self.defaultViewHeight - limit;
     }
     
-    _headerView.frame = _initialFrame;
+    self.headerView.frame = self.initialFrame;
 }
 
 @end

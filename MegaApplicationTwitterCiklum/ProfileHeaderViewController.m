@@ -44,7 +44,6 @@
 - (void)fillProfileView:(NSString *)userID {
     
     User *user = [[CoreDataInterface sharedManager]getUserWithId:userID];
-    
     self.profileNicknameLabel.text = user.name;
     self.profileNameLabel.text = user.screen_name;
 }

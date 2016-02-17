@@ -18,16 +18,20 @@
 
 - (void)awakeFromNib {
     
+    [self configCellViews];
+
+}
+
+- (void)configCellViews {
+    
     self.imageProfilePicture.layer.cornerRadius = 5;
     self.imageProfilePicture.clipsToBounds = YES;
-
+    self.imageProfilePicture.userInteractionEnabled = YES;
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapImageView:)];
+    [self.imageProfilePicture addGestureRecognizer:recognizer];
+    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 - (void)fillCellWith:(Tweet *)tweetModel {
     
@@ -119,6 +123,19 @@
         self.tweetM.retweet_count = [NSNumber numberWithLong:[self.tweetM.retweet_count integerValue] - 1];
     }
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.retweet_count];
+}
+
+- (void)onTapImageView:(UITapGestureRecognizer *)recognizer {
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    self.window.rootViewController = vc;
+    
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
 }
 
 @end

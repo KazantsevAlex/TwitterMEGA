@@ -22,7 +22,7 @@
     [super viewDidLoad];
     [self initObjects];
     self.sinceID = @"";
-//    [[TwitterAPI sharedManager] loginAction];
+    [[TwitterAPI sharedManager] loginAction];
 }
 
 -(void)initObjects
