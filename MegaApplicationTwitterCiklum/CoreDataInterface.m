@@ -46,6 +46,26 @@
     return [self.coreDataStack managedObjectContext];
 }
 
+-(BOOL)existTweetInStore:(NSDictionary *)dict
+{
+    BOOL isExist = true;
+    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity =[NSEntityDescription entityForName:@"Tweet" inManagedObjectContext:self.context];
+    [requst setEntity:entity];
+    NSString *tweetId = dict[@"id_str"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", tweetId];
+    [requst setPredicate:predicate];
+
+    NSError *er = nil;
+    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    
+    if([fecht count] == 0)
+    {
+        isExist = false;
+    }
+    return isExist;
+}
+
 -(void)addTweetWithDictionary:(NSDictionary *)dict
 {
     NSFetchRequest *requst = [[NSFetchRequest alloc]init];
@@ -57,24 +77,29 @@
     
     NSError *er = nil;
     NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
-    
-    if ([fecht count] == 0)
-    {
-        User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
-        [uniqUser fillUpUserEntityWithDictionary:dict];
-        Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
-        [tw fillUpTweetEntityWithDictionary:dict];
-        [uniqUser addTweetsObject:tw];
+    if (![self existTweetInStore:dict]) {
+        if ([fecht count] == 0)
+        {
+            User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+            [uniqUser fillUpUserEntityWithDictionary:dict];
+            Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+            [tw fillUpTweetEntityWithDictionary:dict];
+            [uniqUser addTweetsObject:tw];
+        }
+        else
+        {
+            User *user;
+            user = [fecht lastObject];
+            Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+            [tw fillUpTweetEntityWithDictionary:dict];
+            [user addTweetsObject:tw];
+        }
     }
     else
     {
-        User *user;
-        user = [fecht objectAtIndex:0];
-        Tweet *tw = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet" inManagedObjectContext:self.context];
+        Tweet *tw = [self getUserHomeTimelineTweetWithId:dict[@"id_str"]];
         [tw fillUpTweetEntityWithDictionary:dict];
-        [user addTweetsObject:tw];
     }
-    
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
     {
@@ -88,7 +113,41 @@
 
 -(void)addUserWithDictionary:(NSDictionary *)dict
 {
+    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
+    [requst setEntity:entity];
     
+    NSString *userId = dict[@"id_str"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userId];
+    [requst setPredicate:predicate];
+    
+    NSError *er = nil;
+    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    if ([fecht count] == 0)
+    {
+        User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+        [uniqUser fillUpUserEntityWithDictionary:dict];
+    }
+    else
+    {
+        
+        //if user exist - update his profile
+        User *us;
+        us = [self getUserWithId:dict[@"user"][@"id_str"]];
+        [us fillUpUserEntityWithDictionary:dict];
+    }
+    
+    NSError *errorSave = nil;
+    if (![self.context save:&errorSave])
+    {
+        NSLog(@"error save object model");
+    }
+    else
+    {
+        [self.context save:nil];
+    }
+
 }
 
 -(void)clearTweetStore

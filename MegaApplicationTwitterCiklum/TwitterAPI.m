@@ -226,7 +226,8 @@
     }];
 }
 
--(void)retweetStatus:(NSString *)idTweet block:(void(^)(id object))success
+
+-(void)retweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/retweet/:id.json";
@@ -237,7 +238,9 @@
     }];
 }
 
--(void)unretweetStatus:(NSString *)idTweet block:(void(^)(id object))success
+
+-(void)unretweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
+
 {
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";
@@ -247,8 +250,6 @@
         success(object);
     }];
 }
-
-
 
 -(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success
 {
@@ -263,16 +264,5 @@
     }];
 }
 
-
--(void)TESTs:(NSString *)statusText block:(void(^)(id object))success
-{
-    NSDictionary *params = @{@"skip_status": @"false"};
-    NSString *url = @"https://api.twitter.com/1.1/account/verify_credentials.json";
-    NSString *type = @"GET";
-    
-    [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
-        success(object);
-    }];
-}
 
 @end

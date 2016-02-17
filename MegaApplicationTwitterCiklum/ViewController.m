@@ -45,9 +45,6 @@
 }
 - (IBAction)likeButtonAction:(id)sender {
     
-    [ [TwitterAPI sharedManager]TESTs:@"s" block:^(id object) {
-        NSLog(@"%@",object[@"id"]);
-    }];
 }
 
 
@@ -80,6 +77,27 @@
 //   
 //    NSLog(@"%@", usersID);
 //
+
+//    
+//        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
+//            for (NSDictionary *dict in object) {
+//                [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+//               
+//            }
+//            for (int i = 0; i < [usersID count]; i++) {
+//                User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+//                NSLog(@"name = %@",k.name );
+//                
+//                
+//            }
+//       
+//        }];
+//    
+//    //разобрать с потоками и выводить в main  потоке
+//   
+//
+//}];
+
 //    
 //        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
 //            for (NSDictionary *dict in object) {
@@ -92,7 +110,7 @@
 //        NSLog(@"name = %@",k.name );
 //    }
 //}];
-    
+
     
     //    StoreCoordinator *store = [StoreCoordinator new];
 //    

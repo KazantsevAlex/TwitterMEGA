@@ -23,7 +23,6 @@
     self.lang = dict[@"lang"];
     if (dict[@"extended_entities"]) {
         self.mediaUrl = dict[@"extended_entities"][@"media"][0][@"media_url"];
-        NSLog(@"%@",dict[@"extended_entities"][@"media"][0][@"media_url"]);
     }
 }
 

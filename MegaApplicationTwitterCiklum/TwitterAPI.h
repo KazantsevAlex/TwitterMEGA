@@ -52,14 +52,12 @@
 -(void)postStatusWithText:(NSString *)statusText
                     block:(void(^)(id object))success;
 
--(void)retweetStatus:(NSString *)statusText
+-(void)retweetStatusWithID:(NSString *)statusText
                              block:(void(^)(id object))success;
 
--(void)unretweetStatus:(NSString *)statusText
+-(void)unretweetStatusWithID:(NSString *)statusText
+
                                block:(void(^)(id object))success;
 
-
-
--(void)TESTs:(NSString *)statusText block:(void(^)(id object))success;
 
 @end

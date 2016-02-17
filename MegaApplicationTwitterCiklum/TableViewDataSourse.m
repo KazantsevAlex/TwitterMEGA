@@ -12,8 +12,9 @@
 
 //@property (strong, nonatomic) CoreDataInterface *interfaceQ;
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *tweetArray;
+@property (strong, nonatomic) NSArray *tweetArray;
 @property (nonatomic, strong) __block NSString *sinceID;
+@property (nonatomic, strong)StoreCoordinator *storeCoordinator;
 
 @end
 
@@ -24,8 +25,9 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
-
+//        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+        self.storeCoordinator = [StoreCoordinator new];
+        self.tweetArray = [self.storeCoordinator getOwnTimeLine];
         [self refreshArray];
 
     }
@@ -47,18 +49,20 @@
 
 - (void)refreshArray {
     
-    NSString *count = @"20";
-    __block NSUInteger i = 0;
-    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
-        for (NSDictionary *dict in object) {
-            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
-            i++;
-            if ([object count] == i) {
-                self.sinceID = dict[@"id_str"];
-            }
-        }
-    }];
-    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getUserHomeTimeline];
+    [self.storeCoordinator getOwnTimeLinePullToRefresh];
+
+//    NSString *count = @"20";
+//    __block NSUInteger i = 0;
+//    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
+//        for (NSDictionary *dict in object) {
+//            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+//            i++;
+//            if ([object count] == i) {
+//                self.sinceID = dict[@"id_str"];
+//            }
+//        }
+//    }];
+//    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getUserHomeTimeline];
     //[[CoreDataInterface sharedManager]clearTweetStore];
 }
 
@@ -89,7 +93,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[CoreDataInterface sharedManager] tweetsInStore];
+    return  [[self.storeCoordinator getOwnTimeLine]count];//[[CoreDataInterface sharedManager] tweetsInStore];
 }
          
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,7 +107,7 @@
     CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
     
     if (maximumOffset - currentOffset <= 150.0) {
-       // NSLog(@"Endpoint more");
+        //[self.storeCoordinator getOwnTimeLineDownloadMore];
     }
     // Change 10.0 to adjust the distance from bottom
     if (maximumOffset - currentOffset <= 10.0) {

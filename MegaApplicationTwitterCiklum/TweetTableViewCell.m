@@ -99,7 +99,8 @@
      TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
      
      if (self.retweetButton.selected == 0) {
-         [twitterRetweetApi retweetStatus:self.tweetM.id_str block:^(id object) {
+         [twitterRetweetApi retweetStatusWithID:self.tweetM.id_str block:^(id object) {
+
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
              self.retweetButton.selected = 1;
          }];
@@ -108,7 +109,8 @@
      }
      else if (self.retweetButton.selected == 1)
      {
-         [twitterRetweetApi unretweetStatus:self.tweetM.id_str block:^(id object) {
+         [twitterRetweetApi unretweetStatusWithID:self.tweetM.id_str block:^(id object) {
+
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
              self.retweetButton.selected = 0;
          }];

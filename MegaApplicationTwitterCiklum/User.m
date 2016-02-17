@@ -13,6 +13,7 @@
 
 -(void)fillUpUserEntityWithDictionary:(NSDictionary *)dict
 {
+    if (dict[@"user"]) {
     self.contributors_enabled = dict[@"user"][@"contributors_enabled"];
     self.created_at =  dict[@"user"][@"created_at"];
     self.default_profile = dict[@"user"][@"default_profile"];
@@ -38,6 +39,35 @@
 //    if (dict[@"user"][@"url"] != nil) {
 //         self.url = dict[@"user"][@"url"];
 //    }
+    }
+    else
+    {
+        self.contributors_enabled = dict[@"contributors_enabled"];
+        self.created_at =  dict[@"created_at"];
+        self.default_profile = dict[@"default_profile"];
+        self.name = dict[@"name"];
+        self.descriptionAccount = dict[@"description"];
+        self.default_profile = dict[@"default_profile"];
+        self.default_profile_image = dict[@"default_profile_image"];
+        self.favourites_count = dict[@"favourites_count"];
+        self.followers_count = dict[@"followers_count"];
+        self.following = dict[@"following"];
+        self.friends_count = dict[@"friends_count"];
+        self.geo_enabled = dict[@"geo_enabled"];
+        self.id_str = dict[@"id_str"];
+        self.idUser = dict[@"id"];
+        self.lang = dict[@"lang"];
+        self.listed_count = dict[@"user"][@"listed_count"];
+        self.location = dict[@"location"];
+        self.profile_background_image_url = dict[@"profile_background_image_url"];
+        self.profile_image_url = dict[@"profile_image_url"];
+        self.protected = dict[@"protected"];
+        self.screen_name = dict[@"screen_name"];
+        self.statuses_count = dict[@"statuses_count"];
+        //    if (dict[@"user"][@"url"] != nil) {
+        //         self.url = dict[@"user"][@"url"];
+        //    }
+    }
    
 }
 
