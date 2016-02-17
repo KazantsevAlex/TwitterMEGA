@@ -11,9 +11,6 @@
 
 @interface TweetWithImageTableViewCell : TweetTableViewCell
 
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *mediaImageTweet;
-
 
 @end

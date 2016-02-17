@@ -14,7 +14,6 @@
 @property (nonatomic, strong) CoreDataInterface *interface;
 @property (nonatomic, strong) __block NSString *sinceID;
 
-
 @end
 
 @implementation ViewController
@@ -23,7 +22,7 @@
     [super viewDidLoad];
     [self initObjects];
     self.sinceID = @"";
-    [[TwitterAPI sharedManager] loginAction];
+//    [[TwitterAPI sharedManager] loginAction];
 }
 
 -(void)initObjects
@@ -60,44 +59,58 @@
 //      
 //  }];
     
-    __block NSMutableArray *usersID;
-[[TwitterAPI sharedManager]getUserFriend:^(id object) {
-    
-    usersID = [NSMutableArray arrayWithCapacity:[object count]];
-    for (int i = 0; i < [object[@"ids"] count]; i++ )
-    {
-        if (usersID != nil) {
-        //[usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
-        [usersID addObject:[object[@"ids"]objectAtIndex:i]];
-        }
-        else
-        {
-            NSLog(@"user is NIL");
-        }
-    }
+//    __block NSMutableArray *usersID;
+//[[TwitterAPI sharedManager]getUserFriend:^(id object) {
 //    
-    NSLog(@"%@", usersID);
+//    usersID = [NSMutableArray arrayWithCapacity:[object count]];
+//    for (int i = 0; i < [object[@"ids"] count]; i++ )
+//    {
+//        if (usersID != nil) {
+//        //[usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+//        [usersID addObject:[object[@"ids"]objectAtIndex:i]];
+//        }
+//        else
+//        {
+//            NSLog(@"user is NIL");
+//        }
+//    }
+//   
+//    NSLog(@"%@", usersID);
 //
-    
-        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
-            for (NSDictionary *dict in object) {
-                [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
-               
-            }
-            for (int i = 0; i < [usersID count]; i++) {
-                User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
-                NSLog(@"name = %@",k.name );
-                
-                
-            }
-       
-        }];
-    
-    //разобрать с потоками и выводить в main  потоке
-   
 
-}];
-    
+//    
+//        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
+//            for (NSDictionary *dict in object) {
+//                [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+//               
+//            }
+//            for (int i = 0; i < [usersID count]; i++) {
+//                User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+//                NSLog(@"name = %@",k.name );
+//                
+//                
+//            }
+//       
+//        }];
+//    
+//    //разобрать с потоками и выводить в main  потоке
+//   
+//
+//}];
+
+//    
+//        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object) {
+//            for (NSDictionary *dict in object) {
+//                [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+//            }
+//        }];
+//    
+//    for (int i = 0; i < [usersID count]; i++) {
+//     User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+//        NSLog(@"name = %@",k.name );
+//    }
+//}];
+
     
     //    StoreCoordinator *store = [StoreCoordinator new];
 //    

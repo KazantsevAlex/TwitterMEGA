@@ -10,7 +10,8 @@
 
 @interface TweetTableViewCell ()
 
-@property (nonatomic, strong) Tweet *tweetM;;
+@property (nonatomic, strong) Tweet *tweetM;
+@property (nonatomic, strong) NSString *tweetId;
 
 @end
 
@@ -30,16 +31,16 @@
 }
 
 - (void)fillCellWith:(Tweet *)tweetModel {
+    
     self.messageLabel.text = tweetModel.text;
     self.nameLabel.text = tweetModel.user.name;
     self.userNameLabel.text = tweetModel.user.screen_name;
-    self.likeCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.favorite_count];
-    self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.retweet_count];
+    self.likeCountLabel.text = [tweetModel.favorite_count stringValue];
+    self.retweetCountLabel.text = [tweetModel.retweet_count stringValue];
     self.likeButton.selected = tweetModel.favorited.boolValue;
     self.retweetButton.selected = tweetModel.retweeted.boolValue;
     self.tweetM = tweetModel;
 
-    NSLog(@"%@", tweetModel.retweeted);
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
@@ -74,7 +75,7 @@
             self.likeButton.selected = 1;
         }];
         self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] + 1];
-
+        
     }
     else if (self.likeButton.selected == 1)
     {
@@ -89,11 +90,11 @@
 }
 
  - (IBAction)retweetButton:(id)sender {
-
      TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
      
      if (self.retweetButton.selected == 0) {
          [twitterRetweetApi retweetStatusWithID:self.tweetM.id_str block:^(id object) {
+
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
              self.retweetButton.selected = 1;
          }];
@@ -103,12 +104,14 @@
      else if (self.retweetButton.selected == 1)
      {
          [twitterRetweetApi unretweetStatusWithID:self.tweetM.id_str block:^(id object) {
+
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
              self.retweetButton.selected = 0;
          }];
          self.tweetM.retweet_count = [NSNumber numberWithLong:[self.tweetM.retweet_count integerValue] - 1];
      }
      self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.retweet_count];
+
 }
 
 

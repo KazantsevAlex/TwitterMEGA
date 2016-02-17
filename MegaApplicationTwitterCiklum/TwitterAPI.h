@@ -17,6 +17,9 @@
 + (id)sharedManager;
 
 - (void)loginAction;
+
+-(void)initApiClient:(NSString *)userID;
+
 -(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
 
 -(void)getUserFriend:(void(^)(id object))success;
@@ -53,6 +56,7 @@
                              block:(void(^)(id object))success;
 
 -(void)unretweetStatusWithID:(NSString *)statusText
+
                                block:(void(^)(id object))success;
 
 

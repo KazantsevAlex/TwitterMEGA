@@ -99,9 +99,7 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 185;
-//}
+
 
 - (void)scrollViewDidScroll: (UIScrollView *)scroll {
     // UITableView only moves in one direction, y axis

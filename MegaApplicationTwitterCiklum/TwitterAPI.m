@@ -38,6 +38,8 @@
     return self;
 }
 
+
+
 -(NSString *)getUserSessionID
 {
     return [self.apiClient userID];
@@ -59,10 +61,10 @@
     }];
 }
 
--(void)initApiClient:(NSString *)userID
-{
-    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
-}
+//-(void)initApiClient:(NSString *)userID
+//{
+//    self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
+//}
 
 -(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
 {
@@ -224,6 +226,7 @@
     }];
 }
 
+
 -(void)retweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
 {
     NSDictionary *params = @{@"id": idTweet};
@@ -235,7 +238,9 @@
     }];
 }
 
+
 -(void)unretweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
+
 {
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";

@@ -17,7 +17,7 @@
 @property (nonatomic) CGFloat defaultViewHeight;
 @property (nonatomic) CGFloat minimumHeaderViewHeight;
 
-@property (nonatomic, strong) NSMutableArray *tweetArray1;
+@property (nonatomic, strong) NSMutableArray *tweetArray;
 
 @end
 
@@ -26,25 +26,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.headerView = self.tableView.tableHeaderView;
+//    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
     
+}
+
+- (void)setHeaderFrame {
+    
+    self.headerView = self.tableView.tableHeaderView;
     self.initialFrame = self.headerView.frame;
     self.defaultViewHeight = self.initialFrame.size.height;
-    
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:self.initialFrame];
-    
     [self.tableView addSubview:self.headerView];
-    
     self.minimumHeaderViewHeight = self.profileHeaderViewController.minimumViewHeight;
     
 }
 
 - (void)viewWillLayoutSubviews {
+    
     [super viewWillLayoutSubviews];
-    
     _initialFrame.size.width = self.tableView.frame.size.width;
-    _headerView.frame = self.initialFrame;
-    
+    _headerView.frame = self.initialFrame;    
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
 }
 
@@ -58,28 +59,13 @@
     }
 }
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[CoreDataInterface sharedManager] tweetsInStore];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView registerNib:[UINib nibWithNibName:@"TweetTableViewCell" bundle:nil]
-    forCellReuseIdentifier:NSStringFromClass([TweetTableViewCell class])];
-    
-    Tweet *tweet = [self.tweetArray1 objectAtIndex:indexPath.row];
-    
-    TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TweetTableViewCell class])];
- 
-    
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return nil;
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = self.headerView.frame;
