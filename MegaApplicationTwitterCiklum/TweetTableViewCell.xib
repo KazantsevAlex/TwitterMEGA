@@ -95,6 +95,12 @@
                             <action selector="retweetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7iQ-fm-clS"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmV-aa-jZJ">
+                        <rect key="frame" x="15" y="10" width="50" height="50"/>
+                        <connections>
+                            <action selector="viewProfile:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jCr-fd-TWw"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KWA-06-tgn" firstAttribute="leading" secondItem="0FP-qb-KVZ" secondAttribute="leading" id="A2y-qp-ZDc"/>

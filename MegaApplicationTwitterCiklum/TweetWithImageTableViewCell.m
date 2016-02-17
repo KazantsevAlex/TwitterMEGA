@@ -27,9 +27,6 @@
     self.imageProfilePicture.layer.cornerRadius = 5;
     self.imageProfilePicture.clipsToBounds = YES;
     self.imageProfilePicture.userInteractionEnabled = YES;
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapImageView:)];
-    [self.imageProfilePicture addGestureRecognizer:recognizer];
-    
 }
 
 
@@ -128,13 +125,13 @@
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.retweet_count];
 }
 
-- (void)onTapImageView:(UITapGestureRecognizer *)recognizer {
+
+- (IBAction)viewProview:(id)sender {
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.window.rootViewController = vc;
-    
 }
 
 - (void)prepareForReuse {
