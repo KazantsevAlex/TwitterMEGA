@@ -39,12 +39,12 @@
     self.likeCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.favorite_count];
     self.retweetCountLabel.text = [NSString stringWithFormat:@"%@", tweetModel.retweet_count];
     self.tweetM = tweetModel;
-
+    self.timestampLabel.text = tweetModel.created_at;
     
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
-    
-    self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
+//    NSDateFormatter *formatter = [NSDateFormatter new];
+//    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+//    
+//    self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
 
     
     [self getImage:tweetModel.user.profile_image_url view:self.imageProfilePicture];

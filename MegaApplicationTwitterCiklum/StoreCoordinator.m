@@ -21,7 +21,7 @@ static NSString *tweetsCount = @"100";
 @property(nonatomic, strong) NSString *userMaxId;
 
 @property(nonatomic, strong)NSString *ownUserID;
-
+@property (nonatomic, strong) __block NSArray *array;
 
 @end
 
@@ -46,7 +46,7 @@ static NSString *tweetsCount = @"100";
 -(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID
 {
     __block NSInteger i = 0;
-    __block NSArray *array;
+
     
     [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:@"" maxID:@"" block:^(id object) {
         for(NSDictionary *dict in object) {
@@ -71,9 +71,9 @@ static NSString *tweetsCount = @"100";
                 self.sinceId = dict[@"id_str"];
             }
         }
-        array = [[CoreDataInterface sharedManager]getUserHomeTimeline];
+        self.array = [[CoreDataInterface sharedManager]getUserHomeTimeline];
     }];
-    return array;
+    return self.array;
 }
 
 -(User *)getUserTimeLinePullToRefresh:(NSString *) UserId

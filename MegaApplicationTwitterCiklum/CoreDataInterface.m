@@ -137,7 +137,12 @@
     [request setEntity:description];
     NSError * er = nil;
     self.tweetsArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-    return self.tweetsArray;
+    
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"id_str" ascending:NO];
+    NSArray *sortDescroptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [self.tweetsArray sortedArrayUsingDescriptors:sortDescroptors];
+    return sortedArray;
 }
 
 -(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId {

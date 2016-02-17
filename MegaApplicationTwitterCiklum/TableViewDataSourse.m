@@ -50,20 +50,6 @@
 - (void)refreshArray {
     
     [self.storeCoordinator getOwnTimeLinePullToRefresh];
-
-//    NSString *count = @"20";
-//    __block NSUInteger i = 0;
-//    [[TwitterAPI sharedManager]  getUserHomeTimelineWithCount:count sinceID:@"" maxID:self.sinceID block:^(id object) {
-//        for (NSDictionary *dict in object) {
-//            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
-//            i++;
-//            if ([object count] == i) {
-//                self.sinceID = dict[@"id_str"];
-//            }
-//        }
-//    }];
-//    self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager] getUserHomeTimeline];
-    //[[CoreDataInterface sharedManager]clearTweetStore];
 }
 
 
@@ -93,7 +79,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return  [[self.storeCoordinator getOwnTimeLine]count];//[[CoreDataInterface sharedManager] tweetsInStore];
+    return  [[self.storeCoordinator getOwnTimeLine]count];
 }
          
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

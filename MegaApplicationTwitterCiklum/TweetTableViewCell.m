@@ -38,13 +38,12 @@
     self.likeButton.selected = tweetModel.favorited.boolValue;
     self.retweetButton.selected = tweetModel.retweeted.boolValue;
     self.tweetM = tweetModel;
-
-    NSLog(@"%@", tweetModel.retweeted);
-    
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
-    
-    self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
+    self.timestampLabel.text = tweetModel.created_at;
+   
+//    NSDateFormatter *formatter = [NSDateFormatter new];
+//    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+//    
+//    self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",tweetModel.user.profile_image_url]];
     

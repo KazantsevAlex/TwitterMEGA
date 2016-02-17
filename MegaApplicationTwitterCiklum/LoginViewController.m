@@ -18,11 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TWTRLogInButton* logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session,
-    NSError* error) {
+                                                                                NSError* error) {
         if (session) {
             [[TwitterAPI sharedManager]loginAction];
-            [self performSegueWithIdentifier:@"ToProfile" sender:self];
-        } else {
+            
+            double delayInSeconds = 1.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                
+                [self performSegueWithIdentifier:@"ToProfile" sender:self];
+            });
+            
+        } else
+        {
             NSLog(@"error: %@", [error localizedDescription]);
         }
     }];
@@ -30,7 +38,7 @@
     [self.view addSubview:logInButton];
 }
 - (IBAction)loginAction:(id)sender {
- 
+    
 }
 
 - (void)didReceiveMemoryWarning {

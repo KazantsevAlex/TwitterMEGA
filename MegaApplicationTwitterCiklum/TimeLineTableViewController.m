@@ -18,7 +18,7 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
-    [self getLatestLoans];
+    [self getLatestLoads];
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
    
@@ -26,17 +26,25 @@
     self.refreshControl.backgroundColor = [UIColor grayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
-                            action:@selector(getLatestLoans)
+                            action:@selector(getLatestLoads)
                   forControlEvents:UIControlEventValueChanged];
 
 }
 
 
--(void)getLatestLoans
+-(void)getLatestLoads
 {
-    
     NSLog(@"Pull to refresh");
-    [self.dataSource refreshArray];
+    
+ 
+//    double delayInSeconds = 1.5;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.dataSource refreshArray];
+       
+        
+//    });
+
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
