@@ -18,7 +18,6 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
     [self getLatestLoans];
@@ -33,8 +32,8 @@
 }
 
 
--(void)getLatestLoans
-{
+-(void)getLatestLoans {
+    
     NSLog(@"Pull to refresh");
     [self.dataSource refreshArray];
     [self.tableView reloadData];

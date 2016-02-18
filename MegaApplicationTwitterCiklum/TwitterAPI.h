@@ -18,13 +18,13 @@
 
 - (void)loginAction;
 
--(void)initApiClient:(NSString *)userID;
+- (void)initApiClient:(NSString *)userID;
 
--(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
+- (void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
 
--(void)getUserFriend:(void(^)(id object))success;
+- (void)getUserFriend:(void(^)(id object))success;
 
--(void)getUserHomeTimelineWithCount:(NSString *)count
+- (void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)tweetId
                               maxID:(NSString *)maxID
                               block:(void(^)(id object))success;
@@ -41,22 +41,21 @@
                userUrl:(NSString *)userUrl
                  block:(void(^)(id object))success;
 
--(void)getUserFollowers:(void(^)(id object))success;
+- (void)getUserFollowers:(void(^)(id object))success;
 
--(void)likeTweetwithID:(NSString *)idTweet
+- (void)likeTweetwithID:(NSString *)idTweet
                  block:(void(^)(id object))success;
 
--(void)unlikeTweetwithID:(NSString *)idTweet
+- (void)unlikeTweetwithID:(NSString *)idTweet
                    block:(void(^)(id object))success;
 
--(void)postStatusWithText:(NSString *)statusText
+- (void)postStatusWithText:(NSString *)statusText
                     block:(void(^)(id object))success;
 
--(void)retweetStatusWithID:(NSString *)statusText
+- (void)retweetStatusWithID:(NSString *)statusText
                              block:(void(^)(id object))success;
 
--(void)unretweetStatusWithID:(NSString *)statusText
-
+- (void)unretweetStatusWithID:(NSString *)statusText
                                block:(void(^)(id object))success;
 
 

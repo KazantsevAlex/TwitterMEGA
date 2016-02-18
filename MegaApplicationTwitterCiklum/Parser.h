@@ -10,10 +10,10 @@
 
 @interface Parser : NSObject
 
--(BOOL)isValidStatusText:(NSString *)statusText;
--(BOOL)isValidUserName:(NSString *)username;
--(BOOL)isValidUserDescription:(NSString *)descriprion;
--(BOOL)isValidUserLocationName:(NSString *)locationName;
--(BOOL)isValidUserUrlt:(NSString *)url;
+- (BOOL)isValidStatusText:(NSString *)statusText;
+- (BOOL)isValidUserName:(NSString *)username;
+- (BOOL)isValidUserDescription:(NSString *)descriprion;
+- (BOOL)isValidUserLocationName:(NSString *)locationName;
+- (BOOL)isValidUserUrlt:(NSString *)url;
 
 @end

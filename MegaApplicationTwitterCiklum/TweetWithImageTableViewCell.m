@@ -54,7 +54,7 @@
     
 }
 
--(void)getImage:(NSString *)imageURl view:(UIImageView *)view{
+-(void)getImage:(NSString *)imageURl view:(UIImageView *)view {
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURl]];
     

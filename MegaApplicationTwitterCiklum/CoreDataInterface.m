@@ -20,8 +20,8 @@
 @implementation CoreDataInterface
 
 
-+ (id)sharedManager
-{
++ (id)sharedManager {
+    
     static CoreDataInterface *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -31,8 +31,8 @@
 }
 
 
-- (instancetype)init
-{
+- (instancetype)init {
+    
     self = [super init];
     if (self) {
         self.context = [self getContext];
@@ -40,25 +40,17 @@
     return self;
 }
 
--(NSManagedObjectContext *)getContext
-{
+- (NSManagedObjectContext *)getContext {
+    
     self.coreDataStack = [CoreDataStack new];
     return [self.coreDataStack managedObjectContext];
 }
 
--(BOOL)existTweetInStore:(NSDictionary *)dict
-{
-    BOOL isExist = true;
-    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity =[NSEntityDescription entityForName:@"Tweet" inManagedObjectContext:self.context];
-    [requst setEntity:entity];
-    NSString *tweetId = dict[@"id_str"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", tweetId];
-    [requst setPredicate:predicate];
-
-    NSError *er = nil;
-    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+- (BOOL)existTweetInStore:(NSDictionary *)dict {
     
+    BOOL isExist = true;
+    NSString *tweetId = dict[@"id_str"];
+    NSArray *fecht = [self fetchRequestWithEntityName:@"Tweet" parametr:tweetId];
     if([fecht count] == 0)
     {
         isExist = false;
@@ -66,17 +58,10 @@
     return isExist;
 }
 
--(void)addTweetWithDictionary:(NSDictionary *)dict
-{
-    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
-    [requst setEntity:entity];
-    NSString *userId = dict[@"user"][@"id_str"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userId];
-    [requst setPredicate:predicate];
+- (void)addTweetWithDictionary:(NSDictionary *)dict {
     
-    NSError *er = nil;
-    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    NSString *userId = dict[@"user"][@"id_str"];
+    NSArray *fecht =  [self fetchRequestWithEntityName:@"User" parametr:userId];
     if (![self existTweetInStore:dict]) {
         if ([fecht count] == 0)
         {
@@ -111,19 +96,10 @@
     }
 }
 
--(void)addUserWithDictionary:(NSDictionary *)dict
+- (void)addUserWithDictionary:(NSDictionary *)dict
 {
-    NSFetchRequest *requst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity =[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
-    [requst setEntity:entity];
-    
     NSString *userId = dict[@"id_str"];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userId];
-    [requst setPredicate:predicate];
-    
-    NSError *er = nil;
-    NSArray *fecht = [self.context executeFetchRequest:requst error:&er];
+    NSArray *fecht = [self fetchRequestWithEntityName:@"User" parametr:userId];
     if ([fecht count] == 0)
     {
         User *uniqUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
@@ -131,26 +107,15 @@
     }
     else
     {
-        
         //if user exist - update his profile
         User *us;
         us = [self getUserWithId:dict[@"user"][@"id_str"]];
         [us fillUpUserEntityWithDictionary:dict];
     }
-    
-    NSError *errorSave = nil;
-    if (![self.context save:&errorSave])
-    {
-        NSLog(@"error save object model");
-    }
-    else
-    {
-        [self.context save:nil];
-    }
-
+    [self saveContext];
 }
 
--(void)clearTweetStore
+- (void)clearTweetStore
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Tweet"];
     [fetchRequest setIncludesPropertyValues:NO];
@@ -164,44 +129,65 @@
     [self.context save:&error];
 }
 
--(NSArray *)getUserHomeTimeline {
+- (NSArray *)getUserHomeTimeline {
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
     NSError * er = nil;
     self.tweetsArray = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-    return self.tweetsArray;
+    
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"id_str" ascending:NO];
+    NSArray *sortDescroptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [self.tweetsArray sortedArrayUsingDescriptors:sortDescroptors];
+    return sortedArray;
 }
 
--(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId {
-    NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Tweet"
-                                                   inManagedObjectContext:self.context];
-    [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", tweetId];
-    [request setPredicate:predicate];
-    NSError * er = nil;
-    NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
+- (Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId {
+    
+    NSArray *array = [self fetchRequestWithEntityName:@"Tweet" parametr:tweetId];
     return [array lastObject];
 }
 
 -(User *)getUserWithId:(NSString *) userID {
+    
+    NSArray *array = [self fetchRequestWithEntityName:@"User" parametr:userID];
+    return [array lastObject];
+}
+
+- (NSArray *)fetchRequestWithEntityName:(NSString *)name parametr:(NSString *)param {
+    
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"User"
+    NSEntityDescription *description = [NSEntityDescription entityForName:name
                                                    inManagedObjectContext:self.context];
     [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", userID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"id_str", param];
     [request setPredicate:predicate];
     NSError * er = nil;
     NSArray *array = [[NSMutableArray alloc]initWithArray:[self.context executeFetchRequest:request error:&er]];
-
-    return [array lastObject];
+    return array;
 }
--(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav
-{
+
+- (void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav {
+    
     Tweet *tweet = [self getUserHomeTimelineTweetWithId:tweetID];
     tweet.favorited = [NSNumber numberWithBool:[NSNumber numberWithBool:fav]];
+    [self saveContext];
+}
+
+- (NSUInteger)usersInStore {
+    
+    return [self.userArray count];
+}
+
+- (NSUInteger)tweetsInStore {
+    
+    return [[self getUserHomeTimeline]count];
+}
+
+
+- (void)saveContext {
     
     NSError *errorSave = nil;
     if (![self.context save:&errorSave])
@@ -213,15 +199,6 @@
         [self.context save:nil];
     }
 }
-
-- (NSUInteger)usersInStore {
-    return [self.userArray count];
-}
-
-- (NSUInteger)tweetsInStore {
-    return [[self getUserHomeTimeline]count];
-}
-
 
 
 @end

@@ -12,6 +12,8 @@
 #import "CoreDataInterface.h"
 #import "TwitterAPI.h"
 #import "MHPrettyDate.h"
+#import "ProfileHeaderViewController.h"
+
 
 
 @interface TweetTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>

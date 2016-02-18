@@ -15,4 +15,6 @@
 
 @property (nonatomic) CGFloat minimumViewHeight;
 
+- (void)setUserId:(NSString *)userId;
+
 @end

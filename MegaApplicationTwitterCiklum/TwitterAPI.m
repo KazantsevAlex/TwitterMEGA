@@ -19,8 +19,8 @@
 @implementation TwitterAPI
 
 
-+(id)sharedManager
-{
++ (id)sharedManager {
+    
     static TwitterAPI *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -29,8 +29,8 @@
     return sharedMyManager;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
+    
     self = [super init];
     if (self) {
         self.twitter = [Twitter new];
@@ -40,13 +40,13 @@
 
 
 
--(NSString *)getUserSessionID
-{
+- (NSString *)getUserSessionID {
+    
     return [self.apiClient userID];
 }
 
--(void)loginAction
-{
+- (void)loginAction {
+    
     [self.twitter logInWithCompletion:^(TWTRSession * _Nullable session, NSError * _Nullable error) {
         if (session)
         {
@@ -61,13 +61,13 @@
     }];
 }
 
--(void)initApiClient:(NSString *)userID
-{
+- (void)initApiClient:(NSString *)userID {
+    
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
 }
 
--(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
-{
+- (void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success {
+    
     NSError *clientError;
     NSURLRequest *request = [self.apiClient
                              URLRequestWithMethod:type
@@ -100,11 +100,11 @@
     }
 }
 
--(void)getUserHomeTimelineWithCount:(NSString *)count
+- (void)getUserHomeTimelineWithCount:(NSString *)count
                             sinceID:(NSString *)sinceID
                               maxID:(NSString *)maxID
-                              block:(void(^)(id object))success
-{
+                              block:(void(^)(id object))success {
+    
     NSString *url = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     NSString *type = @"GET";
     NSDictionary *params =  [self setParamByStringLenghtSinceID:sinceID maxID:maxID count:count];
@@ -114,8 +114,8 @@
     
 }
 
--(NSDictionary *)setParamByStringLenghtSinceID:(NSString *)sinceID maxID:(NSString *)maxID count:(NSString *)count
-{
+- (NSDictionary *)setParamByStringLenghtSinceID:(NSString *)sinceID maxID:(NSString *)maxID count:(NSString *)count {
+    
     NSDictionary *params = nil;
     if (([sinceID length] && [maxID length]) == 0)
     {
@@ -133,12 +133,12 @@
     return params;
 }
 
--(void)getTimelineUserWithID:(NSString *)userID
+- (void)getTimelineUserWithID:(NSString *)userID
                        count:(NSString *)count
                      sinceID:(NSString *)sinceID
                        maxID:(NSString *)maxID
-                       block:(void(^)(id object))success
-{
+                       block:(void(^)(id object))success {
+    
     NSDictionary *params =  [self setParamByStringLenghtSinceID:sinceID maxID:maxID count:count];
     NSString *url = @"https://api.twitter.com/1.1/statuses/user_timeline.json";
     NSString *type = @"GET";
@@ -149,12 +149,12 @@
     
 }
 
--(void)setUserProfile:(NSString *)name
+- (void)setUserProfile:(NSString *)name
              location:(NSString *)location
           description:(NSString *)description
               userUrl:(NSString *)userUrl
-                block:(void(^)(id object))success
-{
+                block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"name": name,
                              @"location":location,
                              @"description": description,
@@ -168,8 +168,8 @@
     
 }
 
--(void)getUserFollowers:(void(^)(id object))success
-{
+- (void)getUserFollowers:(void(^)(id object))success {
+    
     NSDictionary *params = @{};
     NSString *url = @"https://api.twitter.com/1.1/followers/list.json";
     NSString *type = @"GET";
@@ -179,8 +179,8 @@
     }];
 }
 
--(void)getUserFriend:(void(^)(id object))success
-{
+- (void)getUserFriend:(void(^)(id object))success {
+    
     NSDictionary *params = @{};
     NSString *url = @"https://api.twitter.com/1.1/friends/ids.json";
     NSString *type = @"GET";
@@ -191,8 +191,8 @@
 }
 
 
--(void)likeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
-{
+- (void)likeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"id": idTweet,
                              @"include_entities": @"false"};
     NSString *url = @"https://api.twitter.com/1.1/favorites/create.json";
@@ -203,8 +203,8 @@
     }];
 }
 
--(void)unlikeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success
-{
+- (void)unlikeTweetwithID:(NSString *)idTweet block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"id": idTweet,
                              @"include_entities": @"false"};
     NSString *url = @"https://api.twitter.com/1.1/favorites/destroy.json";
@@ -215,8 +215,8 @@
     }];
 }
 
--(void)postStatusWithText:(NSString *)statusText block:(void(^)(id object))success
-{
+- (void)postStatusWithText:(NSString *)statusText block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"status": statusText};
     NSString *url = @"https://api.twitter.com/1.1/statuses/update.json";
     NSString *type = @"POST";
@@ -227,8 +227,8 @@
 }
 
 
--(void)retweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
-{
+- (void)retweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/retweet/:id.json";
     NSString *type = @"POST";
@@ -239,9 +239,8 @@
 }
 
 
--(void)unretweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success
-
-{
+- (void)unretweetStatusWithID:(NSString *)idTweet block:(void(^)(id object))success {
+    
     NSDictionary *params = @{@"id": idTweet};
     NSString *url = @"https://api.twitter.com/1.1/statuses/unretweet/:id.json";
     NSString *type = @"POST";
@@ -251,8 +250,7 @@
     }];
 }
 
--(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success
-{
+- (void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success {
     
     NSString *ids =[arrayWithIds componentsJoinedByString:@","];
     NSDictionary *params = @{@"user_id": ids};

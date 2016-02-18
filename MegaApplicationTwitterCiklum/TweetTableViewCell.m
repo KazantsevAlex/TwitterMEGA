@@ -7,7 +7,6 @@
 //
 
 #import "TweetTableViewCell.h"
-#import "ProfileHeaderView.h"
 
 @interface TweetTableViewCell ()
 
@@ -91,7 +90,7 @@
     self.likeCountLabel.text = [NSString stringWithFormat:@"%@", self.tweetM.favorite_count];
 }
 
- - (IBAction)retweetButton:(id)sender {
+- (IBAction)retweetButton:(id)sender {
      TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
      
      if (self.retweetButton.selected == 0) {
@@ -119,12 +118,11 @@
 - (IBAction)viewProfile:(id)sender {
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
+    ProfileHeaderViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.window.rootViewController = vc;
-    
+    [vc setUserId:self.tweetM.user.id_str];
 }
-
 
 - (void)prepareForReuse {
     [super prepareForReuse];

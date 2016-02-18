@@ -36,10 +36,11 @@
     [self configProfileViewStyle];
     
     [self fillProfileView:[[TwitterAPI sharedManager]ownUserID]];
-    
-    
 }
 
+- (void)setUserId:(NSString *)userId {
+    NSLog(@"id = %@",userId);
+}
 
 - (void)fillProfileView:(NSString *)userID {
     
@@ -57,7 +58,6 @@
     [self layoutProfileImageBaseView];
     [self layoutNavigationTitleView];
     [self updateNavigationBarAppearance];
-    
 }
 
 - (void)configProfileViewStyle {
@@ -81,10 +81,12 @@
 }
 
 - (CGFloat)minimumViewHeight {
+    
     return self.navigationBarView.frame.size.height + self.segmentBaseView.frame.size.height;
 }
 
 - (void)layoutBackgroundImageView {
+    
     CGFloat navigationBarHeight = self.navigationBarView.frame.size.height;
     
     CGFloat y = 0;
@@ -111,6 +113,7 @@
 }
 
 - (void)layoutProfileImageBaseView {
+    
     CGFloat navigationBarHeight = self.navigationBarView.frame.size.height;
     
     self.profileImageBaseView.transform = CGAffineTransformIdentity;
@@ -129,6 +132,7 @@
 }
 
 - (void)layoutNavigationTitleView {
+    
     CGRect frame = self.navigationTitleView.frame;
     
     CGFloat y = self.profileNameLabel.frame.origin.y;
@@ -142,6 +146,7 @@
 }
 
 - (void)updateNavigationBarAppearance {
+    
     CGFloat currentTitleY = self.navigationTitleView.frame.origin.y;
     CGFloat navigationBarBottom = self.navigationBarView.frame.size.height;
     

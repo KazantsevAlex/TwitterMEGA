@@ -21,7 +21,7 @@
 - (NSUInteger)usersInStore;
 - (NSArray *)getUserHomeTimeline;
 - (void)clearTweetStore;
--(User *)getUserWithId:(NSString *) userID;
--(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId;
--(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav;
+- (User *)getUserWithId:(NSString *) userID;
+- (Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId;
+- (void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav;
 @end

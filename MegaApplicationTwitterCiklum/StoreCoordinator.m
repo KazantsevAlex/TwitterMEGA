@@ -21,34 +21,44 @@ static NSString *tweetsCount = @"100";
 @property(nonatomic, strong) NSString *userMaxId;
 
 @property(nonatomic, strong)NSString *ownUserID;
-
+@property (nonatomic, strong) __block NSArray *array;
 
 @end
 
 @implementation StoreCoordinator
 
--(NSArray *)getOwnTimeLinePullToRefresh
-{
++ (id)sharedManager {
+    
+    static StoreCoordinator *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
+- (NSArray *)getOwnTimeLinePullToRefresh {
+    
     return [self getTimelineUser:@"" maxId:self.maxId];
 }
 
--(NSArray *)getOwnTimeLineDownloadMore
-{
+- (NSArray *)getOwnTimeLineDownloadMore {
+    
     return [self getTimelineUser:self.sinceId maxId:@""];
 }
 
--(NSArray *)getOwnTimeLine
-{
+- (NSArray *)getOwnTimeLine {
+    
     self.ownUserID = [[TwitterAPI sharedManager]ownUserID];
     return [self getTimelineUser:@"" maxId:@""];
 }
 
--(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID
-{
-    __block NSInteger i = 0;
-    __block NSArray *array;
+- (NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID {
     
-    [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:@"" maxID:@"" block:^(id object) {
+    __block NSInteger i = 0;
+    
+    
+    [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:sinceId maxID:maxID block:^(id object) {
         for(NSDictionary *dict in object) {
             
             //check result for error limit of requests!
@@ -71,64 +81,64 @@ static NSString *tweetsCount = @"100";
                 self.sinceId = dict[@"id_str"];
             }
         }
-        array = [[CoreDataInterface sharedManager]getUserHomeTimeline];
+        self.array = [[CoreDataInterface sharedManager]getUserHomeTimeline];
     }];
-    return array;
+    return self.array;
 }
 
--(User *)getUserTimeLinePullToRefresh:(NSString *) UserId
-{
+- (User *)getUserTimeLinePullToRefresh:(NSString *) UserId {
+    
     return [self getTimelineUserWithId:UserId sinceID:@"" maxId:self.userMaxId];
 }
 
--(User *)getUserTimeLineDownloadMore:(NSString *) UserId
-{
+- (User *)getUserTimeLineDownloadMore:(NSString *) UserId {
+    
     return [self getTimelineUserWithId:UserId sinceID:self.userSinceId maxId:@""];
 }
 
--(User *)getUserTimeLine:(NSString *) UserId
-{
+- (User *)getUserTimeLine:(NSString *) UserId {
+    
     return [self getTimelineUserWithId:UserId sinceID:@"" maxId:@""];
     
     // to get array use convertation from nsset [user.tweets allobject];
 }
 
--(User *)getTimelineUserWithId:(NSString *)userId sinceID:(NSString *)sinceId maxId:(NSString *)maxID
-{
+-(User *)getTimelineUserWithId:(NSString *)userId sinceID:(NSString *)sinceId maxId:(NSString *)maxID {
+    
     __block NSInteger i = 0;
     __block User *uniqUser;
     
     [[TwitterAPI sharedManager] getTimelineUserWithID:userId count:tweetsCount sinceID:sinceId maxID:maxID block:^(id object)
-    {
-        for(NSDictionary *dict in object) {
-            
-            //check result for error limit of requests!
-            if (dict[@"error"])
-            {
-                break;
-                //claas name for cheking error code
-            }
-            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
-            i++;
-            if ([sinceId length] != 0)
-            {
-                if (i == 0)
-                {
-                    self.userMaxId = dict[@"id_str"];
-                }
-            }
-            if ([object count] == i)
-            {
-                self.userSinceId = dict[@"id_str"];
-            }
-        }
-        uniqUser = [[CoreDataInterface sharedManager]getUserWithId:userId ];
-    }];
+     {
+         for(NSDictionary *dict in object) {
+             
+             //check result for error limit of requests!
+             if (dict[@"error"])
+             {
+                 break;
+                 //claas name for cheking error code
+             }
+             [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+             i++;
+             if ([sinceId length] != 0)
+             {
+                 if (i == 0)
+                 {
+                     self.userMaxId = dict[@"id_str"];
+                 }
+             }
+             if ([object count] == i)
+             {
+                 self.userSinceId = dict[@"id_str"];
+             }
+         }
+         uniqUser = [[CoreDataInterface sharedManager]getUserWithId:userId ];
+     }];
     return uniqUser;
-
+    
 }
--(void)setFavoritedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited
-{
+- (void)setFavoritedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited {
+    
     if (favorited == true) {
         [[TwitterAPI sharedManager]likeTweetwithID:tweetID block:^(id object) {
             
@@ -148,8 +158,9 @@ static NSString *tweetsCount = @"100";
         }];
     }
 }
--(void)setRetweetedTweetWithId:(NSString *)tweetID retweted:(BOOL)retweeted
-{
+
+- (void)setRetweetedTweetWithId:(NSString *)tweetID retweted:(BOOL)retweeted {
+    
     if (retweeted == true) {
         [[TwitterAPI sharedManager]retweetStatusWithID:tweetID block:^(id object) {
             //some code
@@ -165,20 +176,82 @@ static NSString *tweetsCount = @"100";
     
 }
 
--(void)postStatus:(NSString *)text
-{
+- (void)postStatus:(NSString *)text {
     
 }
--(NSArray *)getFriendsList
-{
-    return nil;
+
+- (NSArray *)getFriendsList {
+    
+    __block NSMutableArray *usersID;
+    __block NSMutableArray *friendsArray;
+    [[TwitterAPI sharedManager]getUserFriend:^(id object) {
+        usersID = [NSMutableArray arrayWithCapacity:[object count]];
+        for (int i = 0; i < [object[@"ids"] count]; i++ )
+        {
+            if (usersID != nil)
+            {
+                //[usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+                [usersID addObject:[object[@"ids"]objectAtIndex:i]];
+            }
+            else
+            {
+                NSLog(@"user is NIL");
+            }
+        }
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object)
+         {
+             for (NSDictionary *dict in object)
+             {
+                 [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+                 
+             }
+             for (int i = 0; i < [usersID count]; i++)
+             {
+                 User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                 [friendsArray addObject:k];
+                 //  NSLog(@"%@", k.name);
+             }
+         }];
+    }];
+    return friendsArray;
 }
--(NSArray *)getFollowersList
-{
-    return nil;
+
+-(NSArray *)getFollowersList {
+    
+    __block NSMutableArray *usersID;
+    __block NSMutableArray *followersArray;
+    [[TwitterAPI sharedManager]getUserFriend:^(id object) {
+        usersID = [NSMutableArray arrayWithCapacity:[object count]];
+        for (int i = 0; i < [object[@"ids"] count]; i++ )
+        {
+            if (usersID != nil)
+            {
+                [usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+                //[usersID addObject:[object[@"ids"]objectAtIndex:i]];
+            }
+            else
+            {
+                NSLog(@"user is NIL");
+            }
+        }
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object)
+         {
+             for (NSDictionary *dict in object)
+             {
+                 [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+                 
+             }
+             for (int i = 0; i < [usersID count]; i++)
+             {
+                 User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                 [followersArray addObject:k];
+             }
+         }];
+    }];
+    return followersArray;
 }
--(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl
-{
+
+-(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl {
     
 }
 

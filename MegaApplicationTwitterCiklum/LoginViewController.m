@@ -35,19 +35,6 @@
 }
 
 
-//- (IBAction)loginAction:(id)sender {
-//    
-//        [[Twitter sharedInstance]logInWithCompletion:^(TWTRSession* session, NSError* error) {
-//            if (session) {
-//                [self performSegueWithIdentifier:@"ToProfile" sender:self];
-//                NSLog(@"signed in as %@", [session userName]);
-//            } else {
-//                NSLog(@"error: %@", [error localizedDescription]);
-//            }
-//        }];
-//    
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

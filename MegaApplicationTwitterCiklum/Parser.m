@@ -10,28 +10,27 @@
 
 @implementation Parser
 
--(BOOL)isValidStatusText:(NSString *)statusText
-{
+-(BOOL)isValidStatusText:(NSString *)statusText {
     //lenght 140 symbols
     return true;
 }
--(BOOL)isValidUserName:(NSString *)username
-{
+
+-(BOOL)isValidUserName:(NSString *)username {
     //lenght 14 symbols
     return true;
 }
--(BOOL)isValidUserDescription:(NSString *)descriprion
-{
+
+-(BOOL)isValidUserDescription:(NSString *)descriprion {
     //lenght 80 symbols
     return true;
 }
--(BOOL)isValidUserLocationName:(NSString *)locationName
-{
+
+-(BOOL)isValidUserLocationName:(NSString *)locationName {
     //lenght 25 symbols
     return true;
 }
--(BOOL)isValidUserUrlt:(NSString *)url
-{
+
+-(BOOL)isValidUserUrlt:(NSString *)url {
     //lenght 140 symbols http:\\ ather 
     return true;
 }
