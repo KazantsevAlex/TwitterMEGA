@@ -14,9 +14,14 @@
 
 @interface StoreCoordinator : NSObject
 
++(id)sharedManager;
+
 -(NSArray *)getOwnTimeLinePullToRefresh;
 -(NSArray *)getOwnTimeLineDownloadMore;
 -(NSArray *)getOwnTimeLine;
+
+
+-(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID;
 
 -(User *)getUserTimeLinePullToRefresh:(NSString *) UserId;
 -(User *)getUserTimeLineDownloadMore:(NSString *) UserId;

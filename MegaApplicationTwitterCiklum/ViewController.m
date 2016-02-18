@@ -62,8 +62,15 @@
 //      
 //  }];
     
-    NSLog(@"%lu",[[self.storeCoordinator getOwnTimeLine]count]);
+//    [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:@"50" sinceID:@"699687202083704832" maxID:@"" block:^(id object) {
+//        for (NSDictionary *dict in object) {
+//            [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+//            NSLog(@"test");
+//        }
+//    }];
     
+    
+    [[StoreCoordinator sharedManager]getTimelineUser:@"" maxId:@"699687202083704832"];
 
     
 //    __block NSMutableArray *usersID;

@@ -107,7 +107,6 @@
     }
     else
     {
-        
         //if user exist - update his profile
         User *us;
         us = [self getUserWithId:dict[@"user"][@"id_str"]];

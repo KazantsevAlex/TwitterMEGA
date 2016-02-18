@@ -27,6 +27,16 @@ static NSString *tweetsCount = @"100";
 
 @implementation StoreCoordinator
 
++(id)sharedManager
+{
+    static StoreCoordinator *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
 -(NSArray *)getOwnTimeLinePullToRefresh
 {
     return [self getTimelineUser:@"" maxId:self.maxId];
@@ -48,7 +58,7 @@ static NSString *tweetsCount = @"100";
     __block NSInteger i = 0;
 
     
-    [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:@"" maxID:@"" block:^(id object) {
+    [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:sinceId maxID:maxID block:^(id object) {
         for(NSDictionary *dict in object) {
             
             //check result for error limit of requests!

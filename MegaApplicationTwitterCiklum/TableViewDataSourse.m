@@ -14,7 +14,7 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *tweetArray;
 @property (nonatomic, strong) __block NSString *sinceID;
-@property (nonatomic, strong)StoreCoordinator *storeCoordinator;
+
 
 @end
 
@@ -25,10 +25,14 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
-//        self.storeCoordinator = [StoreCoordinator new];
-//        self.tweetArray = [self.storeCoordinator getOwnTimeLine];
-        [self refreshArray];
+        self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(refreshArray)
+//                                                     name:@"kCLAuthorizationStatusAuthorized" object:nil];
+//     
+        
+        
+//        [self refreshArray];
 
     }
     return self;
@@ -48,8 +52,7 @@
 }
 
 - (void)refreshArray {
-    
-    [self.storeCoordinator getOwnTimeLinePullToRefresh];
+    self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
 }
 
 
@@ -73,36 +76,24 @@
         [cell fillCellWith:tweet];
         tempCell = cell;
     }
+    
+    if (indexPath.row == [self.tweetArray count] - 2) {
+        self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLineDownloadMore];
+        [self.tableView reloadData];
+    }
     return tempCell;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    NSLog(@"%lu",[self.tweetArray count] );
     return  [self.tweetArray count];
 }
          
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 185;
-//}
-
-- (void)scrollViewDidScroll: (UIScrollView *)scroll {
-    // UITableView only moves in one direction, y axis
-    CGFloat currentOffset = scroll.contentOffset.y;
-    CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
-    
-    if (maximumOffset - currentOffset <= 150.0) {
-        //[self.storeCoordinator getOwnTimeLineDownloadMore];
-    }
-    // Change 10.0 to adjust the distance from bottom
-    if (maximumOffset - currentOffset <= 10.0) {
-       // NSLog(@"download more");
-    }
-}
-
 
 @end
     
