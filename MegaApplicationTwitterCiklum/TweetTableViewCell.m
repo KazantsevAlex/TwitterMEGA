@@ -45,7 +45,6 @@
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
-    
     self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",tweetModel.user.profile_image_url]];
@@ -117,11 +116,11 @@
 
 - (IBAction)viewProfile:(id)sender {
     
+    [ProfileHeaderViewController setUserID: self.tweetM.user.id_str];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     ProfileHeaderViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.window.rootViewController = vc;
-    [vc setUserId:self.tweetM.user.id_str];
 }
 
 - (void)prepareForReuse {

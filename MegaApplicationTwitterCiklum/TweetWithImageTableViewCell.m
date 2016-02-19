@@ -44,17 +44,15 @@
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
-    
     self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
 
-    
     [self getImage:tweetModel.user.profile_image_url view:self.imageProfilePicture];
     
     [self getImage:tweetModel.mediaUrl view:self.mediaImageTweet];
     
 }
 
--(void)getImage:(NSString *)imageURl view:(UIImageView *)view {
+- (void)getImage:(NSString *)imageURl view:(UIImageView *)view {
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURl]];
     

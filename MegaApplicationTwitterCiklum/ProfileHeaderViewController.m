@@ -11,44 +11,63 @@
 @interface ProfileHeaderViewController ()
 
 
-@property (nonatomic) CGFloat defaultViewHeight;
-@property (nonatomic) CGFloat defaultBackgroundImageViewHeight;
-@property (nonatomic) CGFloat defaultNavigationTitleViewTop;
-@property (nonatomic) CGFloat profileImageBaseMinimumScale;
-
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (weak, nonatomic) IBOutlet UIView *profileImageBaseView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-@property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *profileNicknameLabel;
-@property (weak, nonatomic) IBOutlet UIView *navigationTitleView;
-@property (weak, nonatomic) IBOutlet UIView *navigationBarView;
-@property (weak, nonatomic) IBOutlet UIView *segmentBaseView;
-
 
 
 @end
 
 @implementation ProfileHeaderViewController
 
+static NSString* _userID;
+
++ (void)setUserID:(NSString*)value {
+    
+    _userID = value;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configProfileViewStyle];
+    [self fillProfileView:_userID];
     
-    [self fillProfileView:[[TwitterAPI sharedManager]ownUserID]];
+    //need set nil for avoid issues with cached profile id
+    _userID = nil;
 }
 
 - (void)setUserId:(NSString *)userId {
+    
     NSLog(@"id = %@",userId);
 }
 
 - (void)fillProfileView:(NSString *)userID {
     
     User *user = [[CoreDataInterface sharedManager]getUserWithId:userID];
-    self.profileNicknameLabel.text = user.name;
-    self.profileNameLabel.text = user.screen_name;
+    self.profileNicknameLabel.text = user.screen_name;
+    self.profileBarNameLabel.text = user.name;
+    self.profileNameLabel.text = user.name;
+    self.userTweetCountLabel.text = [user.statuses_count stringValue];
+    
+    
+    [self getImage:user.profile_image_url view:self.profileImageView];
+    [self getImage:user.profile_background_image_url view:self.backgroundImageView];
+    NSLog(@"%@", user.profile_background_image_url);
 }
 
+- (void)getImage:(NSString *)imageURl view:(UIImageView *)view {
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURl]];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            UIImage *image = [UIImage imageWithData:data];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    view.image = image;
+                });
+            }
+        }
+    }];
+    [task resume];
+}
 
 
 - (void)viewWillLayoutSubviews {

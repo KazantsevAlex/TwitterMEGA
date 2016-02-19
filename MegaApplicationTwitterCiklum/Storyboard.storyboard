@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fov-zM-lBR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="VKA-y3-0yT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -176,14 +176,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="985-0Z-ZL0">
-                                <rect key="frame" x="12" y="159" width="150" height="21"/>
+                                <rect key="frame" x="12" y="159" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@nickname bla bla bla" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TmG-CO-Bhr">
-                                <rect key="frame" x="12" y="180" width="100" height="12"/>
+                                <rect key="frame" x="12" y="180" width="288" height="12"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -206,22 +206,22 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="X8M-On-Ze1">
-                                        <rect key="frame" x="80" y="13" width="160" height="38"/>
+                                        <rect key="frame" x="44" y="13" width="232" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tweets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mMB-1o-3PF">
-                                                <rect key="frame" x="20" y="17" width="120" height="21"/>
+                                                <rect key="frame" x="0.0" y="17" width="232" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veryyy Looooong name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3F-cG-7IT">
-                                                <rect key="frame" x="22" y="0.0" width="116" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="232" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
@@ -267,11 +267,13 @@
                         <outlet property="backgroundImageView" destination="ooi-EE-hg6" id="Icp-pE-a58"/>
                         <outlet property="navigationBarView" destination="u5l-Ug-KTg" id="9qu-B1-Qo0"/>
                         <outlet property="navigationTitleView" destination="X8M-On-Ze1" id="ECd-1J-eyo"/>
+                        <outlet property="profileBarNameLabel" destination="M3F-cG-7IT" id="4n7-aU-EV5"/>
                         <outlet property="profileImageBaseView" destination="u7s-En-8ys" id="D2G-lL-AQR"/>
                         <outlet property="profileImageView" destination="o8e-0J-VAZ" id="k31-Ub-oYQ"/>
-                        <outlet property="profileNameLabel" destination="985-0Z-ZL0" id="DfG-Tl-7nl"/>
+                        <outlet property="profileNameLabel" destination="985-0Z-ZL0" id="YRr-al-IBh"/>
                         <outlet property="profileNicknameLabel" destination="TmG-CO-Bhr" id="ap2-SR-Gd2"/>
                         <outlet property="segmentBaseView" destination="AYg-tR-tbo" id="u9y-gg-Uy9"/>
+                        <outlet property="userTweetCountLabel" destination="mMB-1o-3PF" id="tdG-4q-Upx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPo-Jo-X4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,6 +291,6 @@
         <image name="twtr-bird-start-logo" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VSA-s7-dwf"/>
+        <segue reference="074-CV-pGa"/>
     </inferredMetricsTieBreakers>
 </document>
