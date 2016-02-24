@@ -35,7 +35,7 @@
 -(void)getLatestLoans {
     
     NSLog(@"Pull to refresh");
-    [self.dataSource refreshArray];
+    [self.dataSource refreshArray];//: [sotecoordinator sharedManger]getUserTimeline];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }

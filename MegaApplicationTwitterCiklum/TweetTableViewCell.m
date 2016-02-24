@@ -7,6 +7,10 @@
 //
 
 #import "TweetTableViewCell.h"
+#import "ProfileTableViewController.h"
+#import "ProfileHeaderViewController.h"
+
+
 
 @interface TweetTableViewCell ()
 
@@ -16,8 +20,6 @@
 @end
 
 @implementation TweetTableViewCell
-
-
 
 - (void)awakeFromNib {
     
@@ -48,7 +50,6 @@
     self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",tweetModel.user.profile_image_url]];
-    
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
             UIImage *image = [UIImage imageWithData:data];
@@ -67,8 +68,8 @@
     TwitterAPI *twitterLikeApi = [TwitterAPI sharedManager];
     CoreDataInterface *coreDataLike = [CoreDataInterface sharedManager];
     
-    if (self.likeButton.selected == 0)
-    {
+    if (self.likeButton.selected == 0) {
+        
         [twitterLikeApi likeTweetwithID:self.tweetM.id_str block:^(id object) {
             [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-on.png"] forState:UIControlStateNormal];
             [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:YES];
@@ -77,8 +78,8 @@
         self.tweetM.favorite_count = [NSNumber numberWithLong:[self.tweetM.favorite_count integerValue] + 1];
         
     }
-    else if (self.likeButton.selected == 1)
-    {
+    else if (self.likeButton.selected == 1) {
+        
         [twitterLikeApi unlikeTweetwithID:self.tweetM.id_str block:^(id object) {
             [self.likeButton setImage:[UIImage imageNamed:@"twtr-icn-heart-off.png"] forState:UIControlStateNormal];
             [coreDataLike tweetWithIDFavorited:self.tweetM.id_str favorited:NO];
@@ -93,6 +94,7 @@
      TwitterAPI *twitterRetweetApi = [TwitterAPI sharedManager];
      
      if (self.retweetButton.selected == 0) {
+         
          [twitterRetweetApi retweetStatusWithID:self.tweetM.id_str block:^(id object) {
 
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"] forState:UIControlStateNormal];
@@ -101,8 +103,8 @@
          self.tweetM.retweet_count = [NSNumber numberWithLong:[self.tweetM.retweet_count integerValue] + 1];
          
      }
-     else if (self.retweetButton.selected == 1)
-     {
+     else if (self.retweetButton.selected == 1) {
+         
          [twitterRetweetApi unretweetStatusWithID:self.tweetM.id_str block:^(id object) {
 
              [self.retweetButton setImage:[UIImage imageNamed:@"retweet_default.png"] forState:UIControlStateNormal];
@@ -117,6 +119,7 @@
 - (IBAction)viewProfile:(id)sender {
     
     [ProfileHeaderViewController setUserID: self.tweetM.user.id_str];
+//    [ProfileTableViewController setUserIDTV:self.tweetM.user.id_str];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     ProfileHeaderViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

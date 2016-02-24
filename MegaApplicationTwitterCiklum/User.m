@@ -13,6 +13,7 @@
 
 -(void)fillUpUserEntityWithDictionary:(NSDictionary *)dict
 {
+    NSLog(@"Twitter object %@", dict);
     if (dict[@"user"]) {
     self.contributors_enabled = dict[@"user"][@"contributors_enabled"];
     self.created_at =  dict[@"user"][@"created_at"];
@@ -64,6 +65,10 @@
         self.protected = dict[@"protected"];
         self.screen_name = dict[@"screen_name"];
         self.statuses_count = dict[@"statuses_count"];
+        
+        //self.profile.banner = dict[@"profile_banner_url"];
+        
+        
         //    if (dict[@"user"][@"url"] != nil) {
         //         self.url = dict[@"user"][@"url"];
         //    }

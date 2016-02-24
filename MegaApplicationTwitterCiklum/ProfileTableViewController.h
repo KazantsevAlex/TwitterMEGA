@@ -11,8 +11,16 @@
 #import "TweetTableViewCell.h"
 #import "TweetWithImageTableViewCell.h"
 #import "ProfileHeaderViewController.h"
-
+#import "StoreCoordinator.h"
 
 @interface ProfileTableViewController : UITableViewController
+
+@property (nonatomic, weak) ProfileHeaderViewController* profileHeaderViewController;
+@property (nonatomic, weak) UIView* headerView;
+@property (nonatomic) CGRect initialFrame;
+@property (nonatomic) CGFloat defaultViewHeight;
+@property (nonatomic) CGFloat minimumHeaderViewHeight;
+
++ (void)setUserIDTV:(NSString*)value;
 
 @end

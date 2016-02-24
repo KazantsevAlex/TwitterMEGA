@@ -30,16 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userTweetCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileBarNameLabel;
 
-/*
- * Static methods
- */
-
+//Static methods
 + (void)setUserID:(NSString*)value;
-
-/*
- * Instance methods
- */
-
-- (void)setUserId:(NSString *)userId;
 
 @end

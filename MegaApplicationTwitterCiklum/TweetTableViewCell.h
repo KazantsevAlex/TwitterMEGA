@@ -12,12 +12,8 @@
 #import "CoreDataInterface.h"
 #import "TwitterAPI.h"
 #import "MHPrettyDate.h"
-#import "ProfileHeaderViewController.h"
-
-
 
 @interface TweetTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
-
 
 @property (weak, nonatomic) IBOutlet UIView *viewTweetContent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageProfilePicture;
@@ -30,8 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *retweetCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 
-
-
 - (void)fillCellWith:(Tweet *)tweetModel;
+
 
 @end

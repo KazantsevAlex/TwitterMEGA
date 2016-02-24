@@ -115,8 +115,8 @@
     [self saveContext];
 }
 
-- (void)clearTweetStore
-{
+- (void)clearTweetStore {
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Tweet"];
     [fetchRequest setIncludesPropertyValues:NO];
     NSError *error;

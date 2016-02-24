@@ -103,7 +103,7 @@ static NSString *tweetsCount = @"100";
     // to get array use convertation from nsset [user.tweets allobject];
 }
 
--(User *)getTimelineUserWithId:(NSString *)userId sinceID:(NSString *)sinceId maxId:(NSString *)maxID {
+- (User *)getTimelineUserWithId:(NSString *)userId sinceID:(NSString *)sinceId maxId:(NSString *)maxID {
     
     __block NSInteger i = 0;
     __block User *uniqUser;
@@ -248,6 +248,7 @@ static NSString *tweetsCount = @"100";
              }
          }];
     }];
+    
     return followersArray;
 }
 

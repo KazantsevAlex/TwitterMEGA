@@ -12,7 +12,7 @@
 
 @property(nonatomic, strong) Twitter *twitter;
 @property (nonatomic, strong) TWTRAPIClient *apiClient;
-@property(nonatomic, strong)NSString *ownUserID;
+@property(nonatomic, strong) NSString *ownUserID;
 
 @end
 

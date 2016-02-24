@@ -10,9 +10,6 @@
 
 @interface ProfileHeaderViewController ()
 
-
-
-
 @end
 
 @implementation ProfileHeaderViewController
@@ -33,11 +30,6 @@ static NSString* _userID;
     _userID = nil;
 }
 
-- (void)setUserId:(NSString *)userId {
-    
-    NSLog(@"id = %@",userId);
-}
-
 - (void)fillProfileView:(NSString *)userID {
     
     User *user = [[CoreDataInterface sharedManager]getUserWithId:userID];
@@ -46,9 +38,9 @@ static NSString* _userID;
     self.profileNameLabel.text = user.name;
     self.userTweetCountLabel.text = [user.statuses_count stringValue];
     
-    
     [self getImage:user.profile_image_url view:self.profileImageView];
     [self getImage:user.profile_background_image_url view:self.backgroundImageView];
+    
     NSLog(@"%@", user.profile_background_image_url);
 }
 

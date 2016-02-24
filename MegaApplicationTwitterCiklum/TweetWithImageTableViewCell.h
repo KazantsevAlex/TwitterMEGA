@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *mediaImageTweet;
 
+- (void)fillCellWith:(Tweet *)tweetModel;
+
 @end

@@ -17,6 +17,36 @@
 @end
 
 @implementation ViewController
+- (IBAction)action:(id)sender {
+    
+    __block NSMutableArray *usersID;
+    __block NSMutableArray *followersArray;
+    [[TwitterAPI sharedManager]getUserFriend:^(id object) {
+        usersID = [NSMutableArray arrayWithCapacity:[object[@"ids"] count]];
+        NSLog(@"%lu",[object[@"ids"] count]);
+        
+        for (int i = 0; i < [object[@"ids"] count]; i++ )
+        {
+            
+               // [usersID addObject:[object[@"users"]objectAtIndex:i][@"id_str"]];
+            [usersID addObject:[object[@"ids"]objectAtIndex:i]];
+           
+        }
+        [[TwitterAPI sharedManager]usersLookupWithIds:usersID block:^(id object)
+         {
+             for (NSDictionary *dict in object)
+             {
+                 [[CoreDataInterface sharedManager]addUserWithDictionary:dict];
+                 
+             }
+             for (int i = 0; i < [usersID count]; i++)
+             {
+                 User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
+                 //[followersArray addObject:k];
+             }
+         }];
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

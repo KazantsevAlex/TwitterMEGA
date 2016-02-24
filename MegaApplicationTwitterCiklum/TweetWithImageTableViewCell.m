@@ -7,6 +7,8 @@
 //
 
 #import "TweetWithImageTableViewCell.h"
+#import "ProfileTableViewController.h"
+#import "ProfileHeaderViewController.h"
 
 @interface TweetWithImageTableViewCell ()
 
@@ -47,7 +49,7 @@
     self.timestampLabel.text = [MHPrettyDate prettyDateFromDate:[formatter dateFromString:tweetModel.created_at] withFormat:MHPrettyDateShortRelativeTime];
 
     [self getImage:tweetModel.user.profile_image_url view:self.imageProfilePicture];
-    
+
     [self getImage:tweetModel.mediaUrl view:self.mediaImageTweet];
     
 }
@@ -126,6 +128,7 @@
 
 - (IBAction)viewProview:(id)sender {
     
+    [ProfileHeaderViewController setUserID: self.tweetM.user.id_str];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Profile"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

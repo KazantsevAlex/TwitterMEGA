@@ -21,11 +21,15 @@
 
 @implementation TableViewDataSource
 
-- (instancetype)initWithTableView:(UITableView *)tableView {
+- (instancetype)initWithTableView:(UITableView *)tableView //with array:(nsarray *)usersTweets
+{
 
     if (self = [super init]) {
         [self configure:tableView];
 //        self.tweetArray = (NSMutableArray *)[[CoreDataInterface sharedManager]getUserHomeTimeline];
+        
+       // self.tweetArray = usersTweets;
+        
         self.storeCoordinator = [StoreCoordinator new];
         self.tweetArray = [self.storeCoordinator getOwnTimeLine];
     }
