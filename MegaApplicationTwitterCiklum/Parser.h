@@ -10,6 +10,7 @@
 
 @interface Parser : NSObject
 
++(id)sharedManager;
 -(BOOL)isValidStatusText:(NSString *)statusText;
 -(BOOL)isValidUserName:(NSString *)username;
 -(BOOL)isValidUserDescription:(NSString *)descriprion;

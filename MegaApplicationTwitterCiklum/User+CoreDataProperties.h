@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *screen_name;
 @property (nullable, nonatomic, retain) NSNumber *statuses_count;
 @property (nullable, nonatomic, retain) NSString *url;
+@property (nullable, nonatomic, retain) NSString *profile_banner_url;
 @property (nullable, nonatomic, retain) NSSet<Tweet *> *tweets;
 
 @end

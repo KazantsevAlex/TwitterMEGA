@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "TableViewDataSourse.h"
 #import "CoreDataInterface.h"
+#import "ProfileHeaderView.h"
+#import "ComposerViewController.h"
 
-@interface TimeLineTableViewController : UITableViewController
+
+@interface TimeLineTableViewController : UITableViewController 
 
 
 @end

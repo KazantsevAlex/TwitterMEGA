@@ -15,6 +15,8 @@
 @property (nonatomic, strong) __block NSString *sinceID;
 @property (nonatomic, strong) StoreCoordinator *storeCoordinator;
 
+@property (nonatomic, strong) NSArray *ar;
+
 
 @end
 
@@ -24,7 +26,8 @@
     [super viewDidLoad];
     [self initObjects];
     self.sinceID = @"";
-    [[TwitterAPI sharedManager] loginAction];
+   [[TwitterAPI sharedManager] loginAction];
+ 
 }
 
 -(void)initObjects
@@ -45,14 +48,21 @@
     //    [[TwitterAPI sharedManager]postStatusWithText:@"Do you know 'tweet' in  REST API called 'status'?" block:^(id object) {
     //        NSLog(@"object %@", object);
     //    }];
+//    
+//    [[StoreCoordinator sharedManager]getTimelineUser:@"" maxId:@"" completition:^void(id objects) {
+//        self.ar = objects;
+//    }];
 }
 - (IBAction)likeButtonAction:(id)sender {
     
+  
 }
 
 
 - (IBAction)ButtonAction:(id)sender {
     
+    
+    NSLog(@"%@",self.ar);
     
 //    
 //  [[TwitterAPI sharedManager]getTimelineUserWithID:@"2941100471" count:@"20" sinceID:@"" maxID:@"" block:^(id object) {
@@ -69,8 +79,7 @@
 //        }
 //    }];
     
-    
-    [[StoreCoordinator sharedManager]getTimelineUser:@"" maxId:@"699687202083704832"];
+   
 
     
 //    __block NSMutableArray *usersID;

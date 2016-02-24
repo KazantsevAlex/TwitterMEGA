@@ -23,6 +23,7 @@
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
 		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
 		A8383C731C70A41200518443 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8383C721C70A41200518443 /* Parser.m */; };
+		A83C66D11C7CC9C80080D70D /* ComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C66D01C7CC9C80080D70D /* ComposerViewController.m */; };
 		A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
 		A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C91C523E2B009D6F07 /* AppDelegate.m */; };
@@ -68,6 +69,8 @@
 		A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorAlertView.m; sourceTree = "<group>"; };
 		A8383C711C70A41200518443 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		A8383C721C70A41200518443 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		A83C66CF1C7CC9C80080D70D /* ComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposerViewController.h; path = ../../.Trash/ComposerViewController.h; sourceTree = "<group>"; };
+		A83C66D01C7CC9C80080D70D /* ComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposerViewController.m; path = ../../.Trash/ComposerViewController.m; sourceTree = "<group>"; };
 		A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEditViewController.h; sourceTree = "<group>"; };
 		A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileEditViewController.m; sourceTree = "<group>"; };
 		A83F39C21C523E2B009D6F07 /* MegaApplicationTwitterCiklum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaApplicationTwitterCiklum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +113,8 @@
 		0C0B0BA61C63B09100F49D93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A83C66CF1C7CC9C80080D70D /* ComposerViewController.h */,
+				A83C66D01C7CC9C80080D70D /* ComposerViewController.m */,
 				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
 				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
 				A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */,
@@ -388,6 +393,7 @@
 			files = (
 				A83F39E11C523E4D009D6F07 /* CoreDataStack.m in Sources */,
 				A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */,
+				A83C66D11C7CC9C80080D70D /* ComposerViewController.m in Sources */,
 				A83F39CD1C523E2B009D6F07 /* ViewController.m in Sources */,
 				0CE65A8E1C5620B8002C2A4D /* TweetWithImageTableViewCell.m in Sources */,
 				0C0B0B6B1C5E871300F49D93 /* LoginViewController.m in Sources */,

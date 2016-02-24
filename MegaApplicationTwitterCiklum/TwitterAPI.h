@@ -16,7 +16,12 @@
 
 + (id)sharedManager;
 
+
+-(void)login;
+
 - (void)loginAction;
+
+
 -(void)usersLookupWithIds:(NSArray *)arrayWithIds block:(void(^)(id object))success;
 
 -(void)getUserFriend:(void(^)(id object))success;

@@ -7,107 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08DDB39F398641BB7B5DE3E676A8170F /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 21341B8019A604119D6769D656BB29FF /* DTTimePeriodCollection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0C118EA84A58649A57D7BDE7CF5BC9A7 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 46373305104963296E5B114436C1CE6F /* NSDate+DateTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3971D598267558B94FF665FECDA82111 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA41535A22CCD2393C8C89276380746 /* DTTimePeriodChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5EAF9E72DEF7160FC93FF44F9BDE322E /* MHPrettyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4124FBF9067FA5EC463DF68E09FD3F70 /* MHPrettyDate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6C8E458BA1C159DDB8D24C215B0CFEE7 /* DTTimePeriodGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 802348764929337E67B5862AE68C20F7 /* DTTimePeriodGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70528E7EBDD7860D6CD13AB83B5FD74A /* DTError.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD77D31E72AB00A80A7E504E00D07B0 /* DTError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08DDB39F398641BB7B5DE3E676A8170F /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026BD7E556ED69D46D19B4E1DADF7A1 /* DTTimePeriodCollection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0C118EA84A58649A57D7BDE7CF5BC9A7 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B460EBD37207AB54DE87116162803EE1 /* NSDate+DateTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1048300D6F6CC5F59946DE95AB34D4A7 /* DEComposeRuledView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7528214C2DCD3072264A50E200E40EB5 /* DEComposeRuledView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E4284F0A2EC63FB0A96E3598FF6F985 /* DEComposeRuledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D3A54F04C5EFD78A8ED17BEF8839A3 /* DEComposeRuledView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1EAD83A636241069DD3B240C22591B21 /* DEComposeTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 82DBD7C3BC4CECD8CAA9942B8F140419 /* DEComposeTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3971D598267558B94FF665FECDA82111 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 97849A3CC3F316103AE680FC1E22EA6A /* DTTimePeriodChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4468C1C373F4069F0C01A6ACC329ED78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		466A7B984FDA8CD5070A31A95E38471B /* DEComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF72B4C8A83625BC5677CFC6FF3C4D2 /* DEComposeTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		54E852311B7AA45A050FA62D223AEC53 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D6A26574FF25B730C6602164B4DD1 /* RECommonFunctions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5843C10ED01A2914E188588272C926E6 /* REComposeSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 535AF25EDC7C1C8A57BEA43B6A0BECFE /* REComposeSheetView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5EAF9E72DEF7160FC93FF44F9BDE322E /* MHPrettyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A165D791133E779D08C12B7452041BF6 /* MHPrettyDate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		64CE502DF5740B33B9713637524F488E /* REComposeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E84A325E1E69594DCD2ACE1D54CA56C /* REComposeBackgroundView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6C8E458BA1C159DDB8D24C215B0CFEE7 /* DTTimePeriodGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D78D3F29D1F86A1F613D4955675CCC7 /* DTTimePeriodGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70528E7EBDD7860D6CD13AB83B5FD74A /* DTError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CAFCBE151F38312E490629A2A78F8FA /* DTError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76D44A6DAF86305BEC263BBFE2657486 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B5C8E3EE8F091F0ACA2EF8B9EE9197 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77193852511922CC5CC888DEDEA6CC64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		8DBAE4BE8A114ED7FA30E5811C7C9F15 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E84B1B374C7FE268E088857D46645D5 /* DTTimePeriodGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		92FAA090F757BECA69FB60EB19F9B4EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		9C3E095663A91660777D0C284588F704 /* DTTimePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = FE52C9443D9A192E94CB19B2E39C9A8D /* DTTimePeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9DA2609B71A9860982B0687802F8D6CB /* DTTimePeriodChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B27329846DC14E11835B9E440625B53 /* DTTimePeriodChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1D39E61CDC8BCFF5C26B38A349CF3C4 /* MHPrettyDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8B82A150F90FFC8E14D52774F983A /* MHPrettyDate-dummy.m */; };
-		A6B1DF59915B1E66F5B492E3DC382FBD /* DateTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 349469612DA36EB10F48BA5B6FDFE848 /* DateTools-dummy.m */; };
-		AEF39CCCA47BF107AEC783739E8D6844 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B8374A3DD8705B80E2E309B079F54 /* DTConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B41E7D31B34527CF5A001926809E5DC8 /* DTTimePeriodCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = F947DB0AB1226201F44CD4A9847BE830 /* DTTimePeriodCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6E277CA70064AE2D1F7361009CEB41B /* DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F994AB0E777B0EF30E12646AB12AB23 /* DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D15D6954B41648B9F81C441AF214B82F /* Pods-MegaApplicationTwitterCiklum-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B03364147738056F36C3911DEF6B4FB /* Pods-MegaApplicationTwitterCiklum-dummy.m */; };
-		D2D399D3D75C39F4AC5CCCC71EAE9C5F /* MHPrettyDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E1A5E8916E1AB048056A00E7D708286 /* MHPrettyDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CF3587E75433C9505678ACB11F99D2F /* REComposeSheetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D5D57D64695745D47C8F9C5E35104DD /* REComposeSheetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AE4738417E1EE2D99C330B890E1BEB3 /* Pods-MegaApplicationTwitterCiklum-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B03364147738056F36C3911DEF6B4FB /* Pods-MegaApplicationTwitterCiklum-dummy.m */; };
+		8DBAE4BE8A114ED7FA30E5811C7C9F15 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FEDC221E201B99C3F5525EA3E37B81 /* DTTimePeriodGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9C3E095663A91660777D0C284588F704 /* DTTimePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 16B2F60DFC839A316221737CEE47D95C /* DTTimePeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA2609B71A9860982B0687802F8D6CB /* DTTimePeriodChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 70A701784A18270A046AD517B4121588 /* DTTimePeriodChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A04C07780DBB5F5BB40E2E178DAB6EC4 /* REComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E01B54C355B0EC297AFF4488A071475 /* REComposeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1D39E61CDC8BCFF5C26B38A349CF3C4 /* MHPrettyDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A67B6E9B2DB725183123E09ED7E81 /* MHPrettyDate-dummy.m */; };
+		A6B1DF59915B1E66F5B492E3DC382FBD /* DateTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7024FA85A79417A638C5B6221E82761B /* DateTools-dummy.m */; };
+		AEF39CCCA47BF107AEC783739E8D6844 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D3839260DDBA523E2B366697B650A5 /* DTConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B41E7D31B34527CF5A001926809E5DC8 /* DTTimePeriodCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F7E0D7202902B997082777E30549B1 /* DTTimePeriodCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B766E02F945E56855ADF1D4226CA5ADD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		B8421E5401774BEE3A1A62E0ACAE3B48 /* REComposeBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 798286B4DBA004E978875676B05A232F /* REComposeBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6E277CA70064AE2D1F7361009CEB41B /* DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A5C8382FA4DCA110172A4A2E5A0587 /* DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2D399D3D75C39F4AC5CCCC71EAE9C5F /* MHPrettyDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F80425CDF77092CFCFC8D966C763F2B /* MHPrettyDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D510BFE29CF3502F0A467D3D94C19D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		DE6303DE14BD8A3A264FE96645E8075A /* DTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D031DB98B1BADFE4E1BDC25442D8A816 /* DTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD8F7B9B19071EB9D3EAA582AD7FAAF /* NSDate+DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 09DCB946FC17B1FEB59758E9CF76BBC7 /* NSDate+DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECDC9BE70EBB30AFA33016F779BB7E3D /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = C027CE6F29139063616D04888F3A71B9 /* DTError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EF8197F179C59888AD8DC30DF746D15E /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD9BFBCC390B9EA5A3BB3E10D28196 /* DTTimePeriod.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DE6303DE14BD8A3A264FE96645E8075A /* DTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 59CC329841ACAECCE1E4580988E6780B /* DTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD8F7B9B19071EB9D3EAA582AD7FAAF /* NSDate+DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3403DF4F8371DCB1CDD287C81AFCB39B /* NSDate+DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECDC9BE70EBB30AFA33016F779BB7E3D /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E010624D2B65554ED591FBA650192DD5 /* DTError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EF8197F179C59888AD8DC30DF746D15E /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D457CA5E4C915858D2786912A48D5D /* DTTimePeriod.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FA87419492D5E5C2E1936CD9AEFDD605 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D455B17366E363DB5DEA78D2F3C509 /* REComposeViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FC963E63868E9764CCF821F14E1075B9 /* REComposeViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD55798DC31CDE0CE9EFFF5B94710B /* REComposeViewController-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		36F31BEDE88B11F4E780C1BDB8F0CB54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF5D28B1709DBAAB6CDC67E8751A66BB;
-			remoteInfo = MHPrettyDate;
-		};
-		C780841F77B0B0966D333AAE3690E0DA /* PBXContainerItemProxy */ = {
+		05ED338C2DDD6640343E9DC0B81CF12F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 31FF44B5E2FF8CF00090950A8B67AFF6;
 			remoteInfo = DateTools;
 		};
+		226A4CCBB2B018666DE0FB3043751F6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF5D28B1709DBAAB6CDC67E8751A66BB;
+			remoteInfo = MHPrettyDate;
+		};
+		D7F6FB58AA609F28EC19311CC718031C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E506E7E8C23F11A7F37DA1C6ABBB1AAB;
+			remoteInfo = REComposeViewController;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008149E8364FF893F13E12E42B24393D /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
-		09DCB946FC17B1FEB59758E9CF76BBC7 /* NSDate+DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateTools.h"; path = "DateTools/NSDate+DateTools.h"; sourceTree = "<group>"; };
+		0296E2061FB922CA04CDFEEC9E389FE8 /* DateTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTools.xcconfig; sourceTree = "<group>"; };
+		02FED64216F57B07BC34B10526CD0B4F /* libDateTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDateTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CAFCBE151F38312E490629A2A78F8FA /* DTError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTError.h; path = DateTools/DTError.h; sourceTree = "<group>"; };
+		0E84A325E1E69594DCD2ACE1D54CA56C /* REComposeBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REComposeBackgroundView.m; path = REComposeViewController/REComposeBackgroundView.m; sourceTree = "<group>"; };
 		0F1B8B66BD2F7D3DFB5739089347DC02 /* Pods-MegaApplicationTwitterCiklum-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MegaApplicationTwitterCiklum-frameworks.sh"; sourceTree = "<group>"; };
-		1AFD9BFBCC390B9EA5A3BB3E10D28196 /* DTTimePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriod.m; path = DateTools/DTTimePeriod.m; sourceTree = "<group>"; };
-		21341B8019A604119D6769D656BB29FF /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodCollection.m; path = DateTools/DTTimePeriodCollection.m; sourceTree = "<group>"; };
-		231BF7123AC7183D5FBB94738C753688 /* libDateTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDateTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		29A2F74BB36CE821A2C7987A43812882 /* DateTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTools.xcconfig; sourceTree = "<group>"; };
-		2F994AB0E777B0EF30E12646AB12AB23 /* DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateTools.h; path = DateTools/DateTools.h; sourceTree = "<group>"; };
+		12D3839260DDBA523E2B366697B650A5 /* DTConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTConstants.m; path = DateTools/DTConstants.m; sourceTree = "<group>"; };
+		139802C98DFECCE5C73043BF4504E267 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nl.lproj; path = MHPrettyDate/nl.lproj; sourceTree = "<group>"; };
+		16B2F60DFC839A316221737CEE47D95C /* DTTimePeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriod.h; path = DateTools/DTTimePeriod.h; sourceTree = "<group>"; };
+		1F33F294D1B4D4AB6579298ADA1A7677 /* DateTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTools-prefix.pch"; sourceTree = "<group>"; };
+		1F80425CDF77092CFCFC8D966C763F2B /* MHPrettyDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MHPrettyDate.h; path = MHPrettyDate/MHPrettyDate.h; sourceTree = "<group>"; };
+		2D5D57D64695745D47C8F9C5E35104DD /* REComposeSheetView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REComposeSheetView.h; path = REComposeViewController/REComposeSheetView.h; sourceTree = "<group>"; };
+		3026BD7E556ED69D46D19B4E1DADF7A1 /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodCollection.m; path = DateTools/DTTimePeriodCollection.m; sourceTree = "<group>"; };
 		314082D23D93B5648A659F23C86B1010 /* Pods-MegaApplicationTwitterCiklum-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MegaApplicationTwitterCiklum-acknowledgements.plist"; sourceTree = "<group>"; };
-		349469612DA36EB10F48BA5B6FDFE848 /* DateTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTools-dummy.m"; sourceTree = "<group>"; };
-		34BD9339233E71EAF6B0768AD18BB9A2 /* MHPrettyDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MHPrettyDate.xcconfig; sourceTree = "<group>"; };
+		3403DF4F8371DCB1CDD287C81AFCB39B /* NSDate+DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateTools.h"; path = "DateTools/NSDate+DateTools.h"; sourceTree = "<group>"; };
+		37D3A54F04C5EFD78A8ED17BEF8839A3 /* DEComposeRuledView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DEComposeRuledView.m; path = REComposeViewController/DEComposeRuledView.m; sourceTree = "<group>"; };
+		37FEDC221E201B99C3F5525EA3E37B81 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodGroup.m; path = DateTools/DTTimePeriodGroup.m; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3FA41535A22CCD2393C8C89276380746 /* DTTimePeriodChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodChain.m; path = DateTools/DTTimePeriodChain.m; sourceTree = "<group>"; };
-		4124FBF9067FA5EC463DF68E09FD3F70 /* MHPrettyDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MHPrettyDate.m; path = MHPrettyDate/MHPrettyDate.m; sourceTree = "<group>"; };
-		46373305104963296E5B114436C1CE6F /* NSDate+DateTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateTools.m"; path = "DateTools/NSDate+DateTools.m"; sourceTree = "<group>"; };
+		459EB83BC103DE20D68C69AAB1CE3D38 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
+		46F2D721A93F0D52A3B0E8A67C825D81 /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC065022380BC9409C05FD6AAE7B0CF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		4E18A0E08B8E71F5AD20D98417B4834F /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
-		5041514732845235A30861EDAA4ED8A1 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		535AF25EDC7C1C8A57BEA43B6A0BECFE /* REComposeSheetView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REComposeSheetView.m; path = REComposeViewController/REComposeSheetView.m; sourceTree = "<group>"; };
+		55F7E0D7202902B997082777E30549B1 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodCollection.h; path = DateTools/DTTimePeriodCollection.h; sourceTree = "<group>"; };
+		59CC329841ACAECCE1E4580988E6780B /* DTConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTConstants.h; path = DateTools/DTConstants.h; sourceTree = "<group>"; };
+		5BB97ADEB62BE0D9F0BC4ABB11339BD7 /* REComposeViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = REComposeViewController.xcconfig; sourceTree = "<group>"; };
+		5E01B54C355B0EC297AFF4488A071475 /* REComposeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REComposeViewController.h; path = REComposeViewController/REComposeViewController.h; sourceTree = "<group>"; };
 		683B604C9ECC02A16C92A23F951CD416 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MegaApplicationTwitterCiklum.release.xcconfig"; sourceTree = "<group>"; };
-		6B27329846DC14E11835B9E440625B53 /* DTTimePeriodChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodChain.h; path = DateTools/DTTimePeriodChain.h; sourceTree = "<group>"; };
-		6DCD72B776C576225DF6EA49B0B10D22 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = MHPrettyDate/en.lproj; sourceTree = "<group>"; };
-		6E1A5E8916E1AB048056A00E7D708286 /* MHPrettyDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MHPrettyDate.h; path = MHPrettyDate/MHPrettyDate.h; sourceTree = "<group>"; };
-		75D3D116439EBCE41F5ACE623DAE3853 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		7CB8B82A150F90FFC8E14D52774F983A /* MHPrettyDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MHPrettyDate-dummy.m"; sourceTree = "<group>"; };
-		802348764929337E67B5862AE68C20F7 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodGroup.h; path = DateTools/DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		701B39401A0BD7A7752B228695B54397 /* DateTools.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = DateTools/DateTools.bundle; sourceTree = "<group>"; };
+		7024FA85A79417A638C5B6221E82761B /* DateTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTools-dummy.m"; sourceTree = "<group>"; };
+		70A701784A18270A046AD517B4121588 /* DTTimePeriodChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodChain.h; path = DateTools/DTTimePeriodChain.h; sourceTree = "<group>"; };
+		721A67B6E9B2DB725183123E09ED7E81 /* MHPrettyDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MHPrettyDate-dummy.m"; sourceTree = "<group>"; };
+		7528214C2DCD3072264A50E200E40EB5 /* DEComposeRuledView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DEComposeRuledView.h; path = REComposeViewController/DEComposeRuledView.h; sourceTree = "<group>"; };
+		798286B4DBA004E978875676B05A232F /* REComposeBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REComposeBackgroundView.h; path = REComposeViewController/REComposeBackgroundView.h; sourceTree = "<group>"; };
+		7C3B9B9883EF65F3747880B7E6E0A424 /* libMHPrettyDate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMHPrettyDate.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DBD7C3BC4CECD8CAA9942B8F140419 /* DEComposeTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DEComposeTextView.h; path = REComposeViewController/DEComposeTextView.h; sourceTree = "<group>"; };
 		8B03364147738056F36C3911DEF6B4FB /* Pods-MegaApplicationTwitterCiklum-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MegaApplicationTwitterCiklum-dummy.m"; sourceTree = "<group>"; };
-		8E0B8374A3DD8705B80E2E309B079F54 /* DTConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTConstants.m; path = DateTools/DTConstants.m; sourceTree = "<group>"; };
-		8E84B1B374C7FE268E088857D46645D5 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodGroup.m; path = DateTools/DTTimePeriodGroup.m; sourceTree = "<group>"; };
-		95A00F169DE981FD6FD351A95F6AE88B /* libMHPrettyDate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMHPrettyDate.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1E8AB232E808F3161AF98B44EC0A0AF /* DateTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTools-prefix.pch"; sourceTree = "<group>"; };
-		A30996312BB6E70CA45BC7BDE0A17F8B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		A694B1CF968A9D2F05A1F5690D47439B /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9534366AB36806A6F45EA2578E82E79C /* libREComposeViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libREComposeViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97849A3CC3F316103AE680FC1E22EA6A /* DTTimePeriodChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodChain.m; path = DateTools/DTTimePeriodChain.m; sourceTree = "<group>"; };
+		9AF72B4C8A83625BC5677CFC6FF3C4D2 /* DEComposeTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DEComposeTextView.m; path = REComposeViewController/DEComposeTextView.m; sourceTree = "<group>"; };
+		9B5D6A26574FF25B730C6602164B4DD1 /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = REComposeViewController/RECommonFunctions.m; sourceTree = "<group>"; };
+		9BBD55798DC31CDE0CE9EFFF5B94710B /* REComposeViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "REComposeViewController-dummy.m"; sourceTree = "<group>"; };
+		9D78D3F29D1F86A1F613D4955675CCC7 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodGroup.h; path = DateTools/DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		A165D791133E779D08C12B7452041BF6 /* MHPrettyDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MHPrettyDate.m; path = MHPrettyDate/MHPrettyDate.m; sourceTree = "<group>"; };
+		A2A9308A74A785ED764C2E3C93901746 /* MHPrettyDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MHPrettyDate-prefix.pch"; sourceTree = "<group>"; };
 		AD210550408921C2874731216B2C6832 /* Pods-MegaApplicationTwitterCiklum-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MegaApplicationTwitterCiklum-resources.sh"; sourceTree = "<group>"; };
+		B460EBD37207AB54DE87116162803EE1 /* NSDate+DateTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateTools.m"; path = "DateTools/NSDate+DateTools.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD0936003BFD0507FAF85235D57D2F1B /* DateTools.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = DateTools/DateTools.bundle; sourceTree = "<group>"; };
-		C027CE6F29139063616D04888F3A71B9 /* DTError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTError.m; path = DateTools/DTError.m; sourceTree = "<group>"; };
-		D031DB98B1BADFE4E1BDC25442D8A816 /* DTConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTConstants.h; path = DateTools/DTConstants.h; sourceTree = "<group>"; };
+		BBDDA87B77AFA3C787C176710C68788F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		D1D457CA5E4C915858D2786912A48D5D /* DTTimePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriod.m; path = DateTools/DTTimePeriod.m; sourceTree = "<group>"; };
+		DCAF961C21F2C719B053DE988601F047 /* REComposeViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = REComposeViewController.bundle; path = REComposeViewController/REComposeViewController.bundle; sourceTree = "<group>"; };
+		DEF43E6EC9A10399ACDBAAC94361C06F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		DF08694ED4F177B8FA217011406F5003 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = MHPrettyDate/en.lproj; sourceTree = "<group>"; };
+		E010624D2B65554ED591FBA650192DD5 /* DTError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTError.m; path = DateTools/DTError.m; sourceTree = "<group>"; };
+		E0A5C8382FA4DCA110172A4A2E5A0587 /* DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateTools.h; path = DateTools/DateTools.h; sourceTree = "<group>"; };
 		E3485F8A979EE90A8EB67579F48E0252 /* Pods-MegaApplicationTwitterCiklum-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MegaApplicationTwitterCiklum-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EDD77D31E72AB00A80A7E504E00D07B0 /* DTError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTError.h; path = DateTools/DTError.h; sourceTree = "<group>"; };
-		F61C6229F3C41C89CFDD94C0F98BBFCF /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nl.lproj; path = MHPrettyDate/nl.lproj; sourceTree = "<group>"; };
-		F947DB0AB1226201F44CD4A9847BE830 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodCollection.h; path = DateTools/DTTimePeriodCollection.h; sourceTree = "<group>"; };
-		FE52C9443D9A192E94CB19B2E39C9A8D /* DTTimePeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriod.h; path = DateTools/DTTimePeriod.h; sourceTree = "<group>"; };
-		FFECD56A0C64304C1AE5512119119679 /* MHPrettyDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MHPrettyDate-prefix.pch"; sourceTree = "<group>"; };
+		E59D571CF633C470D8A3A59C9C395BF2 /* MHPrettyDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MHPrettyDate.xcconfig; sourceTree = "<group>"; };
+		F3B5C8E3EE8F091F0ACA2EF8B9EE9197 /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = REComposeViewController/RECommonFunctions.h; sourceTree = "<group>"; };
+		F6D455B17366E363DB5DEA78D2F3C509 /* REComposeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REComposeViewController.m; path = REComposeViewController/REComposeViewController.m; sourceTree = "<group>"; };
+		FFEC043A26C44AE3DC2B1CBE475D0AF4 /* REComposeViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "REComposeViewController-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		30D917C01858DB32D7C93CCB0201FA6B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92FAA090F757BECA69FB60EB19F9B4EC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		530FD65C498B21E3CC0C04855EB59B4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				77193852511922CC5CC888DEDEA6CC64 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BD1549CA174F44729C8EAFF1EBF487E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B766E02F945E56855ADF1D4226CA5ADD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,49 +157,126 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E22B9750B1FD5F5A8E0007B9053752DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4468C1C373F4069F0C01A6ACC329ED78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0428C8A6520C48587B200C04DBF8207D /* TwitterCore */ = {
+		03677ED99582330FC2ED1A9B269B9EF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B9301503E7EA7B06AC7B999FAE89A31F /* Frameworks */,
+				701B39401A0BD7A7752B228695B54397 /* DateTools.bundle */,
 			);
-			path = TwitterCore;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		313DE67ABE686F4A1F344F0604CFB9D7 /* Pods */ = {
+		206B6B85541F35250E933E8819E9B053 /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				7E1FD0B81B8314F3748D2BAAEA95D810 /* DateTools */,
-				F8057C35733816764A27BA4AB8663FD7 /* Fabric */,
-				3F096D5CC2A39E49AB41F40CF7234C40 /* MHPrettyDate */,
-				0428C8A6520C48587B200C04DBF8207D /* TwitterCore */,
-				B28EE1448746AF59497421896ED0BDA7 /* TwitterKit */,
+				D6104FA4FA218A31E7E021BE91052D16 /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		3C248D8B9116681C37DDDD3A2E548FF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF961C21F2C719B053DE988601F047 /* REComposeViewController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		435C3C9E06AC256405BE293437035A31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B5E623C1113F85F4F08F4B09CCB0AEF /* DateTools */,
+				206B6B85541F35250E933E8819E9B053 /* Fabric */,
+				9DCAA2E09BB823EA842970634521C003 /* MHPrettyDate */,
+				4B1347D47B1DBF6069AB652D4569E881 /* REComposeViewController */,
+				8F3BDC3114994E93F4DFC00ABFBA2F22 /* TwitterCore */,
+				5D1BDC5FED22ABE6B01BC6500595F708 /* TwitterKit */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3F096D5CC2A39E49AB41F40CF7234C40 /* MHPrettyDate */ = {
+		494D5D52EBF977B18D756439FFF2B07C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E1A5E8916E1AB048056A00E7D708286 /* MHPrettyDate.h */,
-				4124FBF9067FA5EC463DF68E09FD3F70 /* MHPrettyDate.m */,
-				EADD942C9BD624251BAB989FF04B695A /* Resources */,
-				796CBA37767D5CDC6E96B8AEF60D6BCD /* Support Files */,
-			);
-			path = MHPrettyDate;
-			sourceTree = "<group>";
-		};
-		796CBA37767D5CDC6E96B8AEF60D6BCD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				34BD9339233E71EAF6B0768AD18BB9A2 /* MHPrettyDate.xcconfig */,
-				7CB8B82A150F90FFC8E14D52774F983A /* MHPrettyDate-dummy.m */,
-				FFECD56A0C64304C1AE5512119119679 /* MHPrettyDate-prefix.pch */,
+				E59D571CF633C470D8A3A59C9C395BF2 /* MHPrettyDate.xcconfig */,
+				721A67B6E9B2DB725183123E09ED7E81 /* MHPrettyDate-dummy.m */,
+				A2A9308A74A785ED764C2E3C93901746 /* MHPrettyDate-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MHPrettyDate";
+			sourceTree = "<group>";
+		};
+		49526C70D4F448CAC692491148CD2AE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF08694ED4F177B8FA217011406F5003 /* en.lproj */,
+				139802C98DFECCE5C73043BF4504E267 /* nl.lproj */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4B1347D47B1DBF6069AB652D4569E881 /* REComposeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7528214C2DCD3072264A50E200E40EB5 /* DEComposeRuledView.h */,
+				37D3A54F04C5EFD78A8ED17BEF8839A3 /* DEComposeRuledView.m */,
+				82DBD7C3BC4CECD8CAA9942B8F140419 /* DEComposeTextView.h */,
+				9AF72B4C8A83625BC5677CFC6FF3C4D2 /* DEComposeTextView.m */,
+				F3B5C8E3EE8F091F0ACA2EF8B9EE9197 /* RECommonFunctions.h */,
+				9B5D6A26574FF25B730C6602164B4DD1 /* RECommonFunctions.m */,
+				798286B4DBA004E978875676B05A232F /* REComposeBackgroundView.h */,
+				0E84A325E1E69594DCD2ACE1D54CA56C /* REComposeBackgroundView.m */,
+				2D5D57D64695745D47C8F9C5E35104DD /* REComposeSheetView.h */,
+				535AF25EDC7C1C8A57BEA43B6A0BECFE /* REComposeSheetView.m */,
+				5E01B54C355B0EC297AFF4488A071475 /* REComposeViewController.h */,
+				F6D455B17366E363DB5DEA78D2F3C509 /* REComposeViewController.m */,
+				3C248D8B9116681C37DDDD3A2E548FF8 /* Resources */,
+				F194B004262D410C3EE91949A1819DB4 /* Support Files */,
+			);
+			path = REComposeViewController;
+			sourceTree = "<group>";
+		};
+		4B5E623C1113F85F4F08F4B09CCB0AEF /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				E0A5C8382FA4DCA110172A4A2E5A0587 /* DateTools.h */,
+				59CC329841ACAECCE1E4580988E6780B /* DTConstants.h */,
+				12D3839260DDBA523E2B366697B650A5 /* DTConstants.m */,
+				0CAFCBE151F38312E490629A2A78F8FA /* DTError.h */,
+				E010624D2B65554ED591FBA650192DD5 /* DTError.m */,
+				16B2F60DFC839A316221737CEE47D95C /* DTTimePeriod.h */,
+				D1D457CA5E4C915858D2786912A48D5D /* DTTimePeriod.m */,
+				70A701784A18270A046AD517B4121588 /* DTTimePeriodChain.h */,
+				97849A3CC3F316103AE680FC1E22EA6A /* DTTimePeriodChain.m */,
+				55F7E0D7202902B997082777E30549B1 /* DTTimePeriodCollection.h */,
+				3026BD7E556ED69D46D19B4E1DADF7A1 /* DTTimePeriodCollection.m */,
+				9D78D3F29D1F86A1F613D4955675CCC7 /* DTTimePeriodGroup.h */,
+				37FEDC221E201B99C3F5525EA3E37B81 /* DTTimePeriodGroup.m */,
+				3403DF4F8371DCB1CDD287C81AFCB39B /* NSDate+DateTools.h */,
+				B460EBD37207AB54DE87116162803EE1 /* NSDate+DateTools.m */,
+				03677ED99582330FC2ED1A9B269B9EF2 /* Resources */,
+				C98953D5EE87850542B7EFFD238C139F /* Support Files */,
+			);
+			path = DateTools;
+			sourceTree = "<group>";
+		};
+		5D1BDC5FED22ABE6B01BC6500595F708 /* TwitterKit */ = {
+			isa = PBXGroup;
+			children = (
+				F522E575E56945649AB2ACB05A582CD2 /* Frameworks */,
+				B71EDA913202806339D3E0031B781551 /* Resources */,
+			);
+			path = TwitterKit;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -169,86 +284,48 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				313DE67ABE686F4A1F344F0604CFB9D7 /* Pods */,
-				F020139334CC60C4E07E3701009AA16D /* Products */,
+				435C3C9E06AC256405BE293437035A31 /* Pods */,
+				83A4948E18F5245F6300DD68E0B2AF2A /* Products */,
 				F0B7A3461FF13A831812526C2F526C6C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E1FD0B81B8314F3748D2BAAEA95D810 /* DateTools */ = {
+		83A4948E18F5245F6300DD68E0B2AF2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F994AB0E777B0EF30E12646AB12AB23 /* DateTools.h */,
-				D031DB98B1BADFE4E1BDC25442D8A816 /* DTConstants.h */,
-				8E0B8374A3DD8705B80E2E309B079F54 /* DTConstants.m */,
-				EDD77D31E72AB00A80A7E504E00D07B0 /* DTError.h */,
-				C027CE6F29139063616D04888F3A71B9 /* DTError.m */,
-				FE52C9443D9A192E94CB19B2E39C9A8D /* DTTimePeriod.h */,
-				1AFD9BFBCC390B9EA5A3BB3E10D28196 /* DTTimePeriod.m */,
-				6B27329846DC14E11835B9E440625B53 /* DTTimePeriodChain.h */,
-				3FA41535A22CCD2393C8C89276380746 /* DTTimePeriodChain.m */,
-				F947DB0AB1226201F44CD4A9847BE830 /* DTTimePeriodCollection.h */,
-				21341B8019A604119D6769D656BB29FF /* DTTimePeriodCollection.m */,
-				802348764929337E67B5862AE68C20F7 /* DTTimePeriodGroup.h */,
-				8E84B1B374C7FE268E088857D46645D5 /* DTTimePeriodGroup.m */,
-				09DCB946FC17B1FEB59758E9CF76BBC7 /* NSDate+DateTools.h */,
-				46373305104963296E5B114436C1CE6F /* NSDate+DateTools.m */,
-				82B859EC7796B883DBF3218F9FFF4DA6 /* Resources */,
-				96EDF123E8EDF3C774C3AED1B7B996F1 /* Support Files */,
+				02FED64216F57B07BC34B10526CD0B4F /* libDateTools.a */,
+				7C3B9B9883EF65F3747880B7E6E0A424 /* libMHPrettyDate.a */,
+				46F2D721A93F0D52A3B0E8A67C825D81 /* libPods-MegaApplicationTwitterCiklum.a */,
+				9534366AB36806A6F45EA2578E82E79C /* libREComposeViewController.a */,
 			);
-			path = DateTools;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		7E3383B9BA4A5587F73A49759CF9059D /* Frameworks */ = {
+		8F3BDC3114994E93F4DFC00ABFBA2F22 /* TwitterCore */ = {
 			isa = PBXGroup;
 			children = (
-				A30996312BB6E70CA45BC7BDE0A17F8B /* Fabric.framework */,
+				DBD9FB9121EE629306390D7C4D63ED8D /* Frameworks */,
 			);
-			name = Frameworks;
+			path = TwitterCore;
 			sourceTree = "<group>";
 		};
-		82B859EC7796B883DBF3218F9FFF4DA6 /* Resources */ = {
+		9DCAA2E09BB823EA842970634521C003 /* MHPrettyDate */ = {
 			isa = PBXGroup;
 			children = (
-				BD0936003BFD0507FAF85235D57D2F1B /* DateTools.bundle */,
+				1F80425CDF77092CFCFC8D966C763F2B /* MHPrettyDate.h */,
+				A165D791133E779D08C12B7452041BF6 /* MHPrettyDate.m */,
+				49526C70D4F448CAC692491148CD2AE6 /* Resources */,
+				494D5D52EBF977B18D756439FFF2B07C /* Support Files */,
+			);
+			path = MHPrettyDate;
+			sourceTree = "<group>";
+		};
+		B71EDA913202806339D3E0031B781551 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBDDA87B77AFA3C787C176710C68788F /* TwitterKitResources.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		96EDF123E8EDF3C774C3AED1B7B996F1 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				29A2F74BB36CE821A2C7987A43812882 /* DateTools.xcconfig */,
-				349469612DA36EB10F48BA5B6FDFE848 /* DateTools-dummy.m */,
-				A1E8AB232E808F3161AF98B44EC0A0AF /* DateTools-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DateTools";
-			sourceTree = "<group>";
-		};
-		AE6A3813DED62001644793FC7105A784 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5041514732845235A30861EDAA4ED8A1 /* TwitterKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B28EE1448746AF59497421896ED0BDA7 /* TwitterKit */ = {
-			isa = PBXGroup;
-			children = (
-				AE6A3813DED62001644793FC7105A784 /* Frameworks */,
-				D5C628F879A25B9E92F2FFFD8379735D /* Resources */,
-			);
-			path = TwitterKit;
-			sourceTree = "<group>";
-		};
-		B9301503E7EA7B06AC7B999FAE89A31F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				008149E8364FF893F13E12E42B24393D /* TwitterCore.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -267,31 +344,31 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D5C628F879A25B9E92F2FFFD8379735D /* Resources */ = {
+		C98953D5EE87850542B7EFFD238C139F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				75D3D116439EBCE41F5ACE623DAE3853 /* TwitterKitResources.bundle */,
+				0296E2061FB922CA04CDFEEC9E389FE8 /* DateTools.xcconfig */,
+				7024FA85A79417A638C5B6221E82761B /* DateTools-dummy.m */,
+				1F33F294D1B4D4AB6579298ADA1A7677 /* DateTools-prefix.pch */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/DateTools";
 			sourceTree = "<group>";
 		};
-		EADD942C9BD624251BAB989FF04B695A /* Resources */ = {
+		D6104FA4FA218A31E7E021BE91052D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD72B776C576225DF6EA49B0B10D22 /* en.lproj */,
-				F61C6229F3C41C89CFDD94C0F98BBFCF /* nl.lproj */,
+				4AC065022380BC9409C05FD6AAE7B0CF /* Fabric.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F020139334CC60C4E07E3701009AA16D /* Products */ = {
+		DBD9FB9121EE629306390D7C4D63ED8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				231BF7123AC7183D5FBB94738C753688 /* libDateTools.a */,
-				95A00F169DE981FD6FD351A95F6AE88B /* libMHPrettyDate.a */,
-				A694B1CF968A9D2F05A1F5690D47439B /* libPods-MegaApplicationTwitterCiklum.a */,
+				459EB83BC103DE20D68C69AAB1CE3D38 /* TwitterCore.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F0B7A3461FF13A831812526C2F526C6C /* Targets Support Files */ = {
@@ -300,6 +377,17 @@
 				F49638413EFA317CFCC132E86DBE496D /* Pods-MegaApplicationTwitterCiklum */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F194B004262D410C3EE91949A1819DB4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BB97ADEB62BE0D9F0BC4ABB11339BD7 /* REComposeViewController.xcconfig */,
+				9BBD55798DC31CDE0CE9EFFF5B94710B /* REComposeViewController-dummy.m */,
+				FFEC043A26C44AE3DC2B1CBE475D0AF4 /* REComposeViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/REComposeViewController";
 			sourceTree = "<group>";
 		};
 		F49638413EFA317CFCC132E86DBE496D /* Pods-MegaApplicationTwitterCiklum */ = {
@@ -317,12 +405,12 @@
 			path = "Target Support Files/Pods-MegaApplicationTwitterCiklum";
 			sourceTree = "<group>";
 		};
-		F8057C35733816764A27BA4AB8663FD7 /* Fabric */ = {
+		F522E575E56945649AB2ACB05A582CD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E3383B9BA4A5587F73A49759CF9059D /* Frameworks */,
+				DEF43E6EC9A10399ACDBAAC94361C06F /* TwitterKit.framework */,
 			);
-			path = Fabric;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +431,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		858CF215558182EF832B39C9E4A8F3D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1048300D6F6CC5F59946DE95AB34D4A7 /* DEComposeRuledView.h in Headers */,
+				1EAD83A636241069DD3B240C22591B21 /* DEComposeTextView.h in Headers */,
+				76D44A6DAF86305BEC263BBFE2657486 /* RECommonFunctions.h in Headers */,
+				B8421E5401774BEE3A1A62E0ACAE3B48 /* REComposeBackgroundView.h in Headers */,
+				7CF3587E75433C9505678ACB11F99D2F /* REComposeSheetView.h in Headers */,
+				A04C07780DBB5F5BB40E2E178DAB6EC4 /* REComposeViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD58B9444F740E16716BA6531E138BD6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,24 +455,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		026A2234848803647EF653A70D383640 /* Pods-MegaApplicationTwitterCiklum */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA291FCB770FCDDC542C957EB4A6945F /* Build configuration list for PBXNativeTarget "Pods-MegaApplicationTwitterCiklum" */;
-			buildPhases = (
-				78CF9CB48026DC4A14D22E5844B6D38C /* Sources */,
-				30D917C01858DB32D7C93CCB0201FA6B /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3462CC52E4F1AFA74EC717933CE7C393 /* PBXTargetDependency */,
-				2F4D9C63A6DB3DB3B4C27B7AC0C96F01 /* PBXTargetDependency */,
-			);
-			name = "Pods-MegaApplicationTwitterCiklum";
-			productName = "Pods-MegaApplicationTwitterCiklum";
-			productReference = A694B1CF968A9D2F05A1F5690D47439B /* libPods-MegaApplicationTwitterCiklum.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D080F77A97056851915A3DCE6F7F6EA5 /* Build configuration list for PBXNativeTarget "DateTools" */;
@@ -386,7 +469,43 @@
 			);
 			name = DateTools;
 			productName = DateTools;
-			productReference = 231BF7123AC7183D5FBB94738C753688 /* libDateTools.a */;
+			productReference = 02FED64216F57B07BC34B10526CD0B4F /* libDateTools.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4361CD2E8D587EBF38EA42EB36270248 /* Pods-MegaApplicationTwitterCiklum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75C8192C10C47EAB266E0F4DFE7F5932 /* Build configuration list for PBXNativeTarget "Pods-MegaApplicationTwitterCiklum" */;
+			buildPhases = (
+				6D9990DD971C5F322ED14485DBEAFB5F /* Sources */,
+				E22B9750B1FD5F5A8E0007B9053752DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9ECA5AA7284D58DA0E3566FE9CD5C82 /* PBXTargetDependency */,
+				815D51A7E2903F84E61B4581BC753954 /* PBXTargetDependency */,
+				972F0F8614FEB64361AFDD0EEC2D1C13 /* PBXTargetDependency */,
+			);
+			name = "Pods-MegaApplicationTwitterCiklum";
+			productName = "Pods-MegaApplicationTwitterCiklum";
+			productReference = 46F2D721A93F0D52A3B0E8A67C825D81 /* libPods-MegaApplicationTwitterCiklum.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E506E7E8C23F11A7F37DA1C6ABBB1AAB /* REComposeViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833B2493AABCF393DBBDB7AC2AC3D8F5 /* Build configuration list for PBXNativeTarget "REComposeViewController" */;
+			buildPhases = (
+				9D12687B85CF9B5B571E62BF05F991A8 /* Sources */,
+				6BD1549CA174F44729C8EAFF1EBF487E /* Frameworks */,
+				858CF215558182EF832B39C9E4A8F3D1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = REComposeViewController;
+			productName = REComposeViewController;
+			productReference = 9534366AB36806A6F45EA2578E82E79C /* libREComposeViewController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		FF5D28B1709DBAAB6CDC67E8751A66BB /* MHPrettyDate */ = {
@@ -403,7 +522,7 @@
 			);
 			name = MHPrettyDate;
 			productName = MHPrettyDate;
-			productReference = 95A00F169DE981FD6FD351A95F6AE88B /* libMHPrettyDate.a */;
+			productReference = 7C3B9B9883EF65F3747880B7E6E0A424 /* libMHPrettyDate.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -423,23 +542,38 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F020139334CC60C4E07E3701009AA16D /* Products */;
+			productRefGroup = 83A4948E18F5245F6300DD68E0B2AF2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */,
 				FF5D28B1709DBAAB6CDC67E8751A66BB /* MHPrettyDate */,
-				026A2234848803647EF653A70D383640 /* Pods-MegaApplicationTwitterCiklum */,
+				4361CD2E8D587EBF38EA42EB36270248 /* Pods-MegaApplicationTwitterCiklum */,
+				E506E7E8C23F11A7F37DA1C6ABBB1AAB /* REComposeViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		78CF9CB48026DC4A14D22E5844B6D38C /* Sources */ = {
+		6D9990DD971C5F322ED14485DBEAFB5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D15D6954B41648B9F81C441AF214B82F /* Pods-MegaApplicationTwitterCiklum-dummy.m in Sources */,
+				8AE4738417E1EE2D99C330B890E1BEB3 /* Pods-MegaApplicationTwitterCiklum-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D12687B85CF9B5B571E62BF05F991A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4284F0A2EC63FB0A96E3598FF6F985 /* DEComposeRuledView.m in Sources */,
+				466A7B984FDA8CD5070A31A95E38471B /* DEComposeTextView.m in Sources */,
+				54E852311B7AA45A050FA62D223AEC53 /* RECommonFunctions.m in Sources */,
+				64CE502DF5740B33B9713637524F488E /* REComposeBackgroundView.m in Sources */,
+				5843C10ED01A2914E188588272C926E6 /* REComposeSheetView.m in Sources */,
+				FC963E63868E9764CCF821F14E1075B9 /* REComposeViewController-dummy.m in Sources */,
+				FA87419492D5E5C2E1936CD9AEFDD605 /* REComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,24 +604,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2F4D9C63A6DB3DB3B4C27B7AC0C96F01 /* PBXTargetDependency */ = {
+		815D51A7E2903F84E61B4581BC753954 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MHPrettyDate;
 			target = FF5D28B1709DBAAB6CDC67E8751A66BB /* MHPrettyDate */;
-			targetProxy = 36F31BEDE88B11F4E780C1BDB8F0CB54 /* PBXContainerItemProxy */;
+			targetProxy = 226A4CCBB2B018666DE0FB3043751F6C /* PBXContainerItemProxy */;
 		};
-		3462CC52E4F1AFA74EC717933CE7C393 /* PBXTargetDependency */ = {
+		972F0F8614FEB64361AFDD0EEC2D1C13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = REComposeViewController;
+			target = E506E7E8C23F11A7F37DA1C6ABBB1AAB /* REComposeViewController */;
+			targetProxy = D7F6FB58AA609F28EC19311CC718031C /* PBXContainerItemProxy */;
+		};
+		C9ECA5AA7284D58DA0E3566FE9CD5C82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DateTools;
 			target = 31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */;
-			targetProxy = C780841F77B0B0966D333AAE3690E0DA /* PBXContainerItemProxy */;
+			targetProxy = 05ED338C2DDD6640343E9DC0B81CF12F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		093DC8C8AEB4B8142412F69713E62089 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29A2F74BB36CE821A2C7987A43812882 /* DateTools.xcconfig */;
+			baseConfigurationReference = 0296E2061FB922CA04CDFEEC9E389FE8 /* DateTools.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
@@ -503,7 +643,42 @@
 			};
 			name = Debug;
 		};
-		1E6CFA30EFB274CEF03B3899E12E1CF1 /* Release */ = {
+		0B0AEEAD2A6D751485DD9917DDE0C7AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E18A0E08B8E71F5AD20D98417B4834F /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2599C4478DE68AEAA8758BDDE951E21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59D571CF633C470D8A3A59C9C395BF2 /* MHPrettyDate.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MHPrettyDate/MHPrettyDate-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		314DBF1283A5D42E214A12ADB5CDA79D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 683B604C9ECC02A16C92A23F951CD416 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */;
 			buildSettings = {
@@ -520,12 +695,48 @@
 			};
 			name = Release;
 		};
-		2599C4478DE68AEAA8758BDDE951E21F /* Release */ = {
+		3927910F4A29974FAE85013E65D4CB25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34BD9339233E71EAF6B0768AD18BB9A2 /* MHPrettyDate.xcconfig */;
+			baseConfigurationReference = E59D571CF633C470D8A3A59C9C395BF2 /* MHPrettyDate.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MHPrettyDate/MHPrettyDate-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5691050400B6A7FADC44FB3C84B0C518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB97ADEB62BE0D9F0BC4ABB11339BD7 /* REComposeViewController.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/REComposeViewController/REComposeViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		73EAAA6AFDBAF1DB65E16099CF9E9647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB97ADEB62BE0D9F0BC4ABB11339BD7 /* REComposeViewController.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/REComposeViewController/REComposeViewController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -537,41 +748,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		3927910F4A29974FAE85013E65D4CB25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34BD9339233E71EAF6B0768AD18BB9A2 /* MHPrettyDate.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MHPrettyDate/MHPrettyDate-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		7B08128C96EC3CF18F12AB77CA8454AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E18A0E08B8E71F5AD20D98417B4834F /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		8D1534490D941DCA47C62AC4314182AF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -614,7 +790,7 @@
 		};
 		909F1EA1C99849B69E8E0D16F07988AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29A2F74BB36CE821A2C7987A43812882 /* DateTools.xcconfig */;
+			baseConfigurationReference = 0296E2061FB922CA04CDFEEC9E389FE8 /* DateTools.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
@@ -676,11 +852,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA291FCB770FCDDC542C957EB4A6945F /* Build configuration list for PBXNativeTarget "Pods-MegaApplicationTwitterCiklum" */ = {
+		75C8192C10C47EAB266E0F4DFE7F5932 /* Build configuration list for PBXNativeTarget "Pods-MegaApplicationTwitterCiklum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7B08128C96EC3CF18F12AB77CA8454AD /* Debug */,
-				1E6CFA30EFB274CEF03B3899E12E1CF1 /* Release */,
+				0B0AEEAD2A6D751485DD9917DDE0C7AF /* Debug */,
+				314DBF1283A5D42E214A12ADB5CDA79D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833B2493AABCF393DBBDB7AC2AC3D8F5 /* Build configuration list for PBXNativeTarget "REComposeViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5691050400B6A7FADC44FB3C84B0C518 /* Debug */,
+				73EAAA6AFDBAF1DB65E16099CF9E9647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

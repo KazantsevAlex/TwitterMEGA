@@ -10,6 +10,6 @@ pod 'TwitterKit'
 pod 'TwitterCore'
 pod 'DateTools'
 pod 'MHPrettyDate', '~> 1.1.1'
-
+pod 'REComposeViewController', '~> 2.3.2'
 end
 

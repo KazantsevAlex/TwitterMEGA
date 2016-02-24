@@ -13,15 +13,19 @@
 
 @interface CoreDataInterface : NSObject
 
-
 + (id)sharedManager;
+
 - (void)addTweetWithDictionary:(NSDictionary *)dict;
-- (void)addUserWithDictionary:(NSDictionary *)dict; 
+- (void)addUserWithDictionary:(NSDictionary *)dict;
+
 - (NSUInteger)tweetsInStore;
 - (NSUInteger)usersInStore;
+
 - (NSArray *)getUserHomeTimeline;
 - (void)clearTweetStore;
+
 -(User *)getUserWithId:(NSString *) userID;
 -(Tweet *)getUserHomeTimelineTweetWithId:(NSString *)tweetId;
+
 -(void)tweetWithIDFavorited:(NSString *)tweetID favorited:(BOOL)fav;
 @end

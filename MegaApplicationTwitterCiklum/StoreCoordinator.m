@@ -27,6 +27,11 @@ static NSString *tweetsCount = @"100";
 
 @implementation StoreCoordinator
 
+- (void)postTweetWithText:(NSString *)text
+{
+    NSLog(@"Store coordinator text: %@",text);
+}
+
 +(id)sharedManager
 {
     static StoreCoordinator *sharedMyManager = nil;
@@ -55,6 +60,11 @@ static NSString *tweetsCount = @"100";
 
 -(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID
 {
+    NSArray *s;
+    return s;
+}
+-(void)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID completition:(void (^)(id objects))handler
+{
     __block NSInteger i = 0;
 
     
@@ -81,9 +91,8 @@ static NSString *tweetsCount = @"100";
                 self.sinceId = dict[@"id_str"];
             }
         }
-        self.array = [[CoreDataInterface sharedManager]getUserHomeTimeline];
+        handler([[CoreDataInterface sharedManager]getUserHomeTimeline]);
     }];
-    return self.array;
 }
 
 -(User *)getUserTimeLinePullToRefresh:(NSString *) UserId
@@ -176,8 +185,14 @@ static NSString *tweetsCount = @"100";
 }
 -(void)postStatus:(NSString *)text
 {
-    
+    [[TwitterAPI sharedManager]postStatusWithText:text block:^(id object) {
+        NSDictionary *dict = [[NSDictionary alloc]initWithDictionary:object];
+        NSLog(@"%@", dict);
+        [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+    }];
 }
+
+
 -(NSArray *)getFriendsList
 {
     __block NSMutableArray *usersID;

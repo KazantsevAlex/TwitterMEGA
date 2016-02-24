@@ -2,6 +2,7 @@ PODS:
   - DateTools (1.7.0)
   - Fabric (1.6.4)
   - MHPrettyDate (1.1.1)
+  - REComposeViewController (2.3.2)
   - TwitterCore (1.15.1):
     - Fabric
   - TwitterKit (1.15.1):
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - DateTools
   - Fabric
   - MHPrettyDate (~> 1.1.1)
+  - REComposeViewController (~> 2.3.2)
   - TwitterCore
   - TwitterKit
 
@@ -18,6 +20,7 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
   MHPrettyDate: e0e5975041f0210c0542f4c5d7e3e44d1a8537be
+  REComposeViewController: b3b95517095c11dae4045fed44377096c9fa0981
   TwitterCore: 12983a7464e34afbbf18881347898a9db526ac71
   TwitterKit: b5821570887ec2d77650fa232eaec175665dc443
 

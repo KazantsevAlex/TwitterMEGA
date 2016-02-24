@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *userTableView;
 @property (strong, nonatomic) TableViewDataSource *dataSource;
+@property (weak, nonatomic) IBOutlet UIButton *showPopoverButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *postTweetBarButton;
+//@property (strong, nonatomic)REComposeViewController *composeViewController;
 
 @end
 
@@ -21,7 +24,6 @@
     [self getLatestLoads];
     [super viewDidLoad];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
-   
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor grayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
@@ -30,6 +32,16 @@
                   forControlEvents:UIControlEventValueChanged];
 
 }
+- (IBAction)showPostTweetPopover:(id)sender {
+    ComposerViewController * compose = [ComposerViewController new];
+    [compose postTweet];
+  
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Tittle" message:@"massefe" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
 
 
 -(void)getLatestLoads
@@ -45,8 +57,6 @@
         
 //    });
 
-    [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
 }
 
 

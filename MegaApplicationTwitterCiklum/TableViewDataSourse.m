@@ -25,7 +25,7 @@
 
     if (self = [super init]) {
         [self configure:tableView];
-        self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
+      //  self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
 //        [[NSNotificationCenter defaultCenter] addObserver:self
 //                                                 selector:@selector(refreshArray)
 //                                                     name:@"kCLAuthorizationStatusAuthorized" object:nil];
@@ -52,7 +52,7 @@
 }
 
 - (void)refreshArray {
-    self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
+  //  self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
 }
 
 
@@ -78,7 +78,7 @@
     }
     
     if (indexPath.row == [self.tweetArray count] - 2) {
-        self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLineDownloadMore];
+       // self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLineDownloadMore];
         [self.tableView reloadData];
     }
     return tempCell;
@@ -88,12 +88,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSLog(@"%lu",[self.tweetArray count] );
-    return  [self.tweetArray count];
+    return  50;
 }
          
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    static NSString *CellIdentifier = @"SectionHeader";
+//    UITableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (headerView == nil){
+//        [NSException raise:@"headerView == nil.." format:@"No cells with matching CellIdentifier loaded from your storyboard"];
+//    }
+//    return headerView;
+//}
 
 @end
     

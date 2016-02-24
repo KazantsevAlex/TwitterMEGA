@@ -10,10 +10,24 @@
 
 @implementation Parser
 
++(id)sharedManager
+{
+    static Parser *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
 -(BOOL)isValidStatusText:(NSString *)statusText
 {
-    //lenght 140 symbols
-    return true;
+    BOOL isOk = true;
+    if (([statusText length] == 0) || [statusText length] >140) {
+        NSLog(@"Error lenght");
+        isOk = false;
+    }
+    return isOk;
 }
 -(BOOL)isValidUserName:(NSString *)username
 {

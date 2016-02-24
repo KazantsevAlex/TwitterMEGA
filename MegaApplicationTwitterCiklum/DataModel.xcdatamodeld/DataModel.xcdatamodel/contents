@@ -32,6 +32,7 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profile_background_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_banner_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profile_image_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="protected" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="screen_name" optional="YES" attributeType="String" syncable="YES"/>
@@ -42,6 +43,6 @@
     <elements>
         <element name="Tweet" positionX="-209" positionY="-499" width="128" height="210"/>
         <element name="TwitterObject" positionX="-398" positionY="-630" width="128" height="45"/>
-        <element name="User" positionX="-549" positionY="-513" width="128" height="388"/>
+        <element name="User" positionX="-549" positionY="-513" width="128" height="405"/>
     </elements>
 </model>

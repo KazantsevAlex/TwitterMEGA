@@ -36,5 +36,6 @@
 @dynamic statuses_count;
 @dynamic url;
 @dynamic tweets;
+@dynamic profile_banner_url;
 
 @end

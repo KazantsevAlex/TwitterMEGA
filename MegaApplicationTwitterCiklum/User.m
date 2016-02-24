@@ -64,6 +64,7 @@
         self.protected = dict[@"protected"];
         self.screen_name = dict[@"screen_name"];
         self.statuses_count = dict[@"statuses_count"];
+        self.profile_banner_url = dict[@"profile_banner_url"];
         //    if (dict[@"user"][@"url"] != nil) {
         //         self.url = dict[@"user"][@"url"];
         //    }

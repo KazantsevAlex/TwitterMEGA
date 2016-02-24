@@ -12,30 +12,21 @@
 #import "User.h"
 #import "Parser.h"
 
-@interface StoreCoordinator : NSObject
+@protocol StoreCoordinatorDelegate <NSObject>
 
-+(id)sharedManager;
-
--(NSArray *)getOwnTimeLinePullToRefresh;
--(NSArray *)getOwnTimeLineDownloadMore;
--(NSArray *)getOwnTimeLine;
-
-
--(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID;
-
--(User *)getUserTimeLinePullToRefresh:(NSString *) UserId;
--(User *)getUserTimeLineDownloadMore:(NSString *) UserId;
--(User *)getUserTimeLine:(NSString *) UserId;
-
--(void)setFavoritedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited;
--(void)setRetweetedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited;
-
--(void)postStatus:(NSString *)text;
-
+-(NSArray *)getOwnTimeline;
+-(NSArray *)gettimelineuserWithId:(NSString *) userId;
 -(NSArray *)getFriendsList;
 -(NSArray *)getFollowersList;
+-(void)setFavoritedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited;
+-(void)setRetweetedTweetWithId:(NSString *)tweetID favorited:(BOOL)favorited;
+- (void)postTweetWithText:(NSString *)text;
 
--(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl;
--(Tweet *)getTweetWithId:(NSString *)tweetId;
+@end
+
+@interface StoreCoordinator : NSObject <StoreCoordinatorDelegate>
+
++(id)sharedManager;
+-(void)postStatus:(NSString *)text;
 
 @end
