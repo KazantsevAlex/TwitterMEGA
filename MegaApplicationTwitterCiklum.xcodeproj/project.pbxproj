@@ -21,7 +21,6 @@
 		0CE65AA41C591187002C2A4D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE65AA21C591187002C2A4D /* User.m */; };
 		0CE65AAC1C5B9B77002C2A4D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */; };
 		71623EE02F8D9397D7578E3D /* libPods-MegaApplicationTwitterCiklum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */; };
-		A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */; };
 		A8383C731C70A41200518443 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8383C721C70A41200518443 /* Parser.m */; };
 		A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E74C21C5A23F600FEC448 /* UserProfileEditViewController.m */; };
 		A83F39C71C523E2B009D6F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F39C61C523E2B009D6F07 /* main.m */; };
@@ -37,6 +36,7 @@
 		A840E0D51C6F537C009BB0D2 /* StoreCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = A840E0D41C6F537C009BB0D2 /* StoreCoordinator.m */; };
 		A8F2B8B61C5269090031B5AE /* TwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2B8B51C5269090031B5AE /* TwitterAPI.m */; };
 		A8F763541C7E6543002C05CE /* ComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F763531C7E6543002C05CE /* ComposerViewController.m */; };
+		A8F763571C7E6706002C05CE /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F763561C7E6706002C05CE /* AlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +65,6 @@
 		0CE65AAB1C5B9B77002C2A4D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2B8AE95C18049D26CBFCD8D7 /* Pods-MegaApplicationTwitterCiklum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.release.xcconfig"; sourceTree = "<group>"; };
 		8FC775149EAC26BE8DA7E162 /* Pods-MegaApplicationTwitterCiklum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MegaApplicationTwitterCiklum/Pods-MegaApplicationTwitterCiklum.debug.xcconfig"; sourceTree = "<group>"; };
-		A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorAlertView.h; sourceTree = "<group>"; };
-		A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorAlertView.m; sourceTree = "<group>"; };
 		A8383C711C70A41200518443 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		A8383C721C70A41200518443 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEditViewController.h; sourceTree = "<group>"; };
@@ -95,6 +93,8 @@
 		A8F2B8B51C5269090031B5AE /* TwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAPI.m; sourceTree = "<group>"; };
 		A8F763521C7E6543002C05CE /* ComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposerViewController.h; sourceTree = "<group>"; };
 		A8F763531C7E6543002C05CE /* ComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposerViewController.m; sourceTree = "<group>"; };
+		A8F763551C7E6706002C05CE /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		A8F763561C7E6706002C05CE /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		B17D6E25E294E8470D0C657C /* libPods-MegaApplicationTwitterCiklum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MegaApplicationTwitterCiklum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +115,8 @@
 			children = (
 				A8F763521C7E6543002C05CE /* ComposerViewController.h */,
 				A8F763531C7E6543002C05CE /* ComposerViewController.m */,
+				A8F763551C7E6706002C05CE /* AlertViewController.h */,
+				A8F763561C7E6706002C05CE /* AlertViewController.m */,
 				A83F39CB1C523E2B009D6F07 /* ViewController.h */,
 				A83F39CC1C523E2B009D6F07 /* ViewController.m */,
 				A83E74C11C5A23F600FEC448 /* UserProfileEditViewController.h */,
@@ -158,8 +160,6 @@
 		A82AE9D11C689F9700968CCA /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				A800FD1A1C5434F6006E8CD8 /* ErrorAlertView.h */,
-				A800FD1B1C5434F6006E8CD8 /* ErrorAlertView.m */,
 				A83F39C81C523E2B009D6F07 /* AppDelegate.h */,
 				A83F39C91C523E2B009D6F07 /* AppDelegate.m */,
 			);
@@ -402,7 +402,6 @@
 				0CE65AA41C591187002C2A4D /* User.m in Sources */,
 				0CE65A9B1C5816C1002C2A4D /* TableViewDataSourse.m in Sources */,
 				A83F39CA1C523E2B009D6F07 /* AppDelegate.m in Sources */,
-				A800FD1C1C5434F6006E8CD8 /* ErrorAlertView.m in Sources */,
 				A83F39F11C524451009D6F07 /* Tweet.m in Sources */,
 				A83E74C31C5A23F600FEC448 /* UserProfileEditViewController.m in Sources */,
 				A83F39F01C524451009D6F07 /* Tweet+CoreDataProperties.m in Sources */,
@@ -415,6 +414,7 @@
 				A840E0D51C6F537C009BB0D2 /* StoreCoordinator.m in Sources */,
 				A8383C731C70A41200518443 /* Parser.m in Sources */,
 				0CE65AA31C591187002C2A4D /* User+CoreDataProperties.m in Sources */,
+				A8F763571C7E6706002C05CE /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

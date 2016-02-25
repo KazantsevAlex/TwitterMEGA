@@ -34,11 +34,7 @@
 }
 - (IBAction)showPostTweetPopover:(id)sender {
     ComposerViewController * compose = [ComposerViewController new];
-    [compose postTweet];
-  
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Tittle" message:@"massefe" preferredStyle:(UIAlertControllerStyleAlert)];
-    [self presentViewController:alert animated:YES completion:nil];
-    
+    [compose postTweet:self]; 
 }
 
 
