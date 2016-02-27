@@ -24,9 +24,14 @@
 
 @end
 
-@interface StoreCoordinator : NSObject <StoreCoordinatorDelegate>
+@interface StoreCoordinator : NSObject
 
 +(id)sharedManager;
 -(void)postStatus:(NSString *)text;
+-(void)getOwnTimeLine:(void (^)(id objects))handler;
+
+
+
+-(void)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID completition:(void (^)(id objects))handler;
 
 @end

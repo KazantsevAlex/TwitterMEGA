@@ -55,17 +55,14 @@
 }
 - (IBAction)likeButtonAction:(id)sender {
     
-  
+
+
 }
 
 
 - (IBAction)ButtonAction:(id)sender {
     
-    
-    NSLog(@"%@",self.ar);
-    
-//    
-//  [[TwitterAPI sharedManager]getTimelineUserWithID:@"2941100471" count:@"20" sinceID:@"" maxID:@"" block:^(id object) {
+    //  [[TwitterAPI sharedManager]getTimelineUserWithID:@"2941100471" count:@"20" sinceID:@"" maxID:@"" block:^(id object) {
 //      for (NSDictionary *dict in object) {
 //          NSLog(@"count %lu --- twxt %@", [object count], [dict valueForKey:@"text"]) ;
 //      }

@@ -30,9 +30,7 @@
 
     self.composeViewController.completionHandler = ^(REComposeViewController *composeViewController, REComposeResult result) {
         [composeViewController dismissViewControllerAnimated:YES completion:nil];
-        
-
-        
+       
         if (result == REComposeResultCancelled) {
             NSLog(@"Cancelled");
         }
@@ -45,7 +43,7 @@
             else
             {
                 AlertViewController *aler = [AlertViewController new];
-                [aler alert:it];
+                [aler alert:it messageText:@"Incorect  tweet lengh" tittleText:@"Error"];
             }
    
         }

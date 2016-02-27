@@ -20,6 +20,6 @@
 @property (nonatomic, strong) CoreDataInterface *tweetObjects;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
-- (void)refreshArray;
+- (void)refreshArray:(UIRefreshControl *)refresh;
 
 @end

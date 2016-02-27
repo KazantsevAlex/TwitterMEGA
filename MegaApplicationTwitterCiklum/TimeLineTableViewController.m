@@ -21,8 +21,8 @@
 @implementation TimeLineTableViewController
 
 - (void)viewDidLoad {
-    [self getLatestLoads];
     [super viewDidLoad];
+    [self getLatestLoads];
     self.dataSource = [[TableViewDataSource alloc]initWithTableView:self.userTableView];
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor grayColor];
@@ -37,22 +37,9 @@
     [compose postTweet:self]; 
 }
 
-
-
-
 -(void)getLatestLoads
 {
-    NSLog(@"Pull to refresh");
-    
- 
-//    double delayInSeconds = 1.5;
-//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self.dataSource refreshArray];
-       
-        
-//    });
-
+    [self.dataSource refreshArray: self.refreshControl];
 }
 
 

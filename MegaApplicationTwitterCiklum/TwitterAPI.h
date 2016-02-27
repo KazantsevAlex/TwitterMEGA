@@ -16,9 +16,6 @@
 
 + (id)sharedManager;
 
-
--(void)login;
-
 - (void)loginAction;
 
 

@@ -26,13 +26,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MegaApplicationTwitterCiklum/StoreCoordinator.m"
-            timestampString = "477929725.729553"
+            timestampString = "478291680.489626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-getOwnTimeLineDownloadMore"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-getOwnTimeLine:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__35-[StoreCoordinator getOwnTimeLine:]_block_invoke"
+                  moduleName = "MegaApplicationTwitterCiklum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexandr/TwitterMEGA/MegaApplicationTwitterCiklum/StoreCoordinator.m"
+                  timestampString = "478292017.302684"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_14"
+                  moduleName = "MegaApplicationTwitterCiklum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexandr/TwitterMEGA/MegaApplicationTwitterCiklum/StoreCoordinator.m"
+                  timestampString = "478292017.302841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_15"
+                  moduleName = "MegaApplicationTwitterCiklum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexandr/TwitterMEGA/MegaApplicationTwitterCiklum/StoreCoordinator.m"
+                  timestampString = "478292017.302932"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,27 +89,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MegaApplicationTwitterCiklum/StoreCoordinator.m"
-            timestampString = "477929725.729553"
+            timestampString = "478292017.253484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-getTimelineUser:maxId:completition:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MegaApplicationTwitterCiklum/StoreCoordinator.m"
-            timestampString = "478003266.821293"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "-postStatus:"
             landmarkType = "5">
          </BreakpointContent>

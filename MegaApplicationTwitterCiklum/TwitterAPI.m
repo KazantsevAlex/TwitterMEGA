@@ -14,6 +14,11 @@
 @property (nonatomic, strong) TWTRAPIClient *apiClient;
 @property(nonatomic, strong)NSString *ownUserID;
 
+
+
+@property (nonatomic, strong) NSString *consumerKey;
+@property (nonatomic, strong)NSString *consumerSecret;
+
 @end
 
 @implementation TwitterAPI
@@ -62,27 +67,6 @@
 -(void)initApiClient:(NSString *)userID
 {
     self.apiClient = [[TWTRAPIClient alloc]initWithUserID:userID];
-}
-
-
--(void)login
-{
-    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
-    NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-    NSLog(@"%@",timeStampObj);
-    NSDictionary *s = @{@"oauth_consumer_key":@"nrq96Exckh06IEpOlpDDqEWte",
-                        @"oauth_consumer_secret":@"AburHB5U0NerpEOFqEMfhc3RqO15bZpX9bPnQEFW7Pf07WaOVb",
-                        @"oauth_nonce":@"6AN2dKRzxyGhmIXUKSmp1JcB4pckM8rD3frKMTmVAo",
-                        @"oauth_signature_method":@"HMAC-SHA1",
-                        @"oauth_timestamp":[NSString stringWithFormat:@"%@",timeStampObj],
-                        @"oauth_version":@"1.0",
-                        @"x_auth_mode":@"client_auth",
-                        @"x_auth_password":@"nentrastsen12",
-                        @"x_auth_username":@"nentrast"};
-    
-    [self executeQueryRequest:@"https://api.twitter.com/oauth/access_token" queryMethod:@"POST" withParameters:s block:^(id object) {
-        NSLog(@"%@",object);
-    }];
 }
 
 -(void)executeQueryRequest:(NSString *)URLRequest queryMethod:(NSString *)type withParameters:(NSDictionary *)parametrs block:(void(^)( id object))success
@@ -239,7 +223,6 @@
     NSDictionary *params = @{@"status": statusText};
     NSString *url = @"https://api.twitter.com/1.1/statuses/update.json";
     NSString *type = @"POST";
-    
     [self executeQueryRequest:url queryMethod:type withParameters:params block:^(id object) {
         success(object);
     }];

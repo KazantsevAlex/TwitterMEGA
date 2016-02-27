@@ -42,32 +42,27 @@ static NSString *tweetsCount = @"100";
     return sharedMyManager;
 }
 
--(NSArray *)getOwnTimeLinePullToRefresh
-{
-    return [self getTimelineUser:@"" maxId:self.maxId];
-}
+//-(NSArray *)getOwnTimeLinePullToRefresh
+//{
+//    return [self getTimelineUser:@"" maxId:self.maxId];
+//}
 
--(NSArray *)getOwnTimeLineDownloadMore
-{
-    return [self getTimelineUser:self.sinceId maxId:@""];
-}
+//-(NSArray *)getOwnTimeLineDownloadMore
+//{
+//    return [self getTimelineUser:self.sinceId maxId:@""];
+//}
 
--(NSArray *)getOwnTimeLine
+-(void)getOwnTimeLine:(void (^)(id objects))handler
 {
     self.ownUserID = [[TwitterAPI sharedManager]ownUserID];
-    return [self getTimelineUser:@"" maxId:@""];
+    [self getTimelineUser:@"" maxId:@"" completition:^(id objects) {
+        handler(objects );
+    }];
 }
 
--(NSArray *)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID
-{
-    NSArray *s;
-    return s;
-}
 -(void)getTimelineUser:(NSString *)sinceId maxId:(NSString *)maxID completition:(void (^)(id objects))handler
 {
     __block NSInteger i = 0;
-
-    
     [[TwitterAPI sharedManager] getUserHomeTimelineWithCount:tweetsCount sinceID:sinceId maxID:maxID block:^(id object) {
         for(NSDictionary *dict in object) {
             
@@ -183,14 +178,7 @@ static NSString *tweetsCount = @"100";
     
     
 }
--(void)postStatus:(NSString *)text
-{
-    [[TwitterAPI sharedManager]postStatusWithText:text block:^(id object) {
-        NSDictionary *dict = [[NSDictionary alloc]initWithDictionary:object];
-        NSLog(@"%@", dict);
-        [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
-    }];
-}
+
 
 
 -(NSArray *)getFriendsList
@@ -222,7 +210,7 @@ static NSString *tweetsCount = @"100";
             {
                 User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
                 [friendsArray addObject:k];
-              //  NSLog(@"%@", k.name);
+                NSLog(@"%@", k.name);
             }
         }];
     }];
@@ -258,6 +246,7 @@ static NSString *tweetsCount = @"100";
              {
                  User *k =  [[CoreDataInterface sharedManager]getUserWithId:[NSString stringWithFormat:@"%@",[usersID objectAtIndex:i]]];
                  [followersArray addObject:k];
+                   NSLog(@"%@", k.name);
              }
          }];
     }];
@@ -266,6 +255,16 @@ static NSString *tweetsCount = @"100";
 -(void)setuOwnProfile:(NSString *)name location:(NSString *)location description:(NSString *)description userUrl:(NSString *)userUrl
 {
     
+}
+
+
+// working good!
+-(void)postStatus:(NSString *)text
+{
+    [[TwitterAPI sharedManager]postStatusWithText:text block:^(id object) {
+        NSDictionary *dict = [[NSDictionary alloc]initWithDictionary:object];
+        [[CoreDataInterface sharedManager]addTweetWithDictionary:dict];
+    }];
 }
 
 @end

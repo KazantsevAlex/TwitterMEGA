@@ -51,8 +51,14 @@
     
 }
 
-- (void)refreshArray {
-  //  self.tweetArray = [[StoreCoordinator sharedManager]getOwnTimeLine];
+- (void)refreshArray:(UIRefreshControl *)refresh {
+  
+    [[StoreCoordinator sharedManager]getOwnTimeLine:^(id objects) {
+        NSLog(@"Pull to refresh");
+        self.tweetArray = objects;
+        [refresh endRefreshing];
+    }];
+
 }
 
 
